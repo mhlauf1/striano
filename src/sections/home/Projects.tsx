@@ -70,11 +70,13 @@ const ProjectItem = ({
 const Projects = () => {
   return (
     <section className=" bg-[#151515] ">
-      <div className=" mx-8 flex flex-col py-24 md:py-36 border-x border-white/10">
+      <div className="mx-4 md:mx-8 flex flex-col py-24 md:py-36 border-x border-white/10">
         <div className="flex items-center gap-2 flex-row">
-          <div className="h-[1px] w-[40px] md:w-[75px] bg-white/10"></div>
-          <div className="h-[10px] w-[10px] bg-[#981D1F] rounded-full"></div>
-          <p className="text-neutral-400">Portfolio of Success</p>
+          <div className="h-[1px] w-[16px] md:w-[75px] bg-white/10"></div>
+          <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
+          <p className="text-sm md:text-md text-neutral-400">
+            Portfolio of Success
+          </p>
         </div>
         <div className="flex mt-8  px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-x-36 justify-between">
           <div className="flex flex-col flex-1 justify-between items-start">
@@ -90,18 +92,18 @@ const Projects = () => {
                 services to blue-chip clients with critical systems across a
                 wide variety of business sectors:
               </p>
-              <div className="flex mt-10 md:mt-16 flex-col items-start gap-4">
+              <div className="flex mt-10 md:mt-16 flex-col items-start gap-3 md:gap-4">
                 {sectors.map((item) => (
                   <p
                     key={item}
-                    className="font-medium text-xl md:text-2xl text-neutral-100"
+                    className="font-medium text-lg md:text-2xl text-neutral-100"
                   >
                     {item}
                   </p>
                 ))}
               </div>
             </div>
-            <div className="space-y-6 md:space-y-4 mt-16 md:mt-0">
+            <div className="space-y-6 md:space-y-4 mt-12 md:mt-0">
               <PrimaryButton>Learn More</PrimaryButton>
               <p className="font-medium text-white">
                 Trusted by leading financial institutions, universities, and

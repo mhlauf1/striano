@@ -60,26 +60,29 @@ const ServiceItem = ({
 
 const Services = () => {
   return (
-    <section className="border-x border-black/10 mx-8 flex flex-col py-20 md:py-36">
+    <section className="border-x border-black/10 mx-4 md:mx-8 flex flex-col py-20 md:py-36">
       <div className="flex items-center gap-2 flex-row">
-        <div className="h-[1px] w-[40px] md:w-[75px] bg-black/10"></div>
-        <div className="h-[10px] w-[10px] bg-[#981D1F] rounded-full"></div>
-        <p className="text-neutral-500">Our Services</p>
+        <div className="h-[1px] w-[16px] md:w-[75px] bg-black/10"></div>
+        <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
+        <p className="text-sm md:text-md text-neutral-500">Our Services</p>
       </div>
       <div className="flex mt-8 px-4 sm:px-12 lg:px-20 flex-col md:flex-row gap-16 md:gap-24">
         {/* Left column - shrink to content width */}
         <div className="md:w-2/5 flex flex-col justify-between items-start">
-          <div className="space-y-6 md:space-y-8">
-            <h2
-              style={{ lineHeight: "100%" }}
-              className="text-3xl md:text-4xl lg:text-6xl tracking-tight"
-            >
-              Complete Electrical Distribution
-            </h2>
-            <p className="text-lg md:text-xl font-medium">
-              Striano Electric Co., Inc. has the knowledge and experience
-              necessary to perform effectively on any size project.
-            </p>
+          <div className="flex flex-col h-full justify-between">
+            <div>
+              <h2
+                style={{ lineHeight: "100%" }}
+                className="text-3xl md:text-4xl lg:text-6xl tracking-tight"
+              >
+                Complete Electrical Distribution
+              </h2>
+              <p className="text-lg mt-4 mb-6 md:mt-6 md:mb-8 md:text-xl font-medium">
+                Striano Electric Co., Inc. has the knowledge and experience
+                necessary to perform effectively on any size project.
+              </p>
+            </div>
+
             <PrimaryButton>Learn More</PrimaryButton>
           </div>
         </div>
