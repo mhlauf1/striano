@@ -58,7 +58,7 @@ const TestimonialItem = ({
   company,
 }: Omit<TestimonialItemProps, "id">) => (
   <div className="flex flex-col h-auto  rounded gap-6">
-    <p className="text-neutral-800 font-medium text-lg">"{quote}"</p>
+    <p className="text-neutral-800 font-medium text-lg">{quote}</p>
     <div className="flex flex-col gap-1">
       <p className="font-medium text-xl">
         {author}, {title}

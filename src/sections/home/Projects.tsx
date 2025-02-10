@@ -92,7 +92,10 @@ const Projects = () => {
               </p>
               <div className="flex mt-10 md:mt-16 flex-col items-start gap-4">
                 {sectors.map((item) => (
-                  <p className="font-medium text-xl md:text-2xl text-neutral-100">
+                  <p
+                    key={item}
+                    className="font-medium text-xl md:text-2xl text-neutral-100"
+                  >
                     {item}
                   </p>
                 ))}
