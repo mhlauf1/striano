@@ -78,7 +78,7 @@ const Testimonials = () => {
           Hear From Our Clients
         </p>
       </div>
-      <div className="flex mt-8 px-4 sm:px-12 lg:px-20 flex-col gap-12 md:gap-20">
+      <div className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20 flex-col gap-12 md:gap-20">
         <div className="flex flex-col items-start">
           <div className="space-y-4 md:space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-6xl tracking-tight max-w-3xl">

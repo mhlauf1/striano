@@ -78,7 +78,7 @@ const Projects = () => {
             Portfolio of Success
           </p>
         </div>
-        <div className="flex mt-8  px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-x-36 justify-between">
+        <div className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-x-36 justify-between">
           <div className="flex flex-col flex-1 justify-between items-start">
             <div className="">
               <h2
@@ -92,11 +92,11 @@ const Projects = () => {
                 services to blue-chip clients with critical systems across a
                 wide variety of business sectors:
               </p>
-              <div className="flex mt-10 md:mt-16 flex-col items-start gap-3 md:gap-4">
+              <div className="flex mt-10 md:mt-16 flex-col items-start gap-4">
                 {sectors.map((item) => (
                   <p
                     key={item}
-                    className="font-medium text-lg md:text-2xl text-neutral-100"
+                    className="font-medium leading-tight  text-lg md:text-2xl text-neutral-100"
                   >
                     {item}
                   </p>

@@ -66,7 +66,7 @@ const Services = () => {
         <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
         <p className="text-sm md:text-md text-neutral-500">Our Services</p>
       </div>
-      <div className="flex mt-8 px-4 sm:px-12 lg:px-20 flex-col md:flex-row gap-16 md:gap-24">
+      <div className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20 flex-col md:flex-row gap-16 md:gap-24">
         {/* Left column - shrink to content width */}
         <div className="md:w-2/5 flex flex-col justify-between items-start">
           <div className="flex flex-col h-full justify-between">

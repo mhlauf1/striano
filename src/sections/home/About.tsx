@@ -9,7 +9,7 @@ const About = () => {
         <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
         <p className="text-sm md:text-md text-neutral-500">About Us</p>
       </div>
-      <div className="flex mt-8  px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-20 justify-between">
+      <div className="flex mt-4 md:mt-8  px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-20 justify-between">
         <div className="flex flex-col flex-1 justify-between items-start">
           <p className="text-xl md:text-2xl font-medium w-full md:w-[85%]">
             Striano Electric Co., Inc. is an I.B.E.W. full service contractor

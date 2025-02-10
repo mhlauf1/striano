@@ -17,10 +17,7 @@ const Hero = () => {
 
       <div className="relative mx-4 md:mx-8 border-x border-white/10 z-10 h-screen  px-4 sm:px-12 lg:px-20 flex flex-col justify-end pb-24">
         <div className="max-w-3xl space-y-4 md:space-y-6">
-          <h1
-            style={{ lineHeight: "100%" }}
-            className="text-4xl md:text-5xl lg:text-7xl text-white tracking-tight"
-          >
+          <h1 className="text-4xl md:text-5xl lg:text-7xl text-white tracking-tight">
             Striano Electric Powers New York City&apos;s Most Critical
             Infrastructure
           </h1>
