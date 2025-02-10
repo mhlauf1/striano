@@ -9,3 +9,11 @@
   --font-serif: Georgia, Times, serif;
   --font-mono: Menlo, Courier, monospace;
 }
+
+.title-line-height {
+  line-height: 1;
+}
+
+.title-line-subheight {
+  line-height: 1.3;
+}

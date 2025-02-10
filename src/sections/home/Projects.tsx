@@ -83,7 +83,7 @@ const Projects = () => {
             <div className="">
               <h2
                 style={{ lineHeight: "100%" }}
-                className="text-3xl md:text-4xl lg:text-6xl text-neutral-100 tracking-tight"
+                className="text-3xl title-line-height md:text-4xl lg:text-6xl text-neutral-100 tracking-tight"
               >
                 Projects we&apos;ve worked on
               </h2>
