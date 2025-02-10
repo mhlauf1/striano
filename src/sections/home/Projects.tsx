@@ -112,12 +112,14 @@ const Projects = () => {
           <div className="flex flex-1 mt-16 md:mt-0">
             <div className="grid grid-cols-1 gap-12">
               {projectItemData.map((item) => (
-                <ProjectItem
-                  id={item.id}
-                  title={item.title}
-                  description={item.description}
-                  icon={item.icon}
-                />
+                <div key={item.id}>
+                  <ProjectItem
+                    id={item.id}
+                    title={item.title}
+                    description={item.description}
+                    icon={item.icon}
+                  />
+                </div>
               ))}
             </div>
           </div>

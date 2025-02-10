@@ -91,13 +91,15 @@ const Testimonials = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonialData.map((item) => (
-            <TestimonialItem
-              key={item.id}
-              quote={item.quote}
-              author={item.author}
-              title={item.title}
-              company={item.company}
-            />
+            <div key={item.id}>
+              <TestimonialItem
+                key={item.id}
+                quote={item.quote}
+                author={item.author}
+                title={item.title}
+                company={item.company}
+              />
+            </div>
           ))}
         </div>
       </div>

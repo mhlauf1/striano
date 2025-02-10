@@ -87,13 +87,15 @@ const Services = () => {
         <div className="md:w-3/5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8">
             {serviceItemData.map((item) => (
-              <ServiceItem
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                description={item.description}
-                icon={item.icon}
-              />
+              <div key={item.id}>
+                <ServiceItem
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  description={item.description}
+                  icon={item.icon}
+                />
+              </div>
             ))}
           </div>
         </div>
