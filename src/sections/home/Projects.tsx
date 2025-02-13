@@ -61,10 +61,12 @@ const ProjectItem = ({
 }: projectItemDataProps) => (
   <div key={id} className="flex flex-col gap-2">
     {icon}
-    <h3 className="text-2xl font-medium tracking-tight text-neutral-100">
+    <h3 className="text-xl md:text-2xl font-medium tracking-tight text-neutral-100">
       {title}
     </h3>
-    <p className="text-neutral-300 text-lg">{description}</p>
+    <p className="text-neutral-300 font-medium md:max-w-2xl text-lg md:text-xl">
+      {description}
+    </p>
   </div>
 );
 const Projects = () => {
@@ -83,20 +85,20 @@ const Projects = () => {
             <div className="">
               <h2
                 style={{ lineHeight: "100%" }}
-                className="text-3xl title-line-height md:text-4xl lg:text-6xl text-neutral-100 tracking-tight"
+                className="text-3xl title-line-height md:text-4xl lg:text-5xl text-neutral-100 tracking-tight"
               >
                 Projects we&apos;ve worked on
               </h2>
-              <p className="mt-5 md:mt-8 font-medium text-neutral-400 text-lg md:text-xl">
+              <p className="text-lg md:max-w-2xl md:text-xl mt-4 md:mt-6 font-medium text-neutral-300">
                 We provide a full range of electrical and telecommunication
                 services to blue-chip clients with critical systems across a
                 wide variety of business sectors:
               </p>
-              <div className="flex mt-10 md:mt-16 flex-col items-start gap-4">
+              <div className="flex mt-10 md:mt-8 flex-col items-start gap-2">
                 {sectors.map((item) => (
                   <p
                     key={item}
-                    className="font-medium leading-tight  text-lg md:text-2xl text-neutral-100"
+                    className="font-medium leading-tight  text-xl md:text-2xl text-white"
                   >
                     {item}
                   </p>
@@ -105,7 +107,7 @@ const Projects = () => {
             </div>
             <div className="space-y-6 md:space-y-4 mt-12 md:mt-0">
               <PrimaryButton>Learn More</PrimaryButton>
-              <p className="font-medium text-white">
+              <p className="font-medium text-neutral-300 text-md md:max-w-2xl md:text-lg">
                 Trusted by leading financial institutions, universities, and
                 corporations
               </p>

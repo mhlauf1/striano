@@ -1,7 +1,12 @@
 import React from "react";
+import Hero from "@/sections/projects/Hero";
+import Projects from "@/sections/projects/Projects";
 
 export default function ProjectsPage() {
-  <main>
-    <h1>Projects</h1>
-  </main>;
+  return (
+    <main>
+      <Hero />
+      <Projects />
+    </main>
+  );
 }

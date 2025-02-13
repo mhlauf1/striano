@@ -11,7 +11,7 @@ const About = () => {
       </div>
       <div className="flex mt-4 md:mt-8  px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-20 justify-between">
         <div className="flex flex-col flex-1 justify-between items-start">
-          <p className="text-xl md:text-2xl font-medium w-full md:w-[85%]">
+          <p className="text-2xl md:text-3xl max-w-4xl font-medium text-neutral-900">
             Striano Electric Co., Inc. is an I.B.E.W. full service contractor
             and provider of electrical and telecommunications installations,
             repairs and maintenance in the Greater New York & New Jersey Areas.
@@ -32,8 +32,8 @@ const About = () => {
           <Image
             src="/about-drawing.png"
             alt="About drawing"
-            height={375}
-            width={600}
+            height={300}
+            width={500}
           />
         </div>
       </div>
