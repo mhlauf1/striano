@@ -37,7 +37,7 @@ const Hero = () => {
                 <IoIosStar className="h-[24px] w-[24px] text-yellow-400" />
               </div>
               <p className="text-white font-semibold">
-                New York's Most Trusted Electrical Partner
+                New York&apos;s Most Trusted Electrical Partner
               </p>
             </div>
             <Image

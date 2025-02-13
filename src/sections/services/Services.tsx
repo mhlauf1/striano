@@ -45,7 +45,6 @@ const serviceItemData = [
 ];
 
 const ServiceItem = ({
-  id,
   number,
   image,
   title,

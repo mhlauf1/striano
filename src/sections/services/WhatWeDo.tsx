@@ -19,13 +19,13 @@ const WhatWeDo = () => {
                 Enterprise-grade electrical
               </span>{" "}
               solutions for{" "}
-              <span className="text-neutral-100">New York's </span> most
+              <span className="text-neutral-100">New York&apos;s </span> most
               demanding environments
             </h2>
 
             <p className="mt-8 text-xl sm:text-2xl md:text-3xl font-medium text-neutral-300">
               We design and implement mission-critical electrical systems that
-              power New York's most demanding institutions.
+              power New York&apos;s most demanding institutions.
             </p>
 
             {/* Tab Component */}
