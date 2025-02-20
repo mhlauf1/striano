@@ -23,53 +23,6 @@ const sectors = [
   "Real Estate Services, Insurance Management, Law Firms",
 ];
 
-const projectItemData = [
-  {
-    id: 0,
-    icon: <GiElectricalResistance className="w-6 h-6 text-white " />,
-    title: "Commercial",
-    description:
-      "Full-service electrical solutions for NYC's most demanding commercial spaces. From Wall Street trading floors to mission-critical data centers, we deliver enterprise-grade installations and 24/7 support.",
-  },
-  {
-    id: 1,
-    icon: <SlLayers className="w-6 h-6 text-white" />,
-    title: "Institutional",
-    description:
-      "Describe the service and how customers or clients can benefit from it. It’s an opportunity to add a short description with relevant details, like pricing, duration and how to book.",
-  },
-  {
-    id: 2,
-    icon: <MdEmergencyShare className="w-6 h-6 text-white" />,
-    title: "Site Management",
-    description:
-      "Powering critical facilities across education, healthcare, and government sectors. From university campuses to medical centers, we design and maintain the electrical systems that keep essential services operating without interruption.",
-  },
-  {
-    id: 3,
-    icon: <IoBarChartSharp className="w-6 h-6 text-white" />,
-    title: "Pre-Construction",
-    description:
-      "Expert electrical planning, value engineering, and system design. We collaborate with architects and contractors to optimize electrical systems for maximum efficiency and scalability.",
-  },
-];
-
-const ProjectItem = ({
-  id,
-  icon,
-  title,
-  description,
-}: projectItemDataProps) => (
-  <div key={id} className="flex flex-col gap-2">
-    {icon}
-    <h3 className="text-xl md:text-2xl font-medium tracking-tight text-neutral-100">
-      {title}
-    </h3>
-    <p className="text-neutral-300 font-medium md:max-w-2xl text-lg md:text-xl">
-      {description}
-    </p>
-  </div>
-);
 const Projects = () => {
   return (
     <section className=" bg-[#151515]">
