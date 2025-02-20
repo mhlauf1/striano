@@ -14,7 +14,7 @@ const FeaturedProjects = () => {
       </div>
       <h2
         style={{ lineHeight: "120%" }}
-        className="text-3xl md:text-4xl  mt-4 md:mt-8  px-4 sm:px-12 lg:px-20  mb-8 md:mb-12"
+        className="text-3xl md:text-4xl tracking-tight mt-4 md:mt-8  px-4 sm:px-12 lg:px-20  mb-8 md:mb-12"
       >
         Current Projects
       </h2>
