@@ -1,17 +1,6 @@
 import React from "react";
 import { PrimaryButton } from "@/components/Button";
-import { GiElectricalResistance } from "react-icons/gi";
-import { SlLayers } from "react-icons/sl";
-import { MdEmergencyShare } from "react-icons/md";
-import { IoBarChartSharp } from "react-icons/io5";
 import Image from "next/image";
-
-interface projectItemDataProps {
-  id: number;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
 
 const sectors = [
   "Financial Institutions",
