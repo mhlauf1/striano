@@ -8,6 +8,7 @@
     "Helvetica Neue", sans-serif;
   --font-serif: Georgia, Times, serif;
   --font-mono: Menlo, Courier, monospace;
+  scroll-behavior: smooth;
 }
 
 .title-line-height {

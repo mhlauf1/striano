@@ -52,24 +52,21 @@ const Projects = () => {
   };
 
   return (
-    <section className="border-x border-black/10 mx-4 md:mx-8 flex flex-col py-12 md:py-24">
+    <section className="flex flex-col mt-24 md:mt-36 pb-12 md:pb-24">
       <div className="flex flex-col">
         {/* Filters */}
         <div className="flex flex-col px-4 sm:px-12 lg:px-20">
-          <p className="text-xl sm:text-2xl md:text-3xl max-w-3xl font-medium">
-            Operating in the Greater New York & New Jersey areas, across a wide
-            variety of business sectors:
-          </p>
-          <div className="flex my-12 flex-wrap gap-3">
+          <p className="text-neutral-600">Filter by sector:</p>
+          <div className="flex mb-12 mt-4 flex-wrap gap-x-6 gap-y-3">
             {FILTER_OPTIONS.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 text-xs sm:text-md md:text-lg text-start py-2 rounded-full transition-colors
+                className={`text-xs sm:text-md md:text-lg text-start  transition-colors
                 ${
                   activeFilter === filter
-                    ? "bg-[#981D1F] font-medium text-white"
-                    : "bg-neutral-100 text-neutral-800 font-medium hover:bg-neutral-200"
+                    ? " font-medium text-black"
+                    : " text-neutral-400 font-medium hover:text-neutral-800"
                 }`}
               >
                 {filter}
@@ -82,21 +79,16 @@ const Projects = () => {
           {/* Filter text */}
           <div
             ref={headerRef}
-            className={`flex sticky top-0 px-4 sm:px-12 lg:px-20 items-center justify-between mb-4 py-4 transition-colors duration-300 z-10
-              ${isSticky ? "bg-[#981D1F] shadow-md" : "bg-white"}`}
+            className="flex sticky bg-white top-0 px-4 sm:px-12 lg:px-20 items-center justify-between mb-4 py-4 border-b transition-colors duration-300 z-50"
           >
-            <h2
-              className={`text-2xl md:text-3xl font-medium transition-colors duration-300 ${
-                isSticky ? "text-white" : "text-black"
-              }`}
-            >
+            <h2 className="text-2xl md:text-3xl font-medium transition-colors duration-300">
               {activeFilter}
             </h2>
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
                 className={`transition-colors duration-300 flex items-center gap-2
-                  ${isSticky ? "text-white/70" : "text-neutral-500"}`}
+                  ${isSticky ? "text-black" : "text-neutral-500"}`}
               >
                 Filter
                 <ChevronDown

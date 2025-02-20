@@ -6,7 +6,7 @@ import { PrimaryButton, SecondaryButton } from "@/components/Button";
 const Hero = () => {
   return (
     <section className="relative max-h-screen bg-gradient-to-b from-[#1F1F1F] to-[#151515]">
-      <div className="relative mx-4 md:mx-8 border-x gap-12 border-white/10 z-10 justify-between md:h-screen px-4 sm:px-12 lg:px-20 flex pb-24 md:pb-0 pt-[20vh] md:pt-0 flex-col md:flex-row items-center ">
+      <div className="relative gap-12 z-10 justify-between md:h-screen px-4 sm:px-12 lg:px-20 flex pb-24 md:pb-0 pt-[20vh] md:pt-0 flex-col md:flex-row items-center ">
         <div className=" flex flex-1 flex-col gap-4 md:gap-6">
           <p className="text-white/80 text-sm uppercase tracking-wider">
             Specialized Solutions. Superior Service.

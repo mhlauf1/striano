@@ -4,12 +4,12 @@ import TabComponent from "@/components/TabComponent";
 
 const WhatWeDo = () => {
   return (
-    <section className="bg-[#151515]">
-      <div className="mx-4 md:mx-8 flex flex-col py-24 md:py-36 border-x border-white/10">
-        <div className="flex items-center gap-2 flex-row px-4 sm:px-12 lg:px-20">
+    <section className="bg-[#151515] mb-16">
+      <div className="flex flex-col py-24 md:py-36 ">
+        <div className="flex items-center gap-2 flex-row">
           <div className="h-[1px] w-[16px] md:w-[75px] bg-white/10"></div>
           <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
-          <p className="text-sm md:text-base text-neutral-400">What We Do</p>
+          <p className="text-sm md:text-base text-neutral-200">What We Do</p>
         </div>
         <div className="flex mt-8 md:mt-12 px-4 sm:px-12 lg:px-20 gap-16 lg:gap-24">
           {/* Left Content - Takes up 2/3 of the space */}

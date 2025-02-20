@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -28,16 +27,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="absolute w-full top-0 z-50 px-8 py-8">
-      <div className=" px-4 sm:px-12 lg:px-20  flex justify-between items-center">
-        <Link href="/" className="relative w-32 h-12">
-          <Image
-            src="/nav-logo.png"
-            alt="Striano Electric"
-            fill
-            className="object-contain"
-            priority
-          />
+    <nav className="sticky w-full bg-white top-0 left-0 shadow right-0 z-50 py-3">
+      <div className="flex px-4 sm:px-12 md:px-20 justify-between items-center">
+        <Link href="/">
+          <h2 className="text-xl md:text-2xl tracking-tight text-neutral-800 font-semibold">
+            Striano Electric
+          </h2>
         </Link>
 
         {/* Desktop Menu */}
@@ -46,37 +41,34 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="text-white hover:text-gray-300 transition-colors"
+              className="hover:text-gray-500 transition-colors"
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="px-8 py-2 rounded border border-white bg-white/10 text-white hover:bg-white hover:text-black transition-all"
+            className="py-2 rounded border border-white bg-white/10 hover:bg-white hover:text-black transition-all"
           >
             Contact
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white p-2"
-        >
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2">
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
-              className={`w-full h-0.5 bg-white transition-all ${
+              className={`w-full h-0.5 bg-black transition-all ${
                 isOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`w-full h-0.5 bg-white transition-all ${
+              className={`w-full h-0.5 bg-black transition-all ${
                 isOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`w-full h-0.5 bg-white transition-all ${
+              className={`w-full h-0.5 bg-black transition-all ${
                 isOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />
@@ -93,6 +85,18 @@ const Navbar = () => {
               variants={menuVariants}
               className="fixed inset-y-0 right-0 w-full max-w-sm bg-black/95 backdrop-blur-lg p-8 lg:hidden"
             >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute top-8 right-8 text-white p-2"
+                aria-label="Close menu"
+              >
+                <div className="w-6 h-6 relative">
+                  <span className="absolute w-full h-0.5 bg-white rotate-45 top-1/2 -translate-y-1/2" />
+                  <span className="absolute w-full h-0.5 bg-white -rotate-45 top-1/2 -translate-y-1/2" />
+                </div>
+              </button>
+
               <div className="flex flex-col gap-8 mt-16">
                 {menuItems.map((item) => (
                   <Link

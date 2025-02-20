@@ -1,12 +1,5 @@
-import React from "react";
-
-interface TestimonialItemProps {
-  id: number;
-  quote: string;
-  author: string;
-  title: string;
-  company: string;
-}
+"use client";
+import React, { useState, useEffect } from "react";
 
 const testimonialData = [
   {
@@ -51,60 +44,103 @@ const testimonialData = [
   },
 ];
 
-const TestimonialItem = ({
-  quote,
-  author,
-  title,
-  company,
-}: Omit<TestimonialItemProps, "id">) => (
-  <div className="flex flex-col h-auto  rounded gap-6">
-    <p className="text-neutral-800 font-medium text-md md:text-lg">{quote}</p>
-    <div className="flex flex-col gap-1">
-      <p className="font-medium text-lg md:text-xl">
-        {author}, {title}
-      </p>
-      <p className="text-neutral-700 font-medium">{company}</p>
-    </div>
-  </div>
-);
-
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonialData.length);
+    }, 7000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="border-x border-black/10 mx-4 md:mx-8 flex flex-col py-24 md:py-36">
+    <section className="flex flex-col py-12 md:py-24">
+      {/* Header */}
       <div className="flex items-center gap-2 flex-row">
         <div className="h-[1px] w-[16px] md:w-[75px] bg-black/10"></div>
         <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
-        <p className="text-sm md:text-md text-neutral-500">
-          Hear From Our Clients
+        <p className="text-sm md:text-base text-neutral-700">
+          Hear from our clients
         </p>
       </div>
-      <div className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20 flex-col gap-12 md:gap-20">
-        <div className="flex flex-col items-start">
-          <div className="space-y-4 md:space-y-6">
-            <h2 className="text-3xl md:text-4xl md:max-w-xl lg:text-5xl tracking-tight text-neutral-800 max-w-3xl">
-              Proof that better engineering makes a difference
-            </h2>
-            <p className="text-lg md:max-w-2xl md:text-xl text-neutral-600 font-medium">
-              As we continue to grow our business, we continually remind
-              ourselves of our commitment to our clients to provide a personal
-              yet professional service at a competitive price.
-            </p>
-          </div>
+
+      <div className="w-full space-y-4  px-4 sm:px-12 lg:px-20 mt-4 md:mt-8">
+        {/* Progress bar */}
+        <div className="h-[2px] w-full bg-neutral-100 overflow-hidden">
+          <div
+            className="h-full bg-neutral-400 w-full origin-left"
+            style={{
+              animation: "progress 7s linear infinite",
+            }}
+          />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonialData.map((item) => (
-            <div key={item.id}>
-              <TestimonialItem
-                key={item.id}
-                quote={item.quote}
-                author={item.author}
-                title={item.title}
-                company={item.company}
-              />
-            </div>
+
+        {/* Testimonial content */}
+        <div
+          className="h-[350px] md:h-[450px]  animate-fade-in overflow-hidden"
+          key={currentIndex}
+        >
+          <h2
+            style={{ lineHeight: "120%" }}
+            className="text-3xl tracking-tight md:text-5xl"
+          >
+            {testimonialData[currentIndex].quote}
+          </h2>
+          <h3 className="mt-6 tracking-wide text-lg">
+            {testimonialData[currentIndex].author},{" "}
+            <span className="text-neutral-500">
+              {testimonialData[currentIndex].title}
+            </span>
+          </h3>
+          <p className="text-neutral-500">
+            {testimonialData[currentIndex].company}
+          </p>
+        </div>
+
+        {/* Navigation dots */}
+        <div className="flex justify-end gap-3 mt-12">
+          {testimonialData.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                currentIndex === index ? "bg-neutral-800" : "bg-neutral-300"
+              }`}
+            />
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes progress {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          15% {
+            opacity: 1;
+          }
+          85% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 7s linear;
+        }
+      `}</style>
     </section>
   );
 };

@@ -4,7 +4,7 @@ import Projects from "@/sections/projects/Projects";
 
 export default function ProjectsPage() {
   return (
-    <main>
+    <main className="border-x border-black/10 mx-4 md:mx-8">
       <Hero />
       <Projects />
     </main>

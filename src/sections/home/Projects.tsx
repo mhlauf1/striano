@@ -4,6 +4,7 @@ import { GiElectricalResistance } from "react-icons/gi";
 import { SlLayers } from "react-icons/sl";
 import { MdEmergencyShare } from "react-icons/md";
 import { IoBarChartSharp } from "react-icons/io5";
+import Image from "next/image";
 
 interface projectItemDataProps {
   id: number;
@@ -71,12 +72,12 @@ const ProjectItem = ({
 );
 const Projects = () => {
   return (
-    <section className=" bg-[#151515] ">
-      <div className="mx-4 md:mx-8 flex flex-col py-24 md:py-36 border-x border-white/10">
+    <section className=" bg-[#151515]">
+      <div className="flex flex-col py-24 md:py-36">
         <div className="flex items-center gap-2 flex-row">
           <div className="h-[1px] w-[16px] md:w-[75px] bg-white/10"></div>
           <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
-          <p className="text-sm md:text-md text-neutral-400">
+          <p className="text-sm md:text-md text-neutral-200">
             Portfolio of Success
           </p>
         </div>
@@ -85,11 +86,11 @@ const Projects = () => {
             <div className="">
               <h2
                 style={{ lineHeight: "100%" }}
-                className="text-3xl title-line-height md:text-4xl lg:text-5xl text-neutral-100 tracking-tight"
+                className="text-3xl tracking-tight md:text-5xl text-neutral-100"
               >
                 Projects we&apos;ve worked on
               </h2>
-              <p className="text-lg md:max-w-2xl md:text-xl mt-4 md:mt-6 font-medium text-neutral-300">
+              <p className=" max-w-2xl text-lg mt-6 text-neutral-200">
                 We provide a full range of electrical and telecommunication
                 services to blue-chip clients with critical systems across a
                 wide variety of business sectors:
@@ -98,34 +99,29 @@ const Projects = () => {
                 {sectors.map((item) => (
                   <p
                     key={item}
-                    className="font-medium leading-tight  text-xl md:text-2xl text-white"
+                    className="font-medium leading-tight  text-lg md:text-xl text-white"
                   >
                     {item}
                   </p>
                 ))}
               </div>
             </div>
-            <div className="space-y-6 md:space-y-4 mt-12 md:mt-0">
+            <div className="space-y-6 md:space-y-4 mt-8 md:mt-12">
               <PrimaryButton>Learn More</PrimaryButton>
-              <p className="font-medium text-neutral-300 text-md md:max-w-2xl md:text-lg">
+              <p className="font-medium text-neutral-300 text-md md:max-w-2xl">
                 Trusted by leading financial institutions, universities, and
                 corporations
               </p>
             </div>
           </div>
-          <div className="flex flex-1 mt-16 md:mt-0">
-            <div className="grid grid-cols-1 gap-12">
-              {projectItemData.map((item) => (
-                <div key={item.id}>
-                  <ProjectItem
-                    id={item.id}
-                    title={item.title}
-                    description={item.description}
-                    icon={item.icon}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="relative flex flex-1">
+            <Image
+              src="/white-projects.png"
+              alt="Building exterior with modern architecture"
+              className="object-cover p-4 md:p-8"
+              fill
+              priority
+            />
           </div>
         </div>
       </div>
