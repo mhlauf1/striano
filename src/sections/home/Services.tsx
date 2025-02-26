@@ -1,13 +1,35 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { LuServer } from "react-icons/lu";
 import { BsLightningCharge } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 
 const Services = () => {
+  const [threshold, setThreshold] = useState(0.5);
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
 
+  // Update threshold based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if we're on a mobile device (less than 768px width)
+      if (window.innerWidth < 768) {
+        setThreshold(0.2); // Lower threshold for mobile
+      } else {
+        setThreshold(0.5); // Default threshold for desktop
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isInView = useInView(ref, { once: true, amount: threshold });
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -46,8 +68,20 @@ const Services = () => {
     },
   };
 
+  const lineVariants = {
+    hidden: { height: 0 },
+    visible: {
+      height: "100%",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.1,
+      },
+    },
+  };
+
   return (
-    <section className="flex flex-col pb-20 pt-12 px-4 sm:px-12 lg:px-20 md:pb-28 md:pt-16">
+    <section className="flex flex-col pb-20 pt-12  px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 md:pb-28 md:pt-16">
       {/* Top content area with two columns */}
       <motion.div
         ref={ref}
@@ -58,13 +92,17 @@ const Services = () => {
       >
         {/* Left column - Headers */}
         <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-          <div className="border-l-4 border-[#981D1F] pl-4">
+          <div className="relative pl-6">
+            <motion.div
+              variants={lineVariants}
+              className="absolute left-0 top-0 w-1 bg-[#981D1F]"
+            ></motion.div>
             <p className="text-sm md:text-md font-medium text-[#981D1F]">
               Our Services
             </p>
             <h2
               style={{ letterSpacing: -0.35 }}
-              className="text-2xl  md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
+              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
             >
               Complete Electrical Distribution
             </h2>
@@ -74,7 +112,7 @@ const Services = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             style={{ lineHeight: 1.7 }}
-            className="mt-6 text-neutral-600 text-md md:text-lg"
+            className="text-neutral-600 text-md pl-6 md:text-lg"
           >
             Our reputation of completing on-time and on-budget projects has
             gained us a reputation for service and integrity unequaled in the
@@ -90,7 +128,7 @@ const Services = () => {
           <motion.div
             custom={0}
             variants={cardVariants}
-            className="flex items-start justify-end gap-4 lg:gap-5 p-4 rounded-lg hover:bg-neutral-50 transition-colors duration-300"
+            className="flex items-start justify-end gap-4 lg:gap-5 p-4"
           >
             <motion.div
               variants={iconVariants}
@@ -118,7 +156,7 @@ const Services = () => {
           <motion.div
             custom={1}
             variants={cardVariants}
-            className="flex justify-end items-start gap-4 lg:gap-5 p-4 rounded-lg hover:bg-neutral-50 transition-colors duration-300"
+            className="flex justify-end items-start gap-4 lg:gap-5 p-4"
           >
             <motion.div
               variants={iconVariants}

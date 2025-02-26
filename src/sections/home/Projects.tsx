@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { PrimaryButton } from "@/components/Button";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -15,8 +15,31 @@ const sectors = [
 ];
 
 const Projects = () => {
+  const [threshold, setThreshold] = useState(0.5);
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  // Update threshold based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if we're on a mobile device (less than 768px width)
+      if (window.innerWidth < 768) {
+        setThreshold(0.2); // Lower threshold for mobile
+      } else {
+        setThreshold(0.5); // Default threshold for desktop
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isInView = useInView(ref, { once: true, amount: threshold });
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -43,6 +66,18 @@ const Projects = () => {
     }),
   };
 
+  const lineVariants = {
+    hidden: { height: 0 },
+    visible: {
+      height: "100%",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.1,
+      },
+    },
+  };
+
   return (
     <section className="relative">
       {/* Background Image with Overlay */}
@@ -54,7 +89,7 @@ const Projects = () => {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70  to-black/80"></div>
       </div>
 
       {/* Content */}
@@ -65,25 +100,28 @@ const Projects = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
-            className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20 flex-col md:flex-row gap-x-36 justify-between"
+            className="flex mt-4 md:mt-8  px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex-col md:flex-row gap-x-36 justify-between"
           >
             <div className="flex flex-col flex-1 justify-between items-start max-w-3xl">
-              <div className="border-l-4 border-[#981D1F] pl-4">
+              <div className="relative pl-6">
+                <motion.div
+                  variants={lineVariants}
+                  className="absolute left-0 top-0 w-1 bg-white"
+                ></motion.div>
                 <p className="text-sm md:text-md font-medium text-white">
                   Portfolio of Success
                 </p>
                 <h2
                   style={{ letterSpacing: -0.35 }}
-                  className="text-3xl md:text-4xl text-neutral-100 font-medium mt-2 mb-4"
+                  className="text-2xl md:text-3xl text-neutral-100 font-medium mt-2 mb-4"
                 >
                   Projects we&apos;ve worked on
                 </h2>
               </div>
-
-              <div className="mt-8 max-w-2xl">
+              <div className="max-w-2xl">
                 <p
                   style={{ lineHeight: 1.7 }}
-                  className="text-neutral-300 text-md md:text-lg"
+                  className="text-neutral-300 pl-6 text-md md:text-lg"
                 >
                   We provide a full range of electrical and telecommunication
                   services to blue-chip clients with critical systems across a
@@ -109,7 +147,7 @@ const Projects = () => {
 
               <div className="space-y-6 md:space-y-4 mt-12 md:mt-16">
                 <PrimaryButton>Learn More</PrimaryButton>
-                <p className="font-medium text-neutral-300 text-sm md:max-w-2xl border-l-2 border-[#981D1F] pl-3">
+                <p className="font-medium text-neutral-300 text-sm md:max-w-2xl border-l-2 border-white pl-3">
                   Trusted by leading financial institutions, universities, and
                   corporations
                 </p>

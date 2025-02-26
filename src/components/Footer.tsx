@@ -3,28 +3,68 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="">
-      <div className=" mx-4 md:mx-8 flex flex-col gap-8 md:flex-row  px-4 sm:px-12 lg:px-20 py-8 md:py-12 border-x border-white/10">
-        <div className="flex text-black flex-1">logo</div>
-        <div className="flex flex-1 md:items-end flex-col gap-4">
-          <div className="flex flex-col md:flex-row gap-3 md:gap-6 text-neutral-500 md:items-center">
-            <Link href="/">Home</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/testimonials">Testimonials</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
-          <div className="flex md:items-end flex-col">
-            <p className="text-sm text-neutral-500">
-              © Striano Electric Co. Inc, 2025. All rights reserved.
-            </p>
-            <p className="text-sm text-neutral-500">
-              Designed and developed by{" "}
-              <Link target="_blank" href="https://www.lauf.co/">
-                Lauf.
-              </Link>{" "}
-            </p>
-          </div>
+    <footer className="bg-neutral-100 border-t border-neutral-100">
+      <div className="flex flex-col items-center text-center gap-5 px-4 sm:px-12 lg:px-20 py-10 md:py-12">
+        <div className="flex items-center">
+          <div className="h-5 w-1 bg-[#981D1F] mr-2"></div>
+          <h2 className="text-lg tracking-wider font-semibold">
+            <span className="text-neutral-800">STRIANO</span>
+            <span className="text-neutral-500 ml-1">ELECTRIC</span>
+          </h2>
+        </div>
+
+        <div className="flex flex-row gap-5 text-neutral-600">
+          <Link
+            href="/"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Home
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+          <Link
+            href="/projects"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Projects
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+          <Link
+            href="/services"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Services
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+          <Link
+            href="/testimonials"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Testimonials
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Contact
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+        </div>
+
+        <div className="text-center">
+          <p className="text-sm text-neutral-500 mb-1">
+            © Striano Electric Co. Inc, 2025. All rights reserved.
+          </p>
+          <p className="text-sm text-neutral-500">
+            Designed and developed by{" "}
+            <Link
+              target="_blank"
+              href="https://www.lauf.co/"
+              className="text-[#981D1F] hover:underline"
+            >
+              Lauf.
+            </Link>
+          </p>
         </div>
       </div>
     </footer>

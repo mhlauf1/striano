@@ -1,149 +1,144 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import { projects } from "@/lib/projectData";
-import { FILTER_OPTIONS, FilterOption } from "@/lib/projectData";
+import { PROJECT_CATEGORIES } from "@/lib/types";
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
+// Define a type for the project categories
+type ProjectCategory =
+  (typeof PROJECT_CATEGORIES)[keyof typeof PROJECT_CATEGORIES];
+
 const Projects = () => {
-  const [activeFilter, setActiveFilter] =
-    useState<FilterOption>("All Projects");
-  const [isSticky, setIsSticky] = useState(false);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  // State for active category and dropdown open/close
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>(
+    Object.values(PROJECT_CATEGORIES)[0]
+  );
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (headerRef.current) {
-        const { top } = headerRef.current.getBoundingClientRect();
-        setIsSticky(top <= 0);
-      }
-    };
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsFilterOpen(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
+  // Filter projects by active category
   const filteredProjects = projects
-    .filter((project) => {
-      if (activeFilter === "All Projects") return true;
-      if (activeFilter === "Featured Projects") return project.featured;
-      return project.category === activeFilter;
-    })
+    .filter((project) => project.category === activeCategory)
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const handleFilterSelect = (filter: FilterOption) => {
-    setActiveFilter(filter);
-    setIsFilterOpen(false);
+  const lineVariants = {
+    hidden: { height: 0 },
+    visible: {
+      height: "100%",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1 + i * 0.05,
+        duration: 0.4,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  // Correctly typed handleCategorySelect function
+  const handleCategorySelect = (category: ProjectCategory) => {
+    setActiveCategory(category);
+    setIsDropdownOpen(false);
   };
 
   return (
-    <section className="flex flex-col mt-24 md:mt-36 pb-12 md:pb-24">
-      <div className="flex flex-col">
-        {/* Filters */}
-        <div className="flex flex-col px-4 sm:px-12 lg:px-20">
-          <p className="text-neutral-600">Filter by sector:</p>
-          <div className="flex mb-12 mt-4 flex-wrap gap-x-6 gap-y-3">
-            {FILTER_OPTIONS.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`text-xs sm:text-md md:text-lg text-start  transition-colors
-                ${
-                  activeFilter === filter
-                    ? " font-medium text-black"
-                    : " text-neutral-400 font-medium hover:text-neutral-800"
+    <section className="flex flex-col bg-neutral-50 pt-12 pb-12 md:pb-24">
+      {/* Category Dropdown - Sticky at top */}
+      <div className="sticky top-16 z-40 bg-neutral-50 py-4">
+        <div className="px-4 sm:px-12 lg:px-20">
+          <div className="relative w-full max-w-xs">
+            <div
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="flex items-center justify-between px-4 py-2 border rounded-md cursor-pointer bg-white"
+            >
+              <span className="text-sm font-medium mr-2">{activeCategory}</span>
+              <ChevronDown
+                size={16}
+                className={`text-neutral-500 transition-transform ${
+                  isDropdownOpen ? "rotate-180" : ""
                 }`}
-              >
-                {filter}
-              </button>
-            ))}
+              />
+            </div>
+
+            {isDropdownOpen && (
+              <div className="absolute left-0 right-0 top-full mt-1 bg-white border rounded-md shadow-lg z-10">
+                <div className="py-1">
+                  {Object.values(PROJECT_CATEGORIES).map((category) => (
+                    <div
+                      key={category}
+                      onClick={() => handleCategorySelect(category)}
+                      className={`px-4 py-2 text-sm cursor-pointer transition-colors ${
+                        activeCategory === category
+                          ? "bg-neutral-100 text-[#981D1F]"
+                          : "text-neutral-700 hover:bg-neutral-100"
+                      }`}
+                    >
+                      {category}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
+      </div>
 
-        <div className="relative">
-          {/* Filter text */}
-          <div
-            ref={headerRef}
-            className="flex sticky bg-white top-0 px-4 sm:px-12 lg:px-20 items-center justify-between mb-4 py-4 border-b transition-colors duration-300 z-50"
-          >
-            <h2 className="text-2xl md:text-3xl font-medium transition-colors duration-300">
-              {activeFilter}
-            </h2>
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setIsFilterOpen(!isFilterOpen)}
-                className={`transition-colors duration-300 flex items-center gap-2
-                  ${isSticky ? "text-black" : "text-neutral-500"}`}
-              >
-                Filter
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    isFilterOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
+      {/* Projects List */}
+      <div className="px-4 sm:px-12 lg:px-20 py-8">
+        <div className="space-y-8">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              custom={index}
+              initial="hidden"
+              animate="visible"
+              variants={itemVariants}
+              className="relative pl-6"
+            >
+              <motion.div
+                variants={lineVariants}
+                className="absolute left-0 top-0 h-full w-1 bg-[#981D1F]/20"
+              ></motion.div>
+              <p className="text-sm font-medium text-[#981D1F]">
+                {activeCategory}
+              </p>
+              <h3 className="text-xl md:text-2xl text-neutral-800 font-medium mt-2">
+                {project.name}
+              </h3>
+            </motion.div>
+          ))}
 
-              {/* Dropdown Menu */}
-              <div
-                className={`absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-200 origin-top
-                  ${
-                    isFilterOpen
-                      ? "opacity-100 scale-y-100 translate-y-0"
-                      : "opacity-0 scale-y-0 -translate-y-2"
-                  }`}
-              >
-                {FILTER_OPTIONS.map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => handleFilterSelect(filter)}
-                    className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-neutral-50
-                      ${
-                        activeFilter === filter
-                          ? "text-[#981D1F] font-medium"
-                          : "text-neutral-600"
-                      }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Projects List */}
-          <div className="space-y-8">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="px-4 sm:px-12 lg:px-20 border-t border-black/10 pt-8"
-              >
-                <div className="flex items-center mb-2 gap-2">
-                  <div className="h-[6px] w-[6px] bg-[#981D1F] rounded-full"></div>
-                  <div className="text-xs md:text-sm uppercase tracking-wider">
-                    {project.category}
-                  </div>
-                </div>
-                <h3 className="text-3xl md:text-4xl font-medium tracking-tight text-neutral-600">
-                  {project.name}
-                </h3>
-              </div>
-            ))}
-          </div>
+          {/* Add electrical maintenance if selected category is Data Centers */}
+          {activeCategory === PROJECT_CATEGORIES.DATA_CENTERS && (
+            <motion.div
+              custom={filteredProjects.length}
+              initial="hidden"
+              animate="visible"
+              variants={itemVariants}
+              className="relative pl-6"
+            >
+              <motion.div
+                variants={lineVariants}
+                className="absolute left-0 top-0 h-full w-1 bg-[#981D1F]"
+              ></motion.div>
+              <p className="text-sm font-medium text-[#981D1F]">
+                Electrical Maintenance
+              </p>
+              <h3 className="text-xl md:text-2xl text-neutral-800 font-medium mt-2">
+                24/7 Emergency Response & Preventive Maintenance
+              </h3>
+            </motion.div>
+          )}
         </div>
       </div>
     </section>

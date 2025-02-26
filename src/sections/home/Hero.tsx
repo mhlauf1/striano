@@ -9,9 +9,9 @@ const Hero = () => {
     <section className="relative h-screen rounded-md">
       {/* Background image with subtle zoom effect */}
       <motion.div
-        initial={{ scale: 1.05 }}
+        initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 6, ease: "easeOut" }}
+        transition={{ duration: 10, ease: "easeOut" }}
         className="absolute inset-0"
       >
         <Image
@@ -27,13 +27,13 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
       </motion.div>
 
-      <div className="relative z-10 h-[100vh] px-4 sm:px-12 lg:px-20 flex flex-col justify-end pb-32">
+      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex flex-col justify-end md:pb-32">
         <div className="max-w-3xl">
           {/* Branded accent line */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "80px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            animate={{ width: "175px" }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="h-1 bg-[#981D1F] mb-6"
           ></motion.div>
 
