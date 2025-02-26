@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { HiArrowNarrowRight } from "react-icons/hi";
 
 interface serviceItemDataProps {
   id: number;
