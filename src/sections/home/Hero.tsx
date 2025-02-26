@@ -44,7 +44,8 @@ const Hero = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             className="text-3xl mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
           >
-            Striano Electric Powers New York City's Most Critical Infrastructure
+            Striano Electric Powers New York City&apos;s Most Critical
+            Infrastructure
           </motion.h1>
 
           {/* Subheading */}
