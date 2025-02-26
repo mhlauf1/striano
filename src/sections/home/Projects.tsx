@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { PrimaryButton } from "@/components/Button";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 
 const sectors = [
   "Financial Institutions",
@@ -13,58 +15,107 @@ const sectors = [
 ];
 
 const Projects = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.1 + i * 0.1,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <section className=" bg-[#151515]">
-      <div className="flex flex-col py-24 md:py-36">
-        <div className="flex items-center gap-2 flex-row">
-          <div className="h-[1px] w-[16px] md:w-[75px] bg-white/10"></div>
-          <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
-          <p className="text-sm md:text-md text-neutral-200">
-            Portfolio of Success
-          </p>
-        </div>
-        <div className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20  flex-col md:flex-row gap-x-36 justify-between">
-          <div className="flex flex-col flex-1 justify-between items-start">
-            <div className="">
-              <h2
-                style={{ lineHeight: "100%" }}
-                className="text-3xl tracking-tight md:text-5xl text-neutral-100"
-              >
-                Projects we&apos;ve worked on
-              </h2>
-              <p className=" max-w-2xl text-lg mt-6 text-neutral-200">
-                We provide a full range of electrical and telecommunication
-                services to blue-chip clients with critical systems across a
-                wide variety of business sectors:
-              </p>
-              <div className="flex mt-10 md:mt-8 flex-col items-start gap-2">
-                {sectors.map((item) => (
-                  <p
+    <section className="relative">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image
+          src="/services-main.png"
+          alt="Background image"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="flex flex-col py-24 md:py-36">
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={variants}
+            className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20 flex-col md:flex-row gap-x-36 justify-between"
+          >
+            <div className="flex flex-col flex-1 justify-between items-start max-w-3xl">
+              <div className="border-l-4 border-[#981D1F] pl-4">
+                <p className="text-sm md:text-md font-medium text-white">
+                  Portfolio of Success
+                </p>
+                <h2
+                  style={{ letterSpacing: -0.35 }}
+                  className="text-3xl md:text-4xl text-neutral-100 font-medium mt-2 mb-4"
+                >
+                  Projects we&apos;ve worked on
+                </h2>
+              </div>
+
+              <div className="mt-8 max-w-2xl">
+                <p
+                  style={{ lineHeight: 1.7 }}
+                  className="text-neutral-300 text-md md:text-lg"
+                >
+                  We provide a full range of electrical and telecommunication
+                  services to blue-chip clients with critical systems across a
+                  wide variety of business sectors:
+                </p>
+              </div>
+
+              <div className="flex mt-10 md:mt-8 flex-col items-start gap-3">
+                {sectors.map((item, index) => (
+                  <motion.div
                     key={item}
-                    className="font-medium leading-tight  text-lg md:text-xl text-white"
+                    custom={index}
+                    variants={itemVariants}
+                    className="flex items-center gap-3"
                   >
-                    {item}
-                  </p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#981D1F]"></div>
+                    <p className="font-medium text-md md:text-lg text-white">
+                      {item}
+                    </p>
+                  </motion.div>
                 ))}
               </div>
+
+              <div className="space-y-6 md:space-y-4 mt-12 md:mt-16">
+                <PrimaryButton>Learn More</PrimaryButton>
+                <p className="font-medium text-neutral-300 text-sm md:max-w-2xl border-l-2 border-[#981D1F] pl-3">
+                  Trusted by leading financial institutions, universities, and
+                  corporations
+                </p>
+              </div>
             </div>
-            <div className="space-y-6 md:space-y-4 mt-8 md:mt-12">
-              <PrimaryButton>Learn More</PrimaryButton>
-              <p className="font-medium text-neutral-300 text-md md:max-w-2xl">
-                Trusted by leading financial institutions, universities, and
-                corporations
-              </p>
-            </div>
-          </div>
-          <div className="relative flex flex-1">
-            <Image
-              src="/white-projects.png"
-              alt="Building exterior with modern architecture"
-              className="object-cover p-4 md:p-8"
-              fill
-              priority
-            />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

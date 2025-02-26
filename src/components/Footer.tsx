@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#151515]">
+    <footer className="">
       <div className=" mx-4 md:mx-8 flex flex-col gap-8 md:flex-row  px-4 sm:px-12 lg:px-20 py-8 md:py-12 border-x border-white/10">
-        <div className="flex text-white flex-1">logo</div>
+        <div className="flex text-black flex-1">logo</div>
         <div className="flex flex-1 md:items-end flex-col gap-4">
-          <div className="flex flex-col md:flex-row gap-3 md:gap-6 text-white md:items-center">
+          <div className="flex flex-col md:flex-row gap-3 md:gap-6 text-neutral-500 md:items-center">
             <Link href="/">Home</Link>
             <Link href="/projects">Projects</Link>
             <Link href="/services">Services</Link>

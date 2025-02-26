@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const testimonialData = [
   {
@@ -56,59 +57,61 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="flex flex-col py-12 md:py-24">
+    <section className="flex flex-col mt-16 py-12  md:flex-row md:py-24">
       {/* Header */}
-      <div className="flex items-center gap-2 flex-row">
-        <div className="h-[1px] w-[16px] md:w-[75px] bg-black/10"></div>
-        <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
-        <p className="text-sm md:text-base text-neutral-700">
-          Hear from our clients
-        </p>
-      </div>
-
-      <div className="w-full space-y-4  px-4 sm:px-12 lg:px-20 mt-4 md:mt-8">
-        {/* Progress bar */}
-        <div className="h-[2px] w-full bg-neutral-100 overflow-hidden">
-          <div
-            className="h-full bg-neutral-400 w-full origin-left"
-            style={{
-              animation: "progress 7s linear infinite",
-            }}
-          />
-        </div>
-
-        {/* Testimonial content */}
-        <div
-          className="h-[350px] md:h-[450px]  animate-fade-in overflow-hidden"
-          key={currentIndex}
-        >
-          <h2
-            style={{ lineHeight: "120%" }}
-            className="text-3xl tracking-tight md:text-5xl"
-          >
-            {testimonialData[currentIndex].quote}
-          </h2>
-          <h3 className="mt-6 tracking-wide text-lg">
-            {testimonialData[currentIndex].author},{" "}
-            <span className="text-neutral-500">
-              {testimonialData[currentIndex].title}
-            </span>
-          </h3>
-          <p className="text-neutral-500">
-            {testimonialData[currentIndex].company}
+      <div className="flex flex-col flex-1">
+        <div className="flex items-center gap-2 flex-row">
+          <div className="h-[1px] w-[16px] md:w-[75px] bg-black/10"></div>
+          <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
+          <p className="text-sm md:text-base text-neutral-700">
+            Hear from our clients
           </p>
         </div>
 
-        {/* Navigation dots */}
-        <div className="flex justify-end gap-3 mt-12">
-          {testimonialData.map((_, index) => (
+        <div className="w-full space-y-4  px-4 sm:px-12 lg:px-20 mt-4 md:mt-8">
+          {/* Progress bar */}
+          <div className="h-[2px] w-full bg-neutral-100 overflow-hidden">
             <div
-              key={index}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                currentIndex === index ? "bg-neutral-800" : "bg-neutral-300"
-              }`}
+              className="h-full bg-neutral-400 w-full origin-left"
+              style={{
+                animation: "progress 7s linear infinite",
+              }}
             />
-          ))}
+          </div>
+
+          {/* Testimonial content */}
+          <div
+            className="h-[200px] md:h-[350px]  animate-fade-in overflow-hidden"
+            key={currentIndex}
+          >
+            <h2
+              style={{ lineHeight: "120%" }}
+              className="text-2xl tracking-tight md:text-3xl"
+            >
+              {testimonialData[currentIndex].quote}
+            </h2>
+            <h3 className="mt-6 tracking-wide text-lg">
+              {testimonialData[currentIndex].author},{" "}
+              <span className="text-neutral-500">
+                {testimonialData[currentIndex].title}
+              </span>
+            </h3>
+            <p className="text-neutral-500">
+              {testimonialData[currentIndex].company}
+            </p>
+          </div>
+
+          {/* Navigation dots */}
+          <div className="flex justify-end gap-3">
+            {testimonialData.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  currentIndex === index ? "bg-neutral-800" : "bg-neutral-300"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
@@ -141,6 +144,15 @@ const Testimonials = () => {
           animation: fadeIn 7s linear;
         }
       `}</style>
+      <div className="relative flex flex-1">
+        <Image
+          src="/white-projects.png"
+          alt="Building exterior with modern architecture"
+          className="object-cover p-4 md:p-8"
+          fill
+          priority
+        />
+      </div>
     </section>
   );
 };

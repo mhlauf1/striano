@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
 const About = () => {
@@ -13,48 +12,52 @@ const About = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: "easeOut",
       },
     },
   };
 
   return (
-    <section className=" flex flex-col py-12 md:py-24">
-      <div className="flex items-center gap-2 flex-row">
-        <div className="h-[1px] w-[16px] md:w-[75px] bg-black/10"></div>
-        <div className="h-[8px] w-[8px] md:h-[10px] md:w-[10px] bg-[#981D1F] rounded-full"></div>
-        <p className="text-sm md:text-md text-neutral-700">About Us</p>
-      </div>
-      <div className="flex mt-4 md:mt-8 px-4 sm:px-12 lg:px-20 flex-col pb-16 md:pb-24 gap-20 justify-between">
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={variants}
-          className="flex flex-col flex-1 max-w-7xl gap-9 items-start"
-        >
+    <section className="flex flex-col px-4 sm:px-12 lg:px-20 mt-12 py-12 md:py-24">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variants}
+        className="max-w-5xl lg:pr-12"
+      >
+        <div className="border-l-4 border-[#981D1F] pl-4">
+          <p className="text-sm md:text-md font-medium text-[#981D1F]">
+            About Us
+          </p>
           <h2
-            style={{ lineHeight: "120%" }}
-            className="text-3xl tracking-tight md:text-5xl"
+            style={{ letterSpacing: -0.35 }}
+            className="text-2xl md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
+          >
+            Trusted Electrical Contractor in NYC
+          </h2>
+        </div>
+        <div className="mt-6">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            style={{ lineHeight: 1.7 }}
+            className="text-neutral-600 text-md md:text-lg  border-neutral-200 pl-4"
           >
             Striano Electric Co., Inc. is an I.B.E.W. full service contractor
-            and provider of electrical and telecommunications installations,
-            repairs and maintenance in the Greater New York & New Jersey Areas.
-          </h2>
-          <div className="mt-16 md:mt-0">
-            <p className="text-neutral-700 mb-3 md:mb-1">Featured Clients</p>
-            <div>
-              <Image
-                src="/client-logos.svg"
-                alt="logos"
-                height={50}
-                width={500}
-              />
-            </div>
-          </div>
-        </motion.div>
-      </div>
+            providing electrical and telecommunications installations, repairs
+            and maintenance throughout Greater New York & New Jersey. Our
+            reputation for completing on-time, on-budget projects has
+            established us as an industry leader with unequaled service and
+            integrity. We proudly serve diverse clients including leaders in
+            financial services, museums, hospitality, healthcare and
+            entertainment, maintaining our commitment to personal, professional
+            service at competitive prices.
+          </motion.p>
+        </div>
+      </motion.div>
     </section>
   );
 };

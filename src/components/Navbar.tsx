@@ -17,22 +17,26 @@ const Navbar = () => {
     closed: {
       opacity: 0,
       x: "100%",
-      transition: { duration: 0.3 },
+      transition: { duration: 0.25, ease: "easeInOut" },
     },
     open: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.3 },
+      transition: { duration: 0.25, ease: "easeInOut" },
     },
   };
 
   return (
-    <nav className="sticky w-full bg-white top-0 left-0 shadow right-0 z-50 py-3">
+    <nav className="fixed bg-white shadow w-full top-0 left-0 right-0 z-50 py-3">
       <div className="flex px-4 sm:px-12 md:px-20 justify-between items-center">
         <Link href="/">
-          <h2 className="text-xl md:text-2xl tracking-tight text-neutral-800 font-semibold">
-            Striano Electric
-          </h2>
+          <div className="flex items-center">
+            <div className="h-6 w-1 bg-[#981D1F] mr-2"></div>
+            <h2 className="text-md tracking-wider font-semibold">
+              <span className="text-neutral-800">STRIANO</span>
+              <span className="text-neutral-500 ml-1">ELECTRIC</span>
+            </h2>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -41,34 +45,39 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-gray-500 transition-colors"
+              className="hover:text-neutral-900 text-neutral-500 transition-colors relative group"
             >
               {item.label}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
             </Link>
           ))}
           <Link
             href="/contact"
-            className="py-2 rounded border border-white bg-white/10 hover:bg-white hover:text-black transition-all"
+            className="px-5 py-2 rounded border border-[#981D1F] text-[#981D1F] hover:bg-[#981D1F] hover:text-white transition-colors duration-200"
           >
             Contact
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden p-2">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2"
+          aria-label="Toggle menu"
+        >
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
-              className={`w-full h-0.5 bg-black transition-all ${
+              className={`w-full h-0.5 bg-neutral-800 transition-transform duration-200 ${
                 isOpen ? "rotate-45 translate-y-2" : ""
               }`}
             />
             <span
-              className={`w-full h-0.5 bg-black transition-all ${
+              className={`w-full h-0.5 bg-neutral-800 transition-opacity duration-200 ${
                 isOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`w-full h-0.5 bg-black transition-all ${
+              className={`w-full h-0.5 bg-neutral-800 transition-transform duration-200 ${
                 isOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             />
@@ -83,7 +92,7 @@ const Navbar = () => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="fixed inset-y-0 right-0 w-full max-w-sm bg-black/95 backdrop-blur-lg p-8 lg:hidden"
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-black/95 backdrop-blur-sm p-8 lg:hidden"
             >
               {/* Close Button */}
               <button
@@ -111,7 +120,7 @@ const Navbar = () => {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="px-6 py-2 rounded border border-white text-white hover:bg-white hover:text-black transition-all text-center mt-4"
+                  className="px-6 py-2 rounded border border-[#981D1F] text-white hover:bg-[#981D1F] hover:text-white transition-colors duration-200 text-center mt-4 block"
                 >
                   Contact
                 </Link>
