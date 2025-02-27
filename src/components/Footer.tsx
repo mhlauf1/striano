@@ -4,7 +4,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-neutral-100 border-t border-neutral-100">
-      <div className="flex flex-col items-center text-center gap-5 px-4 sm:px-12 lg:px-20 py-10 md:py-12">
+      <div className="flex flex-col items-start md:items-center text-center gap-5 px-4 sm:px-12 lg:px-20 py-10 md:py-12">
         <div className="flex items-center">
           <div className="h-5 w-1 bg-[#981D1F] mr-2"></div>
           <h2 className="text-lg tracking-wider font-semibold">
@@ -13,7 +13,7 @@ const Footer = () => {
           </h2>
         </div>
 
-        <div className="flex flex-row gap-5 text-neutral-600">
+        <div className="flex flex-col items-start  md:flex-row gap-5 text-neutral-600">
           <Link
             href="/"
             className="hover:text-neutral-900 transition-colors relative group"
@@ -51,7 +51,7 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="text-center">
+        <div className="text-start md:text-center">
           <p className="text-sm text-neutral-500 mb-1">
             © Striano Electric Co. Inc, 2025. All rights reserved.
           </p>
