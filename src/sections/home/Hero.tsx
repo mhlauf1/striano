@@ -56,7 +56,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-3xl mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
+            className="text-3xl mb-2 md:mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
           >
             Striano Electric Powers New York City&apos;s Most Critical
             Infrastructure
@@ -80,7 +80,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="flex flex-col md:flex-row gap-4 pt-12"
+            className="flex flex-col md:flex-row gap-4 mt-6 md:pt-12"
           >
             <PrimaryButton>View Projects</PrimaryButton>
             <SecondaryButton>View Services</SecondaryButton>
