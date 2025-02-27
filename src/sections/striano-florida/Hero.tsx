@@ -80,8 +80,8 @@ const StrianoFloridaHero = () => {
             variants={textVariants}
             className="text-lg md:text-xl title-line-subheight max-w-xl font-medium w-full text-neutral-100"
           >
-            Bringing over 50 years of New York electrical excellence to
-            Florida's most demanding projects and discerning clients.
+            Bringing years of New York electrical excellence to Florida&apos;s
+            most demanding projects and discerning clients.
           </motion.p>
 
           {/* Buttons with subtle left animation */}

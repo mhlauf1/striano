@@ -35,18 +35,6 @@ const TestimonialCaseStudy: React.FC<TestimonialCaseStudyProps> = ({
     }),
   };
 
-  // Red accent line animation
-  const lineVariants = {
-    hidden: { width: 0 },
-    visible: {
-      width: "120px",
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <div className="py-8 md:py-16 px-4 sm:px-8 md:px-12 lg:px-16">
       {/* Section Title with animations */}

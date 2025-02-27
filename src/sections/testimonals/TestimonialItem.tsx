@@ -72,7 +72,7 @@ const TestimonialItem: React.FC<TestimonialItemProps> = ({ testimonial }) => {
             {/* Testimonial Quote */}
             <div className="relative">
               <p className="text-lg md:text-2xl tracking-wide md:tracking-normal leading-relaxed text-neutral-800  md:pl-3 mb-8">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </p>
               <div className="border-t border-neutral-200 pt-6 mt-8">
                 <p className="font-medium text-neutral-900">

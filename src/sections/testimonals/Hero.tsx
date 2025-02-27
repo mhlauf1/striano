@@ -44,7 +44,7 @@ const Hero = () => {
           variants={textVariants}
           className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-800 mb-4"
         >
-          You're in great company
+          You&apos;re in great company
         </motion.h1>
 
         <motion.p
