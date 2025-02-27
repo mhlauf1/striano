@@ -42,7 +42,7 @@ const WhatWeDo = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
-            className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 w-full"
+            className="px-4 sm:px-8 md:px-12 lg:px-16  w-full"
           >
             <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
               <div className="w-full">

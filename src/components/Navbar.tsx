@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Striano Electric Florida", href: "/florida" },
+  { label: "Striano Electric Florida", href: "/striano-florida" },
 ];
 
 const Navbar = () => {
@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed bg-white shadow w-full top-0 left-0 right-0 z-50 py-3">
-      <div className="flex px-4 sm:px-12 md:px-20 justify-between items-center">
+      <div className="flex  px-4 sm:px-8 md:px-12 lg:px-16 justify-between items-center">
         <Link href="/">
           <div className="flex items-center">
             <div className="h-6 w-1 bg-[#981D1F] mr-2"></div>

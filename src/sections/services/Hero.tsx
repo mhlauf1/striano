@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-b from-[#1F1F1F] to-[#151515]">
-      <div className="relative gap-12 z-10 justify-between md:h-screen px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex pb-24 md:pb-0 pt-[20vh] md:pt-0 flex-col md:flex-row items-center">
+      <div className="relative gap-12 z-10 justify-between md:h-screen px-4 sm:px-8 md:px-12 lg:px-16  flex pb-24 md:pb-0 pt-[20vh] md:pt-[0vh] flex-col md:flex-row items-center">
         <div className="flex flex-1 flex-col gap-4 md:gap-6">
           {/* Branded accent line */}
           <motion.div

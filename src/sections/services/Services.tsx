@@ -124,7 +124,7 @@ const Services = () => {
   };
 
   return (
-    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-20 md:py-36 bg-neutral-50">
+    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 py-20 md:py-36 bg-neutral-50">
       <motion.div
         ref={ref}
         initial="hidden"

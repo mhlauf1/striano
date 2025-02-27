@@ -1,7 +1,10 @@
 import React from "react";
+import StrianoFloridaHero from "@/sections/striano-florida/Hero";
 
 export default function StrianoFlorida() {
-  <main>
-    <h1>Striano Florida</h1>
-  </main>;
+  return (
+    <main>
+      <StrianoFloridaHero />
+    </main>
+  );
 }

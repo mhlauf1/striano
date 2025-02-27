@@ -83,7 +83,7 @@ const Projects = () => {
       </div>
 
       {/* Projects List */}
-      <div className="px-4 sm:px-12 lg:px-20 py-4">
+      <div className="px-4 sm:px-8 md:px-12 lg:px-16  py-4">
         <div className="space-y-4">
           {filteredProjects.map((project, index) => (
             <motion.div
