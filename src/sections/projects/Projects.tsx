@@ -21,17 +21,6 @@ const Projects = () => {
     .filter((project) => project.category === activeCategory)
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  const lineVariants = {
-    hidden: { height: 0 },
-    visible: {
-      height: "100%",
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: (i: number) => ({
