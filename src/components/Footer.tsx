@@ -44,6 +44,13 @@ const Footer = () => {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
           </Link>
           <Link
+            href="/striano-florida"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Striano Electric Florida
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+          <Link
             href="/contact"
             className="hover:text-neutral-900 transition-colors relative group"
           >
