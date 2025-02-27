@@ -44,7 +44,7 @@ const Projects = () => {
     <section className="flex flex-col bg-neutral-50 pt-6 md:pt-12 pb-6 md:pb-24">
       {/* Category Dropdown - Sticky at top */}
       <div className="z-40 bg-neutral-50 py-4">
-        <div className="px-4 sm:px-12 lg:px-20">
+        <div className="px-4 sm:px-8 md:px-12 lg:px-16">
           <div className="relative w-full max-w-xl">
             <div
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
