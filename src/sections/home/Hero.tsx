@@ -40,7 +40,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
       </motion.div>
 
-      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end md:pb-32">
+      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end pb-12 md:pb-32">
         <div className="max-w-3xl">
           {/* Branded accent line */}
           <motion.div

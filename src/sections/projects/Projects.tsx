@@ -52,14 +52,14 @@ const Projects = () => {
   };
 
   return (
-    <section className="flex flex-col bg-neutral-50 pt-12 pb-12 md:pb-24">
+    <section className="flex flex-col bg-neutral-50 pt-6 md:pt-12 pb-6 md:pb-24">
       {/* Category Dropdown - Sticky at top */}
       <div className="z-40 bg-neutral-50 py-4">
         <div className="px-4 sm:px-12 lg:px-20">
           <div className="relative w-full max-w-xl">
             <div
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center justify-between px-6 py-4 border rounded-md cursor-pointer bg-white"
+              className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer bg-white"
             >
               <span className="text-sm font-medium mr-2">{activeCategory}</span>
               <ChevronDown
@@ -94,8 +94,8 @@ const Projects = () => {
       </div>
 
       {/* Projects List */}
-      <div className="px-4 sm:px-12 lg:px-20 py-8">
-        <div className="space-y-8">
+      <div className="px-4 sm:px-12 lg:px-20 py-4">
+        <div className="space-y-4">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -103,16 +103,16 @@ const Projects = () => {
               initial="hidden"
               animate="visible"
               variants={itemVariants}
-              className="relative pl-6"
+              className="relative "
             >
-              <motion.div
+              {/* <motion.div
                 variants={lineVariants}
                 className="absolute left-0 top-0 h-full w-1 bg-[#981D1F]/20"
               ></motion.div>
               <p className="text-sm font-medium text-[#981D1F]">
                 {activeCategory}
-              </p>
-              <h3 className="text-xl md:text-2xl text-neutral-800 font-medium mt-2">
+              </p> */}
+              <h3 className="text-md hover:text-[#981D1F]  md:text-lg text-neutral-800 font-medium mt-2">
                 {project.name}
               </h3>
             </motion.div>
@@ -125,16 +125,16 @@ const Projects = () => {
               initial="hidden"
               animate="visible"
               variants={itemVariants}
-              className="relative pl-6"
+              className="relative"
             >
-              <motion.div
+              {/* <motion.div
                 variants={lineVariants}
                 className="absolute left-0 top-0 h-full w-1 bg-[#981D1F]"
               ></motion.div>
               <p className="text-sm font-medium text-[#981D1F]">
                 Electrical Maintenance
-              </p>
-              <h3 className="text-xl md:text-2xl text-neutral-800 font-medium mt-2">
+              </p> */}
+              <h3 className="text-md md:text-lg text-neutral-800 font-medium mt-2">
                 24/7 Emergency Response & Preventive Maintenance
               </h3>
             </motion.div>

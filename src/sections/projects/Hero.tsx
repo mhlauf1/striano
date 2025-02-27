@@ -86,10 +86,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-white py-20 h-auto md:py-24">
-      <div className="relative pt-24 z-10 px-4 sm:px-8 md:px-12 h-full lg:px-16 xl:px-20 mx-auto">
+    <section className="relative bg-white pt-[20vh] pb-16 h-auto md:py-24">
+      <div className="relative md:pt-24 z-10 px-4 sm:px-8 md:px-12 h-full lg:px-16 xl:px-20 mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 h-full items-start">
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -120,7 +120,46 @@ const Hero = () => {
               York & New Jersey areas.
             </motion.p>
 
-            <div className="mt-16">
+            {/* Mobile image */}
+            <div className="mt-8 lg:hidden w-full">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+                className="relative rounded-lg overflow-hidden h-[300px] shadow-lg"
+              >
+                <Image
+                  src="/google-cover.webp"
+                  alt="NYC skyline showcasing Striano Electric projects"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <motion.p
+                    custom={3}
+                    initial="hidden"
+                    animate="visible"
+                    variants={textVariants}
+                    className="text-sm font-medium mb-1 text-white/80"
+                  >
+                    Featured Project
+                  </motion.p>
+                  <motion.p
+                    custom={4}
+                    initial="hidden"
+                    animate="visible"
+                    variants={textVariants}
+                    className="text-xl font-medium"
+                  >
+                    Tiffany&apos;s
+                  </motion.p>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="mt-12 lg:mt-16">
               <motion.p
                 custom={2}
                 initial="hidden"
@@ -149,6 +188,7 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* Desktop image */}
           <div className="hidden lg:block lg:w-1/2">
             <motion.div
               initial={{ opacity: 0 }}

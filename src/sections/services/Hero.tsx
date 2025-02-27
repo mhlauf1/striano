@@ -100,7 +100,7 @@ const Hero = () => {
           className="flex flex-1 justify-center relative items-center rounded-lg"
         >
           <div className="relative">
-            <div className="flex flex-col absolute bottom-4 left-4 gap-1 z-10 p-3 bg-black/30 backdrop-blur-sm rounded-lg">
+            <div className="flex flex-col absolute bottom-2 md:bottom-4 left-2 md:left-4 gap-1 z-10 p-3 bg-black/30 backdrop-blur-sm rounded-lg">
               <motion.div
                 custom={4}
                 initial="hidden"
@@ -120,7 +120,7 @@ const Hero = () => {
                 initial="hidden"
                 animate="visible"
                 variants={textVariants}
-                className="text-white font-semibold"
+                className="text-white font-medium"
               >
                 New York&apos;s Most Trusted Electrical Partner
               </motion.p>

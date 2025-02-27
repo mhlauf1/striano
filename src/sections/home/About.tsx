@@ -64,12 +64,12 @@ const About = () => {
             </p>
             <h2
               style={{ letterSpacing: -0.35 }}
-              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
+              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-1 md:mt-2 mb-2 md:mb-4"
             >
               Trusted Electrical Contractor in NYC
             </h2>
           </div>
-          <div className="mt-4">
+          <div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={isTextInView ? { opacity: 1 } : { opacity: 0 }}

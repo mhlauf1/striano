@@ -56,13 +56,13 @@ const WhatWeDo = () => {
                   </p>
                   <h2
                     style={{ letterSpacing: -0.35 }}
-                    className="text-2xl md:text-3xl text-neutral-100 font-medium mt-2"
+                    className="text-2xl md:text-3xl text-neutral-100 font-medium mt-1 md:mt-2"
                   >
                     Enterprise-grade electrical solutions
                   </h2>
                 </div>
 
-                <div className="mt-4">
+                <div className="mt-2 md:mt-4">
                   <p
                     style={{ lineHeight: 1.7 }}
                     className="text-neutral-300 pl-6 text-md md:text-lg"

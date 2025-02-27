@@ -80,7 +80,7 @@ const Services = () => {
             </p>
             <h2
               style={{ letterSpacing: -0.35 }}
-              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
+              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-1 md:mt-2 mb-2 md:mb-4"
             >
               Complete Electrical Distribution
             </h2>
@@ -106,19 +106,19 @@ const Services = () => {
           <motion.div
             custom={0}
             variants={cardVariants}
-            className="flex items-start justify-end gap-4 lg:gap-5 p-4"
+            className="flex items-start justify-end gap-3 lg:gap-5 p-4"
           >
             <motion.div
               variants={iconVariants}
-              className="p-3 border rounded-lg shadow-sm bg-white"
+              className="p-2 md:p-3 border rounded-lg shadow-sm bg-white"
             >
-              <div className="pt-1 shrink-0">
-                <LuServer className="text-[#981D1F] w-5 h-5" />
+              <div className="md:pt-1 shrink-0">
+                <LuServer className="text-[#981D1F] w-4 md:w-5 h-4 md:h-5" />
               </div>
             </motion.div>
 
-            <div className="space-y-2 max-w-xl">
-              <h3 className="font-medium text-xl">
+            <div className="space-y-1 md:space-y-2 max-w-xl">
+              <h3 className="font-medium text-md md:text-xl">
                 Full-Service Electrical Contracting
               </h3>
               <p
@@ -134,18 +134,18 @@ const Services = () => {
           <motion.div
             custom={1}
             variants={cardVariants}
-            className="flex justify-end items-start gap-4 lg:gap-5 p-4"
+            className="flex justify-end items-start gap-3 lg:gap-5 p-4"
           >
             <motion.div
               variants={iconVariants}
-              className="p-3 border rounded-lg shadow-sm bg-white"
+              className="p-2 md:p-3 border rounded-lg shadow-sm bg-white"
             >
-              <div className="pt-1 shrink-0">
-                <BsLightningCharge className="text-[#981D1F] w-5 h-5" />
+              <div className="md:pt-1 shrink-0">
+                <BsLightningCharge className="text-[#981D1F] w-4 md:w-5 h-4 md:h-5" />
               </div>
             </motion.div>
-            <div className="space-y-2 max-w-xl">
-              <h3 className="font-medium text-xl">
+            <div className="space-y-1 md:space-y-2 max-w-xl">
+              <h3 className="font-medium text-md md:text-xl">
                 Comprehensive System Solutions
               </h3>
               <p

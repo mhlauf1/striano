@@ -154,7 +154,7 @@ const Services = () => {
         variants={variants}
         className="max-w-5xl"
       >
-        <div className="relative pl-6 mb-4">
+        <div className="relative pl-6 mb-2 md:mb-4">
           <motion.div
             variants={lineVariants}
             className="absolute left-0 top-0 w-1 bg-[#981D1F]"
@@ -164,7 +164,7 @@ const Services = () => {
           </p>
           <h2
             style={{ letterSpacing: -0.35 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-neutral-800 font-medium mt-2 "
+            className="text-3xl md:text-4xl lg:text-5xl text-neutral-800 font-medium mt-1 md:mt-2"
           >
             Expert solutions for every electrical need
           </h2>

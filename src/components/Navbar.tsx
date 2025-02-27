@@ -3,15 +3,17 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Define a single, shared navigation items array
+const NAV_ITEMS = [
+  { label: "Home", href: "/", mobileOnly: true },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Striano Electric Florida", href: "/florida" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const menuItems = [
-    { label: "Services", href: "/services" },
-    { label: "Projects", href: "/projects" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "Striano Electric Florida", href: "/florida" },
-  ];
 
   const menuVariants = {
     closed: {
@@ -41,7 +43,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
-          {menuItems.map((item) => (
+          {NAV_ITEMS.filter((item) => !item.mobileOnly).map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -107,7 +109,7 @@ const Navbar = () => {
               </button>
 
               <div className="flex flex-col gap-8 mt-16">
-                {menuItems.map((item) => (
+                {NAV_ITEMS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
