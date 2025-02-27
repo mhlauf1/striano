@@ -54,12 +54,12 @@ const Projects = () => {
   return (
     <section className="flex flex-col bg-neutral-50 pt-12 pb-12 md:pb-24">
       {/* Category Dropdown - Sticky at top */}
-      <div className="sticky top-16 z-40 bg-neutral-50 py-4">
+      <div className="z-40 bg-neutral-50 py-4">
         <div className="px-4 sm:px-12 lg:px-20">
-          <div className="relative w-full max-w-xs">
+          <div className="relative w-full max-w-xl">
             <div
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center justify-between px-4 py-2 border rounded-md cursor-pointer bg-white"
+              className="flex items-center justify-between px-6 py-4 border rounded-md cursor-pointer bg-white"
             >
               <span className="text-sm font-medium mr-2">{activeCategory}</span>
               <ChevronDown

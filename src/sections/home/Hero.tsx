@@ -5,13 +5,26 @@ import { PrimaryButton, SecondaryButton } from "@/components/Button";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const textVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.1 + i * 0.1,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <section className="relative h-screen rounded-md">
       {/* Background image with subtle zoom effect */}
       <motion.div
-        initial={{ scale: 1.1 }}
+        initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 10, ease: "easeOut" }}
+        transition={{ duration: 6, ease: "easeOut" }}
         className="absolute inset-0"
       >
         <Image
@@ -23,47 +36,50 @@ const Hero = () => {
           quality={100}
           sizes="100vw"
         />
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
       </motion.div>
 
-      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex flex-col justify-end md:pb-32">
+      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end md:pb-32">
         <div className="max-w-3xl">
           {/* Branded accent line */}
           <motion.div
             initial={{ width: 0 }}
             animate={{ width: "175px" }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="h-1 bg-[#981D1F] mb-6"
           ></motion.div>
 
-          {/* Simplified heading animation */}
+          {/* Heading with subtle left animation */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
             className="text-3xl mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
           >
             Striano Electric Powers New York City&apos;s Most Critical
             Infrastructure
           </motion.h1>
 
-          {/* Subheading */}
+          {/* Subheading with subtle left animation */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            custom={1}
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
             className="text-lg md:text-xl title-line-subheight max-w-md font-medium w-full text-neutral-100"
           >
             Premier electrical solutions for New York&apos;s leading
             institutions, delivered on time and on budget.
           </motion.p>
 
-          {/* Buttons */}
+          {/* Buttons with subtle left animation */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+            custom={2}
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
             className="flex flex-col md:flex-row gap-4 pt-12"
           >
             <PrimaryButton>View Projects</PrimaryButton>

@@ -1,35 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { LuServer } from "react-icons/lu";
 import { BsLightningCharge } from "react-icons/bs";
 import { motion, useInView } from "framer-motion";
 
 const Services = () => {
-  const [threshold, setThreshold] = useState(0.5);
   const ref = React.useRef(null);
 
-  // Update threshold based on screen size
-  useEffect(() => {
-    const handleResize = () => {
-      // Check if we're on a mobile device (less than 768px width)
-      if (window.innerWidth < 768) {
-        setThreshold(0.2); // Lower threshold for mobile
-      } else {
-        setThreshold(0.5); // Default threshold for desktop
-      }
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -81,7 +59,7 @@ const Services = () => {
   };
 
   return (
-    <section className="flex flex-col pb-20 pt-12  px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 md:pb-28 md:pt-16">
+    <section className="flex flex-col pb-20 pt-12 bg-neutral-50 px-4 sm:px-8 md:px-12 lg:px-16 md:pb-28 md:pt-16">
       {/* Top content area with two columns */}
       <motion.div
         ref={ref}

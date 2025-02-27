@@ -1,34 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 const About = () => {
-  // Set initial threshold value
-  const [threshold, setThreshold] = useState(0.5);
-  const ref = React.useRef(null);
-
-  // Update threshold based on screen size
-  useEffect(() => {
-    const handleResize = () => {
-      // Check if we're on a mobile device (less than 768px width)
-      if (window.innerWidth < 768) {
-        setThreshold(0.2); // Lower threshold for mobile
-      } else {
-        setThreshold(0.5); // Default threshold for desktop
-      }
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const textRef = React.useRef(null);
+  const imageRef = React.useRef(null);
+  const isTextInView = useInView(textRef, { once: true, amount: 0.2 });
+  const isImageInView = useInView(imageRef, { once: true, amount: 0.2 });
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -54,50 +33,81 @@ const About = () => {
     },
   };
 
+  const imageVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section className="flex flex-col  px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 mt-12 py-12 md:py-24">
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        variants={variants}
-        className="max-w-5xl lg:pr-12"
-      >
-        <div className="relative pl-6">
+    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 mt-12 py-12 md:py-24">
+      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        <motion.div
+          ref={textRef}
+          initial="hidden"
+          animate={isTextInView ? "visible" : "hidden"}
+          variants={variants}
+          className="lg:w-1/2"
+        >
+          <div className="relative pl-6">
+            <motion.div
+              variants={lineVariants}
+              className="absolute left-0 top-0 w-1 bg-[#981D1F]"
+            ></motion.div>
+            <p className="text-sm md:text-md font-medium text-[#981D1F]">
+              About Us
+            </p>
+            <h2
+              style={{ letterSpacing: -0.35 }}
+              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
+            >
+              Trusted Electrical Contractor in NYC
+            </h2>
+          </div>
+          <div className="mt-4">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={isTextInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              style={{ lineHeight: 1.7 }}
+              className="text-neutral-600 text-md md:text-lg pl-6"
+            >
+              Striano Electric Co., Inc. is an I.B.E.W. full service contractor
+              providing electrical and telecommunications installations, repairs
+              and maintenance throughout Greater New York & New Jersey. Our
+              reputation for completing on-time, on-budget projects has
+              established us as an industry leader with unequaled service and
+              integrity. We proudly serve diverse clients including leaders in
+              financial services, museums, hospitality, healthcare and
+              entertainment, maintaining our commitment to personal,
+              professional service at competitive prices.
+            </motion.p>
+          </div>
+        </motion.div>
+
+        {/* Featured Project Image */}
+        <div className="hidden lg:block lg:w-1/2" ref={imageRef}>
           <motion.div
-            variants={lineVariants}
-            className="absolute left-0 top-0 w-1 bg-[#981D1F]"
-          ></motion.div>
-          <p className="text-sm md:text-md font-medium text-[#981D1F]">
-            About Us
-          </p>
-          <h2
-            style={{ letterSpacing: -0.35 }}
-            className="text-2xl md:text-3xl text-neutral-800 font-medium mt-2 mb-4"
+            initial="hidden"
+            animate={isImageInView ? "visible" : "hidden"}
+            variants={imageVariants}
+            className="relative rounded-lg overflow-hidden h-[500px] shadow-lg"
           >
-            Trusted Electrical Contractor in NYC
-          </h2>
+            <Image
+              src="/google-cover.webp"
+              alt="NYC skyline showcasing Striano Electric projects"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
         </div>
-        <div className="mt-4">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            style={{ lineHeight: 1.7 }}
-            className="text-neutral-600 text-md md:text-lg border-neutral-200 pl-6"
-          >
-            Striano Electric Co., Inc. is an I.B.E.W. full service contractor
-            providing electrical and telecommunications installations, repairs
-            and maintenance throughout Greater New York & New Jersey. Our
-            reputation for completing on-time, on-budget projects has
-            established us as an industry leader with unequaled service and
-            integrity. We proudly serve diverse clients including leaders in
-            financial services, museums, hospitality, healthcare and
-            entertainment, maintaining our commitment to personal, professional
-            service at competitive prices.
-          </motion.p>
-        </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

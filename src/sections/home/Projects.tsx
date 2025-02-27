@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { PrimaryButton } from "@/components/Button";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -15,31 +15,9 @@ const sectors = [
 ];
 
 const Projects = () => {
-  const [threshold, setThreshold] = useState(0.5);
   const ref = React.useRef(null);
 
-  // Update threshold based on screen size
-  useEffect(() => {
-    const handleResize = () => {
-      // Check if we're on a mobile device (less than 768px width)
-      if (window.innerWidth < 768) {
-        setThreshold(0.2); // Lower threshold for mobile
-      } else {
-        setThreshold(0.5); // Default threshold for desktop
-      }
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
@@ -100,13 +78,13 @@ const Projects = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
-            className="flex mt-4 md:mt-8  px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex-col md:flex-row gap-x-36 justify-between"
+            className="flex mt-4 md:mt-8  px-4 sm:px-8 md:px-12 lg:px-16  flex-col md:flex-row gap-x-36 justify-between"
           >
             <div className="flex flex-col flex-1 justify-between items-start max-w-3xl">
               <div className="relative pl-6">
                 <motion.div
                   variants={lineVariants}
-                  className="absolute left-0 top-0 w-1 bg-white"
+                  className="absolute left-0 top-0 w-1 bg-[#981D1F]"
                 ></motion.div>
                 <p className="text-sm md:text-md font-medium text-white">
                   Portfolio of Success
@@ -147,7 +125,7 @@ const Projects = () => {
 
               <div className="space-y-6 md:space-y-4 mt-12 md:mt-16">
                 <PrimaryButton>Learn More</PrimaryButton>
-                <p className="font-medium text-neutral-300 text-sm md:max-w-2xl border-l-2 border-white pl-3">
+                <p className="font-medium text-neutral-300 text-sm md:max-w-2xl border-l-2 border-[#981D1F] pl-3">
                   Trusted by leading financial institutions, universities, and
                   corporations
                 </p>

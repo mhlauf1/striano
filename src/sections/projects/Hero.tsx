@@ -60,24 +60,27 @@ const Hero = () => {
   };
 
   const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
+    hidden: { opacity: 0, x: -10 },
+    visible: (i: number) => ({
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
-        duration: 0.6,
+        delay: 0.1 + i * 0.1,
+        duration: 0.5,
         ease: "easeOut",
       },
-    },
+    }),
   };
 
   const sectorVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, x: -10 },
     visible: (i: number) => ({
       opacity: 1,
+      x: 0,
       transition: {
-        delay: 0.2 + i * 0.05,
+        delay: 0.4 + i * 0.05,
         duration: 0.4,
+        ease: "easeOut",
       },
     }),
   };
@@ -85,7 +88,7 @@ const Hero = () => {
   return (
     <section className="relative bg-white py-20 h-auto md:py-24">
       <div className="relative pt-24 z-10 px-4 sm:px-8 md:px-12 h-full lg:px-16 xl:px-20 mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 h-full items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 h-full items-start">
           <div className="lg:w-1/2">
             <motion.div
               initial="hidden"
@@ -93,7 +96,9 @@ const Hero = () => {
               variants={lineVariants}
               className="h-1 bg-[#981D1F] my-4"
             ></motion.div>
+
             <motion.h1
+              custom={0}
               initial="hidden"
               animate="visible"
               variants={textVariants}
@@ -103,16 +108,45 @@ const Hero = () => {
             </motion.h1>
 
             <motion.p
+              custom={1}
               initial="hidden"
               animate="visible"
               variants={textVariants}
-              className="text-lg md:text-xl font-medium text-neutral-600 mt-4"
+              className="text-lg md:text-xl text-neutral-700 mt-4"
             >
               We provide a full range of electrical and telecommunication
               services to blue-chip clients with critical systems, end-users,
               building owners and construction companies across the Greater New
               York & New Jersey areas.
             </motion.p>
+
+            <div className="mt-16">
+              <motion.p
+                custom={2}
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+                className="text-sm uppercase tracking-wide text-neutral-500 mb-3 font-medium"
+              >
+                variety of business sectors
+              </motion.p>
+
+              <div className="grid grid-cols-1 gap-2">
+                {sectors.map((sector, index) => (
+                  <motion.div
+                    key={sector.title}
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={sectorVariants}
+                    className="flex items-center gap-3 p-1 rounded-md"
+                  >
+                    <div className="h-1 w-1 rounded-full bg-[#981D1F]"></div>
+                    <p className="text-neutral-700 text-md">{sector.title}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="hidden lg:block lg:w-1/2">
@@ -131,37 +165,26 @@ const Hero = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="text-sm font-medium mb-1 text-white/80">
+                <motion.p
+                  custom={3}
+                  initial="hidden"
+                  animate="visible"
+                  variants={textVariants}
+                  className="text-sm font-medium mb-1 text-white/80"
+                >
                   Featured Project
-                </p>
-                <p className="text-xl font-medium">Tiffany&apos;s</p>
+                </motion.p>
+                <motion.p
+                  custom={4}
+                  initial="hidden"
+                  animate="visible"
+                  variants={textVariants}
+                  className="text-xl font-medium"
+                >
+                  Tiffany&apos;s
+                </motion.p>
               </div>
             </motion.div>
-          </div>
-        </div>
-        <div className="mt-8">
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
-            className="text-sm uppercase tracking-wide text-neutral-500 mb-3 font-medium"
-          >
-            variety of business sectors
-          </motion.p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-            {sectors.map((sector, index) => (
-              <motion.div
-                key={sector.title}
-                custom={index}
-                initial="hidden"
-                animate="visible"
-                variants={sectorVariants}
-                className="flex items-center gap-2 p-3 rounded-md bg-neutral-50"
-              >
-                <div className="text-[#981D1F]">{sector.icon}</div>
-                <p className="text-neutral-700 text-sm">{sector.title}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>

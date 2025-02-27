@@ -1,35 +1,13 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import TabComponent from "@/components/TabComponent";
 import { motion, useInView } from "framer-motion";
 
 const WhatWeDo = () => {
-  const [threshold, setThreshold] = useState(0.5);
   const ref = React.useRef(null);
 
-  // Update threshold based on screen size
-  useEffect(() => {
-    const handleResize = () => {
-      // Check if we're on a mobile device (less than 768px width)
-      if (window.innerWidth < 768) {
-        setThreshold(0.2); // Lower threshold for mobile
-      } else {
-        setThreshold(0.5); // Default threshold for desktop
-      }
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const variants = {
     hidden: { opacity: 0, y: 20 },
