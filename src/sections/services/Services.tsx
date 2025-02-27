@@ -90,35 +90,13 @@ const ServiceItem = ({
 
 const Services = () => {
   // Set initial threshold value
-  const [threshold, setThreshold] = useState(0.4);
   const ref = React.useRef(null);
   const servicesRef = React.useRef(null);
 
-  // Update threshold based on screen size
-  useEffect(() => {
-    const handleResize = () => {
-      // Check if we're on a mobile device (less than 768px width)
-      if (window.innerWidth < 768) {
-        setThreshold(0.2); // Lower threshold for mobile
-      } else {
-        setThreshold(0.4); // Default threshold for desktop
-      }
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const isInView = useInView(ref, { once: true, amount: threshold });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
   const isServicesInView = useInView(servicesRef, {
     once: true,
-    amount: threshold,
+    amount: 0.2,
   });
 
   const variants = {

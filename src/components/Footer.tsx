@@ -13,19 +13,12 @@ const Footer = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col items-start  md:flex-row gap-5 text-neutral-600">
+        <div className="flex flex-col items-start  md:flex-row gap-3 md:gap-5 text-neutral-600">
           <Link
             href="/"
             className="hover:text-neutral-900 transition-colors relative group"
           >
             Home
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
-          </Link>
-          <Link
-            href="/projects"
-            className="hover:text-neutral-900 transition-colors relative group"
-          >
-            Projects
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
           </Link>
           <Link
@@ -35,6 +28,14 @@ const Footer = () => {
             Services
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
           </Link>
+          <Link
+            href="/projects"
+            className="hover:text-neutral-900 transition-colors relative group"
+          >
+            Projects
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
+          </Link>
+
           <Link
             href="/testimonials"
             className="hover:text-neutral-900 transition-colors relative group"
