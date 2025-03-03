@@ -2,8 +2,21 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { IoIosClose, IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { data } from "@/lib/projectImageData";
+
+// Import project categories
+const PROJECT_CATEGORIES = {
+  FINANCIAL: "Financial Institutions",
+  EDUCATION_MEDICAL:
+    "Universities, Educational & Medical Facilities, Non-Profit Organizations",
+  CORPORATE: "Corporate Offices, Retail Stores, Museums, Government Buildings",
+  PROFESSIONAL: "Hotels, Real Estate Services, Insurance Management, Law Firms",
+  TRADING: "Trading Floors",
+  DATA_CENTERS: "Data Centers / Telecommunications",
+  SPECIALTY: "Specialty Projects",
+};
 
 interface ProjectItem {
   id: number;
@@ -15,12 +28,45 @@ interface ProjectItem {
   gallery: string[];
 }
 
+// Updated data with the correct sector values from PROJECT_CATEGORIES
+// Note: In your actual code, update your data in projectImageData.js to use these exact values
+const updatedData = data.map((project) => {
+  let mappedSector = project.sector;
+
+  // Map existing sectors to PROJECT_CATEGORIES values
+  if (project.sector === "Financial Institutions") {
+    mappedSector = PROJECT_CATEGORIES.FINANCIAL;
+  } else if (project.sector === "Commerical") {
+    mappedSector = PROJECT_CATEGORIES.CORPORATE;
+  } else if (project.sector === "Healthcare") {
+    mappedSector = PROJECT_CATEGORIES.EDUCATION_MEDICAL;
+  }
+
+  return {
+    ...project,
+    sector: mappedSector,
+  };
+});
+
 const Projects3: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
     null
   );
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+
+  // Category filter state
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Get all available sector values from PROJECT_CATEGORIES
+  const allCategories = ["All", ...Object.values(PROJECT_CATEGORIES)];
+
+  // Filter projects based on selected category
+  const filteredProjects =
+    activeCategory === "All"
+      ? updatedData
+      : updatedData.filter((project) => project.sector === activeCategory);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -70,6 +116,12 @@ const Projects3: React.FC = () => {
     setCurrentImageIndex((prev) =>
       prev === 0 ? selectedProject.gallery.length - 1 : prev - 1
     );
+  };
+
+  // Function to handle category selection
+  const handleCategorySelect = (category: string) => {
+    setActiveCategory(category);
+    setIsDropdownOpen(false);
   };
 
   const LightboxModal: React.FC = () => {
@@ -225,12 +277,61 @@ const Projects3: React.FC = () => {
   return (
     <div className="mt-12 md:mt-16 pb-16 px-4 sm:px-8 md:px-12 lg:px-16">
       <section className="w-full bg-inherit relative">
+        {/* Category Dropdown */}
+        <div className="relative w-full max-w-xl mb-6">
+          <div
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer bg-white"
+          >
+            <span className="text-sm font-medium mr-2">
+              {activeCategory === "All"
+                ? "All Business Sectors"
+                : activeCategory}
+            </span>
+            <ChevronDown
+              size={16}
+              className={`text-neutral-500 transition-transform ${
+                isDropdownOpen ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+
+          {isDropdownOpen && (
+            <div className="absolute left-0 right-0 top-full mt-1 bg-white border rounded-md shadow-lg z-10">
+              <div className="py-1 max-h-60 overflow-y-auto">
+                {allCategories.map((category) => (
+                  <div
+                    key={category}
+                    onClick={() => handleCategorySelect(category)}
+                    className={`px-4 py-2 text-sm cursor-pointer transition-colors ${
+                      activeCategory === category
+                        ? "bg-neutral-100 text-[#981D1F]"
+                        : "text-neutral-700 hover:bg-neutral-100"
+                    }`}
+                  >
+                    {category === "All" ? "All Business Sectors" : category}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
         <p className="text-xs uppercase tracking-widest py-2 rounded-sm mt-2 text-neutral-500">
           Projects:
         </p>
-        {data.map((project) => (
-          <ProjectItem key={project.id} project={project} />
-        ))}
+
+        {filteredProjects.length > 0 ? (
+          filteredProjects.map((project) => (
+            <ProjectItem key={project.id} project={project} />
+          ))
+        ) : (
+          <div className="py-8 text-center border-t border-gray-200">
+            <p className="text-neutral-500">
+              No projects available in this category.
+            </p>
+          </div>
+        )}
       </section>
 
       {/* Lightbox Modal */}

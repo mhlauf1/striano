@@ -141,8 +141,8 @@ const Services = () => {
             Our Services
           </p>
           <h2
-            style={{ letterSpacing: -0.35 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-neutral-800 font-medium mt-1 md:mt-2"
+            style={{ letterSpacing: -1 }}
+            className="text-2xl md:text-3xl text-neutral-800 font-medium mt-1 md:mt-2"
           >
             Expert solutions for every electrical need
           </h2>
