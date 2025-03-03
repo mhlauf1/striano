@@ -1,136 +1,136 @@
 "use client";
-import React, { useState } from "react";
-import { projects } from "@/lib/projectData";
-import { PROJECT_CATEGORIES } from "@/lib/types";
+import React from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { GrProjects } from "react-icons/gr";
+import { IoMdFolderOpen } from "react-icons/io";
 
-// Define a type for the project categories
-type ProjectCategory =
-  (typeof PROJECT_CATEGORIES)[keyof typeof PROJECT_CATEGORIES];
+const data = [
+  {
+    id: 0,
+    src: "url('/proj.png')",
+    name: "Citi Bank",
+    address: "H Branch, 388 Greenwich St",
+    sector: "Financial Institutions",
+  },
+  {
+    id: 1,
+    src: "url('/tiff-1.JPEG')",
+    name: "Tiffany's",
+    address: "H Branch, 388 Greenwich St",
+    sector: "Financial Institutions",
+  },
+  {
+    id: 2,
+    src: "url('/ms-1.jpg')",
+    name: "Morgan Stanely",
+    address: "H Branch, 388 Greenwich St",
+    sector: "Financial Institutions",
+  },
+  {
+    id: 3,
+    src: "url('/pfizer-1.jpg')",
+    name: "Pfizer",
+    address: "H Branch, 388 Greenwich St",
+    sector: "Financial Institutions",
+  },
+  {
+    id: 0,
+    src: "url('/pic-3.jpg')",
+    name: "Little Nell, 10 Rockefeller Center",
+    address: "H Branch, 388 Greenwich St",
+    sector: "Financial Institutions",
+  },
+  {
+    id: 0,
+    src: "url('/proj.png')",
+    name: "Citi Bank",
+    address: "H Branch, 388 Greenwich St",
+    sector: "Financial Institutions",
+  },
+];
 
 const Projects = () => {
-  // State for active category and dropdown open/close
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>(
-    Object.values(PROJECT_CATEGORIES)[0]
-  );
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  // Filter projects by active category
-  const filteredProjects = projects
-    .filter((project) => project.category === activeCategory)
-    .sort((a, b) => a.name.localeCompare(b.name));
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.1 + i * 0.05,
-        duration: 0.4,
+        delay: 0.1 + i * 0.1,
+        duration: 0.6,
         ease: "easeOut",
       },
     }),
   };
 
-  // Correctly typed handleCategorySelect function
-  const handleCategorySelect = (category: ProjectCategory) => {
-    setActiveCategory(category);
-    setIsDropdownOpen(false);
-  };
-
   return (
-    <section className="flex flex-col bg-neutral-50 pt-6 md:pt-12 pb-6 md:pb-24">
-      {/* Category Dropdown - Sticky at top */}
-      <div className="z-40 bg-neutral-50 py-4">
-        <div className="px-4 sm:px-8 md:px-12 lg:px-16">
-          <div className="relative w-full max-w-xl">
-            <div
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer bg-white"
+    <div className="mt-12">
+      <div className=" px-4 sm:px-8 md:px-12 lg:px-16 ">
+        <motion.h2
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          variants={textVariants}
+          className="text-md tracking-normal text-neutral-500 text-lg mb-4"
+        >
+          Filter project by business sector
+        </motion.h2>
+        <div className="flex flex-row gap-4  items-end">
+          <motion.button
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={textVariants}
+            className=" text-neutral-700 px-4 py-2 rounded-full bg-neutral-100 text-lg font-medium flex items-center tracking-tight gap-2"
+          >
+            <IoMdFolderOpen />
+            Project
+          </motion.button>
+          <motion.button
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={textVariants}
+            className=" text-neutral-700 px-4 py-2 rounded-full bg-neutral-100 text-lg font-medium flex items-center tracking-tight gap-2"
+          >
+            <GrProjects size={16} />
+            Business Sector
+          </motion.button>
+        </div>
+      </div>
+      <section className="grid grid-cols-1 gap-4 px-4 sm:px-8 md:px-12 lg:px-16 w-full bg-inherit mt-6 md:grid-cols-2 lg:grid-cols-4">
+        {data.map((item) => (
+          <div key={item.id} className="h-[60vh] w-auto  relative">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              className="h-full relative flex flex-col justify-end px-6 pb-8 rounded-sm bg bg-cover bg-center"
+              style={{ backgroundImage: item.src }}
             >
-              <span className="text-sm font-medium mr-2">{activeCategory}</span>
-              <ChevronDown
-                size={16}
-                className={`text-neutral-500 transition-transform ${
-                  isDropdownOpen ? "rotate-180" : ""
-                }`}
-              />
-            </div>
-
-            {isDropdownOpen && (
-              <div className="absolute left-0 right-0 top-full mt-1 bg-white border rounded-md shadow-lg z-10">
-                <div className="py-1">
-                  {Object.values(PROJECT_CATEGORIES).map((category) => (
-                    <div
-                      key={category}
-                      onClick={() => handleCategorySelect(category)}
-                      className={`px-4 py-2 text-sm cursor-pointer transition-colors ${
-                        activeCategory === category
-                          ? "bg-neutral-100 text-[#981D1F]"
-                          : "text-neutral-700 hover:bg-neutral-100"
-                      }`}
-                    >
-                      {category}
-                    </div>
-                  ))}
+              <div className="absolute inset-0 top-0 left-0 right-0 bottom-0  bg-gradient-to-b -z-1 from-transparent to-[#202020]/40"></div>
+              <div className="z-10">
+                <p className="text-white/80 text-sm md:text-normal z-10">
+                  {item.sector}
+                </p>
+                <div className="flex items-end flex-wrap flex-row mt-1 mb-4 gap-1">
+                  <p className="font-semibold text-xl text-white capitalize ">
+                    {item.name}
+                  </p>
+                  <p className="font-normal text-xl text-white capitalize ">
+                    {item.address}
+                  </p>
                 </div>
+
+                <button className=" text-center bg-[#981D1F] backdrop-blur-xl py-3 px-6 rounded-full text-white text-sm">
+                  View Photos
+                </button>
               </div>
-            )}
+            </motion.div>
           </div>
-        </div>
-      </div>
-
-      {/* Projects List */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-16  py-4">
-        <div className="space-y-4">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={itemVariants}
-              className="relative "
-            >
-              {/* <motion.div
-                variants={lineVariants}
-                className="absolute left-0 top-0 h-full w-1 bg-[#981D1F]/20"
-              ></motion.div>
-              <p className="text-sm font-medium text-[#981D1F]">
-                {activeCategory}
-              </p> */}
-              <h3 className="text-md hover:text-[#981D1F]  md:text-lg text-neutral-800 font-medium mt-2">
-                {project.name}
-              </h3>
-            </motion.div>
-          ))}
-
-          {/* Add electrical maintenance if selected category is Data Centers */}
-          {activeCategory === PROJECT_CATEGORIES.DATA_CENTERS && (
-            <motion.div
-              custom={filteredProjects.length}
-              initial="hidden"
-              animate="visible"
-              variants={itemVariants}
-              className="relative"
-            >
-              {/* <motion.div
-                variants={lineVariants}
-                className="absolute left-0 top-0 h-full w-1 bg-[#981D1F]"
-              ></motion.div>
-              <p className="text-sm font-medium text-[#981D1F]">
-                Electrical Maintenance
-              </p> */}
-              <h3 className="text-md md:text-lg text-neutral-800 font-medium mt-2">
-                24/7 Emergency Response & Preventive Maintenance
-              </h3>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </section>
+        ))}
+      </section>
+    </div>
   );
 };
 

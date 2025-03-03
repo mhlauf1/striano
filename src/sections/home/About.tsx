@@ -63,8 +63,8 @@ const About = () => {
               About Us
             </p>
             <h2
-              style={{ letterSpacing: -0.35 }}
-              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-1 md:mt-2 mb-2 md:mb-4"
+              style={{ letterSpacing: -1 }}
+              className="text-2xl md:text-3xl text-neutral-800  font-medium mt-1 md:mt-2 mb-2 md:mb-4"
             >
               Trusted Electrical Contractor in NYC
             </h2>
@@ -96,10 +96,10 @@ const About = () => {
             initial="hidden"
             animate={isImageInView ? "visible" : "hidden"}
             variants={imageVariants}
-            className="relative rounded-lg overflow-hidden h-[500px] shadow-lg"
+            className="relative rounded-md overflow-hidden h-[500px] shadow-lg"
           >
             <Image
-              src="/google-cover.webp"
+              src="/tiffany-2.JPEG"
               alt="NYC skyline showcasing Striano Electric projects"
               fill
               className="object-cover"

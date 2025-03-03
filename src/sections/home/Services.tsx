@@ -59,7 +59,7 @@ const Services = () => {
   };
 
   return (
-    <section className="flex flex-col pb-20 pt-12 bg-neutral-50 px-4 sm:px-8 md:px-12 lg:px-16 md:pb-28 md:pt-16">
+    <section className="flex flex-col pb-20 pt-4 px-4 sm:px-8 md:px-12 lg:px-16 md:pb-28">
       {/* Top content area with two columns */}
       <motion.div
         ref={ref}
@@ -79,8 +79,8 @@ const Services = () => {
               Our Services
             </p>
             <h2
-              style={{ letterSpacing: -0.35 }}
-              className="text-2xl md:text-3xl text-neutral-800 font-medium mt-1 md:mt-2 mb-2 md:mb-4"
+              style={{ letterSpacing: -1 }}
+              className="text-2xl md:text-3xl text-neutral-800  font-medium mt-1 md:mt-2 mb-2 md:mb-4"
             >
               Complete Electrical Distribution
             </h2>
@@ -117,13 +117,13 @@ const Services = () => {
               </div>
             </motion.div>
 
-            <div className="space-y-1 md:space-y-2 max-w-xl">
-              <h3 className="font-medium text-md md:text-xl">
+            <div className="space-y-1 max-w-xl">
+              <h3 className="font-medium text-md tracking-tight md:text-xl">
                 Full-Service Electrical Contracting
               </h3>
               <p
                 style={{ lineHeight: 1.7 }}
-                className="text-neutral-600 text-sm md:text-base"
+                className="text-neutral-600  text-sm md:text-base"
               >
                 Striano Electric Co., Inc. has the knowledge and experience
                 necessary to perform effectively on any size project.
@@ -144,8 +144,8 @@ const Services = () => {
                 <BsLightningCharge className="text-[#981D1F] w-4 md:w-5 h-4 md:h-5" />
               </div>
             </motion.div>
-            <div className="space-y-1 md:space-y-2 max-w-xl">
-              <h3 className="font-medium text-md md:text-xl">
+            <div className="space-y-1 max-w-xl">
+              <h3 className="font-medium text-md tracking-tight md:text-xl">
                 Comprehensive System Solutions
               </h3>
               <p

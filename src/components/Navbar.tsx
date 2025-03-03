@@ -29,13 +29,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed bg-white shadow w-full top-0 left-0 right-0 z-50 py-3">
+    <nav className="sticky bg-white shadow w-full top-0 left-0 right-0 z-50 py-3">
       <div className="flex  px-4 sm:px-8 md:px-12 lg:px-16 justify-between items-center">
         <Link href="/">
           <div className="flex items-center">
             <div className="h-6 w-1 bg-[#981D1F] mr-2"></div>
-            <h2 className="text-md tracking-wider font-semibold">
-              <span className="text-neutral-800">STRIANO</span>
+            <h2 className="text-md tracking-wide">
+              <span className="text-neutral-800  font-semibold">STRIANO</span>
               <span className="text-neutral-500 ml-1">ELECTRIC</span>
             </h2>
           </div>

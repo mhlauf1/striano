@@ -90,7 +90,7 @@ const Projects = () => {
                   Portfolio of Success
                 </p>
                 <h2
-                  style={{ letterSpacing: -0.35 }}
+                  style={{ letterSpacing: -1 }}
                   className="text-2xl md:text-3xl text-neutral-100 font-medium mt-1 md:mt-2 mb-2 md:mb-4"
                 >
                   Projects we&apos;ve worked on
