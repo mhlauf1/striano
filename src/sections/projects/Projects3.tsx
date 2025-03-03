@@ -281,7 +281,7 @@ const Projects3: React.FC = () => {
         <div className="relative w-full max-w-xl mb-6">
           <div
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer bg-white"
+            className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer text-white bg-[#981D1F]"
           >
             <span className="text-sm font-medium mr-2">
               {activeCategory === "All"
@@ -290,7 +290,7 @@ const Projects3: React.FC = () => {
             </span>
             <ChevronDown
               size={16}
-              className={`text-neutral-500 transition-transform ${
+              className={` transition-transform ${
                 isDropdownOpen ? "rotate-180" : ""
               }`}
             />
