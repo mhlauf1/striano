@@ -44,30 +44,6 @@ const About = () => {
     },
   };
 
-  const iconVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 10,
-      },
-    },
-  };
-  const cardVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        delay: 0.2 + i * 0.15,
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    }),
-  };
   return (
     <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 mt-12 py-12 md:py-24">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
