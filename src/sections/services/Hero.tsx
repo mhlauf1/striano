@@ -84,7 +84,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={imageVariants}
-          className="w-full md:w-3/5 h-[300px] md:h-[500px] relative rounded-lg overflow-hidden"
+          className="w-full md:w-3/5 h-[300px] md:h-[500px] relative rounded-md overflow-hidden"
         >
           <div className="flex flex-col absolute bottom-2 md:bottom-4 left-2 md:left-4 gap-1 z-10 p-3 bg-black/30 backdrop-blur-sm rounded-lg">
             <motion.div

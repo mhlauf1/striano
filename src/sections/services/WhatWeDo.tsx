@@ -88,7 +88,7 @@ const WhatWeDo = () => {
                   src="/tiff3.JPEG"
                   width={500}
                   height={380}
-                  className="w-full rounded-lg object-cover h-[500px]"
+                  className="w-full rounded-md object-cover h-[500px]"
                   priority
                 />
               </div>
