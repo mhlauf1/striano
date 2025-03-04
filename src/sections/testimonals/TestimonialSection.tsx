@@ -116,7 +116,7 @@ const TestimonialSection: React.FC<TestimonialSectionProps> = ({
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-8 md:px-12 lg:px-16 bg-neutral-50">
+    <section className="py-12 px-4 sm:px-8 md:px-12 lg:px-16 bg-neutral-50">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {gridItems.map((item, idx) => (
           <React.Fragment key={idx}>

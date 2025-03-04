@@ -60,12 +60,10 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-3xl title-line-height md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
+            style={{ lineHeight: 1.05 }}
+            className="text-3xl  md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
           >
-            Engineering Power Solutions,{" "}
-            <span className="text-neutral-300">
-              Delivering Critical Results
-            </span>
+            Engineering Power Solutions, Delivering Critical Results
           </motion.h1>
 
           {/* Subheading with subtle left animation */}
@@ -74,7 +72,8 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-lg md:text-xl title-line-subheight font-medium w-full md:max-w-xl text-gray-200"
+            style={{ lineHeight: 1.35 }}
+            className="text-md md:text-lg font-medium w-full md:max-w-xl text-gray-100"
           >
             Striano Electric Co., Inc. has the knowledge and experience
             necessary to perform effectively on any size project.

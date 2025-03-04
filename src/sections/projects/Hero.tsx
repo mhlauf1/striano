@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   // Simple carousel with 4 hardcoded images
-  const images = ["pic-3.jpg", "tiff1.JPEG", "Pfizer1.jpg", "Citi1.jpg"];
+  const images = ["pic-3.jpg", "Citi6.jpg", "Pfizer1.jpg", "Citi1.jpg"];
   const [currentImage, setCurrentImage] = useState(0);
 
   // Auto rotate carousel
@@ -32,7 +32,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b pb-12 pt-12 from-[#000000] to-[#202020]">
+    <section className="relative bg-gradient-to-b pb-12 md:pb-4 pt-12 from-[#000000] to-[#202020]">
       <div className="relative gap-12 z-10 justify-between pt-24 md:pt-12 p-4 sm:p-8 md:p-16 flex flex-col md:flex-row items-center">
         <div className="flex flex-col mt-auto justify-between items-start w-full md:w-3/5">
           <div className="flex flex-col justify-between items-start">
@@ -57,7 +57,8 @@ const Hero = () => {
               animate="visible"
               custom={1}
               variants={textVariants}
-              className="text-lg md:text-xl title-line-subheight font-medium w-full md:max-w-xl text-gray-200"
+              style={{ lineHeight: 1.35 }}
+              className="text-md md:text-lg font-medium w-full md:max-w-2xl text-gray-100"
             >
               We provide a full range of electrical and telecommunication
               services to blue-chip clients with critical systems, end-users,
@@ -69,7 +70,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex mt-12 flex-col justify-between items-start gap-2"
+            className="flex mt-8 flex-col justify-between items-start gap-2"
           >
             <h3 className="text-white text-sm uppercase tracking-wider text-md font-normal">
               Variety Of Business Sectors:

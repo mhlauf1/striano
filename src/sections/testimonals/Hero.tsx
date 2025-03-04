@@ -17,7 +17,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-[#1F1F1F] to-[#151515] border-b pb-8 md:pb-16 pt-16 md:pt-24">
+    <section className="relative bg-gradient-to-b from-[#1F1F1F] to-[#151515] border-b pb-8 md:pb-12 pt-16 md:pt-24">
       <div className=" px-4 sm:px-8 md:px-12 lg:px-16 mt-[10vh]  mx-auto">
         {/* Branded accent line */}
         <motion.div
@@ -45,7 +45,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          className="text-3xl title-line-height md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
+          className="text-3xl title-line-height md:text-4xl mb-2 md:mb-3 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
         >
           You&apos;re in great company
         </motion.h1>
@@ -56,7 +56,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          className="text-lg md:text-xl title-line-subheight font-medium w-full md:max-w-3xl text-gray-200"
+          className="text-md md:text-lg  font-medium w-full md:max-w-2xl text-gray-100"
         >
           Hear from some of our amazing clients how they trust Striano Electric
           to deliver high-quality electrical contracting services on time and on

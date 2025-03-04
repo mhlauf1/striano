@@ -69,7 +69,8 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-lg md:text-xl title-line-subheight max-w-2xl font-medium w-full text-neutral-100"
+            style={{ lineHeight: 1.35 }}
+            className="text-md md:text-lg title-line-subheight max-w-xl font-medium w-full text-neutral-100"
           >
             Premier electrical solutions for New York&apos;s leading
             institutions, delivered on time and on budget.
