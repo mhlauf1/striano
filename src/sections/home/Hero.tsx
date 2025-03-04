@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { PrimaryButton, SecondaryButton } from "@/components/Button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   const textVariants = {
@@ -68,7 +69,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-lg md:text-xl title-line-subheight max-w-md font-medium w-full text-neutral-100"
+            className="text-lg md:text-xl title-line-subheight max-w-2xl font-medium w-full text-neutral-100"
           >
             Premier electrical solutions for New York&apos;s leading
             institutions, delivered on time and on budget.
@@ -80,10 +81,14 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="flex flex-col md:flex-row gap-4 mt-6 md:pt-12"
+            className="flex flex-col md:flex-row gap-4 pt-6 md:pt-8"
           >
-            <PrimaryButton>View Projects</PrimaryButton>
-            <SecondaryButton>View Services</SecondaryButton>
+            <Link className="w-full md:w-auto" href="/projects">
+              <PrimaryButton>View Projects</PrimaryButton>
+            </Link>
+            <Link className="w-full md:w-auto " href="/services">
+              <SecondaryButton>View Services</SecondaryButton>
+            </Link>
           </motion.div>
         </div>
       </div>

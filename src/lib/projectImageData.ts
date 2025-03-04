@@ -33,7 +33,7 @@ export const data: ProjectItem[] = [
         name: "Morgan Stanely",
         year: "2022",
         sector: "Financial Institutions",
-        gallery: ["MS1.jpg", "MS2.jpg", "MS3.jpg", "MS4.jpg", "MS5.jpg", "MS6.jpg",]
+        gallery: ["MS1.jpg", "MS2.jpg", "MS3.jpg", "MS4.png", "MS5.jpg", "MS6.jpg",]
 
     },
     {

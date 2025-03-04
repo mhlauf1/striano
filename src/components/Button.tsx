@@ -13,12 +13,10 @@ const PrimaryButton: React.FC<ButtonProps> = ({
   className = "",
   onClick,
   disabled = false,
-  type = "button",
 }) => {
   return (
     <button
-      type={type}
-      className={`px-12 md:px-16 py-3 rounded font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 bg-[#981D1F] text-[#FFEEEF] hover:bg-[#7A1618] focus:ring-[#981D1F] ${className}`}
+      className={`px-12 md:px-16 py-3 w-full  md:w-auto rounded font-medium transition-colors duration-200  focus:ring-2  disabled:opacity-50 bg-[#981D1F] text-[#FFEEEF] hover:bg-[#7A1618] focus:ring-none ${className}`}
       onClick={onClick}
       disabled={disabled}
     >
@@ -32,12 +30,10 @@ const SecondaryButton: React.FC<ButtonProps> = ({
   className = "",
   onClick,
   disabled = false,
-  type = "button",
 }) => {
   return (
     <button
-      type={type}
-      className={`px-12 md:px-16 py-3 rounded font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 bg-white text-[#1A1A1A] border border-[#D4D4D4] hover:bg-[#F5F5F5] focus:ring-[#D4D4D4] ${className}`}
+      className={`px-12 md:px-16 py-3 w-full md:w-auto rounded font-medium transition-colors duration-200  focus:ring-2  disabled:opacity-50 bg-transparent text-white border border-white/30 hover:bg-white/20 focus:ring-none ${className}`}
       onClick={onClick}
       disabled={disabled}
     >

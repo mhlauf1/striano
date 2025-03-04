@@ -18,7 +18,7 @@ const serviceItemData = [
     title: "Core Infrastructure",
     description:
       "Complete Electrical Distribution, High/Low Voltage Systems, Underground & Overhead Installations, Data Center & UPS Infrastructure",
-    image: "/services-1.png",
+    image: "/MS4.png",
   },
   {
     id: 1,
@@ -26,7 +26,7 @@ const serviceItemData = [
     title: "Building Systems",
     description:
       "Lighting & Controls, Security Integration, Audio/Visual Solutions, Fire & Life Safety, Motor Control Systems",
-    image: "/services-2.png",
+    image: "/Citi3.jpg",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const serviceItemData = [
     title: "Maintenance & Support",
     description:
       "24/7 Emergency Response, Preventive Maintenance, Safety Inspections, Power Quality Monitoring, After-Hours Service",
-    image: "/services-3.png",
+    image: "/Pfizer2.jpg",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const serviceItemData = [
     title: "Project Services",
     description:
       "Value Engineering, Project Management, Installation & Implementation, System Integration, Quality Assurance",
-    image: "/services-1.png",
+    image: "/Citi1.jpg",
   },
 ];
 
@@ -72,9 +72,9 @@ const ServiceItem = ({
       variants={itemVariants}
       className="bg-white rounded-md overflow-hidden group hover:shadow-md transition-all duration-300 flex flex-col h-full"
     >
-      <div className="p-6 pb-6 flex-grow">
-        <h3 className="text-xl text-neutral-800 font-medium mb-3">{title}</h3>
-        <p className="text-neutral-600 text-md">{description}</p>
+      <div className="px-4 py-8 pb-6 flex-grow">
+        <h3 className="text-md tracking-tight md:text-xl mb-2">{title}</h3>
+        <p className="text-neutral-700 text-md">{description}</p>
       </div>
       <div className="relative h-[220px] w-full">
         <Image
@@ -124,7 +124,7 @@ const Services = () => {
   };
 
   return (
-    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 py-20 md:py-36 bg-neutral-50">
+    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 py-20 md:py-24 bg-neutral-50">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -132,28 +132,31 @@ const Services = () => {
         variants={variants}
         className="max-w-5xl"
       >
-        <div className="relative pl-6 mb-2 md:mb-4">
+        <div className="relative pl-6 mb-2 md:mb-3">
           <motion.div
             variants={lineVariants}
             className="absolute left-0 top-0 w-1 bg-[#981D1F]"
           ></motion.div>
-          <p className="text-sm md:text-md font-medium text-[#981D1F]">
+          <p
+            style={{ letterSpacing: 1 }}
+            className="text-xs uppercase  text-[#981D1F]"
+          >
             Our Services
           </p>
           <h2
-            style={{ letterSpacing: -1 }}
-            className="text-2xl md:text-3xl text-neutral-800 font-medium mt-1 md:mt-2"
+            style={{ letterSpacing: -0.75 }}
+            className="text-2xl md:text-3xl text-neutral-800  mt-1 md:mt-2"
           >
             Expert solutions for every electrical need
           </h2>
         </div>
-        <div>
+        <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            style={{ lineHeight: 1.7 }}
-            className="text-neutral-600 text-md md:text-lg pl-6"
+            style={{ lineHeight: 1.55 }}
+            className="text-neutral-700 text-md pl-6"
           >
             Our goal is to develop on-going, long-term client relationships by
             maintaining our reputation for quality installations performed

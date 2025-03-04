@@ -75,12 +75,15 @@ const Services = () => {
               variants={lineVariants}
               className="absolute left-0 top-0 w-1 bg-[#981D1F]"
             ></motion.div>
-            <p className="text-sm md:text-md font-medium text-[#981D1F]">
+            <p
+              style={{ letterSpacing: 1 }}
+              className="text-xs uppercase  text-[#981D1F]"
+            >
               Our Services
             </p>
             <h2
-              style={{ letterSpacing: -1 }}
-              className="text-2xl md:text-3xl text-neutral-800  font-medium mt-1 md:mt-2 mb-2 md:mb-4"
+              style={{ letterSpacing: -0.75 }}
+              className="text-2xl md:text-3xl text-neutral-800 mt-1 md:mt-2 mb-2 md:mb-3"
             >
               Complete Electrical Distribution
             </h2>
@@ -89,8 +92,8 @@ const Services = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            style={{ lineHeight: 1.7 }}
-            className="text-neutral-600 text-md pl-6 md:text-lg"
+            style={{ lineHeight: 1.55 }}
+            className="text-neutral-700 text-md  pl-6"
           >
             Our reputation of completing on-time and on-budget projects has
             gained us a reputation for service and integrity unequaled in the
@@ -117,14 +120,11 @@ const Services = () => {
               </div>
             </motion.div>
 
-            <div className="space-y-1 max-w-xl">
-              <h3 className="font-medium text-md tracking-tight md:text-xl">
+            <div className="space-y-1 max-w-3xl">
+              <h3 className="text-md tracking-tight md:text-xl">
                 Full-Service Electrical Contracting
               </h3>
-              <p
-                style={{ lineHeight: 1.7 }}
-                className="text-neutral-600  text-sm md:text-base"
-              >
+              <p style={{ lineHeight: 1.55 }} className="text-neutral-700">
                 Striano Electric Co., Inc. has the knowledge and experience
                 necessary to perform effectively on any size project.
               </p>
@@ -144,14 +144,11 @@ const Services = () => {
                 <BsLightningCharge className="text-[#981D1F] w-4 md:w-5 h-4 md:h-5" />
               </div>
             </motion.div>
-            <div className="space-y-1 max-w-xl">
-              <h3 className="font-medium text-md tracking-tight md:text-xl">
+            <div className="space-y-1 max-w-3xl">
+              <h3 className="text-md tracking-tight md:text-xl">
                 Comprehensive System Solutions
               </h3>
-              <p
-                style={{ lineHeight: 1.7 }}
-                className="text-neutral-600 text-sm md:text-base"
-              >
+              <p style={{ lineHeight: 1.55 }} className="text-neutral-700">
                 We provide a full range of commercial electrical contracting
                 service to end-users, building owners and contractors.
               </p>

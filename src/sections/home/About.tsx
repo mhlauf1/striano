@@ -44,6 +44,30 @@ const About = () => {
     },
   };
 
+  const iconVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 200,
+        damping: 10,
+      },
+    },
+  };
+  const cardVariants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.2 + i * 0.15,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    }),
+  };
   return (
     <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 mt-12 py-12 md:py-24">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
@@ -59,12 +83,15 @@ const About = () => {
               variants={lineVariants}
               className="absolute left-0 top-0 w-1 bg-[#981D1F]"
             ></motion.div>
-            <p className="text-sm md:text-md font-medium text-[#981D1F]">
+            <p
+              style={{ letterSpacing: 1 }}
+              className="text-xs uppercase  text-[#981D1F]"
+            >
               About Us
             </p>
             <h2
-              style={{ letterSpacing: -1 }}
-              className="text-2xl md:text-3xl text-neutral-800  font-medium mt-1 md:mt-2 mb-2 md:mb-4"
+              style={{ letterSpacing: -0.75 }}
+              className="text-2xl md:text-3xl text-neutral-800  mt-1 md:mt-2 mb-2 md:mb-3"
             >
               Trusted Electrical Contractor in NYC
             </h2>
@@ -74,8 +101,8 @@ const About = () => {
               initial={{ opacity: 0 }}
               animate={isTextInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              style={{ lineHeight: 1.7 }}
-              className="text-neutral-600 text-md md:text-lg pl-6"
+              style={{ lineHeight: 1.55 }}
+              className="text-neutral-700 text-md  pl-6"
             >
               Striano Electric Co., Inc. is an I.B.E.W. full service contractor
               providing electrical and telecommunications installations, repairs

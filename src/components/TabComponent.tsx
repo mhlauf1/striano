@@ -135,22 +135,20 @@ const TabComponent = () => {
       </div>
 
       {/* Tab Content */}
-      <motion.div
-        key={activeTab}
-        initial="hidden"
-        animate="visible"
-        className="md:pt-4"
-      >
-        <h3 className="text-2xl md:text-3xl font-medium text-white mb-4 pl-2 md:pl-6">
+      <motion.div key={activeTab} initial="hidden" animate="visible">
+        <h3
+          style={{ letterSpacing: -0.5 }}
+          className="text-xl md:text-2xl font-medium text-white mb-2 pl-2 md:pl-6"
+        >
           {activeContent?.heading}
         </h3>
         <p
-          className="text-neutral-300 text-md md:text-lg pl-2 md:pl-6 mb-8"
-          style={{ lineHeight: 1.7 }}
+          className="text-neutral-300 text-md pl-2 md:pl-6 mb-4"
+          style={{ lineHeight: 1.55 }}
         >
           {activeContent?.description}
         </p>
-        <ul className="space-y-4 pl-2 md:pl-6">
+        <ul className="space-y-2 pl-2 md:pl-6">
           {activeContent?.bulletPoints.map((point, index) => (
             <motion.li
               key={index}

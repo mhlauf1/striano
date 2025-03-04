@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Define a single, shared navigation items array
+// Define navigation items array
 const NAV_ITEMS = [
   { label: "Home", href: "/", mobileOnly: true },
   { label: "Services", href: "/services" },
@@ -14,6 +14,19 @@ const NAV_ITEMS = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Add scroll event listener
+  useEffect(() => {
+    const handleScroll = () => {
+      // You can adjust this threshold as needed
+      const isScrolled = window.scrollY > 100;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const menuVariants = {
     closed: {
@@ -29,14 +42,30 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky bg-white shadow w-full top-0 left-0 right-0 z-50 py-3">
-      <div className="flex  px-4 sm:px-8 md:px-12 lg:px-16 justify-between items-center">
+    <nav
+      className={`fixed w-full top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="flex px-4 sm:px-8 md:px-12 lg:px-16 justify-between items-center">
         <Link href="/">
           <div className="flex items-center">
             <div className="h-6 w-1 bg-[#981D1F] mr-2"></div>
             <h2 className="text-md tracking-wide">
-              <span className="text-neutral-800  font-semibold">STRIANO</span>
-              <span className="text-neutral-500 ml-1">ELECTRIC</span>
+              <span
+                className={`font-semibold ${
+                  scrolled ? "text-neutral-800" : "text-neutral-100"
+                }`}
+              >
+                STRIANO
+              </span>
+              <span
+                className={`ml-1 ${
+                  scrolled ? "text-neutral-600" : "text-neutral-300"
+                }`}
+              >
+                ELECTRIC
+              </span>
             </h2>
           </div>
         </Link>
@@ -47,7 +76,11 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-neutral-900 text-neutral-500 transition-colors relative group"
+              className={`transition-colors relative group ${
+                scrolled
+                  ? "text-neutral-800 hover:text-[#981D1F]"
+                  : "text-neutral-200 hover:text-white"
+              }`}
             >
               {item.label}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
@@ -55,7 +88,11 @@ const Navbar = () => {
           ))}
           <Link
             href="/contact"
-            className="px-5 py-2 rounded border border-[#981D1F] text-[#981D1F] hover:bg-[#981D1F] hover:text-white transition-colors duration-200"
+            className={`px-5 py-2 rounded transition-colors duration-200 ${
+              scrolled
+                ? "border border-[#981D1F] text-[#981D1F] hover:bg-[#981D1F] hover:text-white"
+                : "border border-white/30 bg-transparent text-white hover:bg-white/20 hover:text-white"
+            }`}
           >
             Contact
           </Link>
@@ -69,24 +106,24 @@ const Navbar = () => {
         >
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
-              className={`w-full h-0.5 bg-neutral-800 transition-transform duration-200 ${
-                isOpen ? "rotate-45 translate-y-2" : ""
-              }`}
+              className={`w-full h-0.5 transition-transform duration-200 ${
+                scrolled ? "bg-neutral-800" : "bg-white"
+              } ${isOpen ? "rotate-45 translate-y-2" : ""}`}
             />
             <span
-              className={`w-full h-0.5 bg-neutral-800 transition-opacity duration-200 ${
-                isOpen ? "opacity-0" : ""
-              }`}
+              className={`w-full h-0.5 transition-opacity duration-200 ${
+                scrolled ? "bg-neutral-800" : "bg-white"
+              } ${isOpen ? "opacity-0" : ""}`}
             />
             <span
-              className={`w-full h-0.5 bg-neutral-800 transition-transform duration-200 ${
-                isOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
+              className={`w-full h-0.5 transition-transform duration-200 ${
+                scrolled ? "bg-neutral-800" : "bg-white"
+              } ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
             />
           </div>
         </button>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - No need to change this as it appears to already have a dark background */}
         <AnimatePresence>
           {isOpen && (
             <motion.div

@@ -51,21 +51,24 @@ const WhatWeDo = () => {
                     variants={lineVariants}
                     className="absolute left-0 top-0 w-1 bg-white"
                   ></motion.div>
-                  <p className="text-sm md:text-md font-medium text-white">
+                  <p
+                    style={{ letterSpacing: 1 }}
+                    className="text-xs uppercase text-white"
+                  >
                     What We Do
                   </p>
                   <h2
                     style={{ letterSpacing: -1 }}
-                    className="text-2xl md:text-3xl text-neutral-100 font-medium mt-1 md:mt-2"
+                    className="text-2xl md:text-3xl text-neutral-100 mt-1 md:mt-2"
                   >
                     Enterprise-grade electrical solutions
                   </h2>
                 </div>
 
-                <div className="mt-2 md:mt-4">
+                <div className="mt-2 md:mt-3 w-full md:max-w-xl">
                   <p
-                    style={{ lineHeight: 1.7 }}
-                    className="text-neutral-300 pl-6 text-md md:text-lg"
+                    style={{ lineHeight: 1.55 }}
+                    className="text-neutral-200 pl-6"
                   >
                     We design and implement mission-critical electrical systems
                     that power New York&apos;s most demanding institutions.
@@ -73,7 +76,7 @@ const WhatWeDo = () => {
                 </div>
 
                 {/* Tab Component */}
-                <div className="mt-12 w-fit">
+                <div className="mt-4 w-fit">
                   <TabComponent />
                 </div>
               </div>
@@ -82,7 +85,7 @@ const WhatWeDo = () => {
               <div className="hidden lg:block lg:w-full self-start">
                 <Image
                   alt="Striano Electric"
-                  src="/wwd-img.jpeg"
+                  src="/tiff3.JPEG"
                   width={500}
                   height={380}
                   className="w-full rounded-lg object-cover h-[500px]"

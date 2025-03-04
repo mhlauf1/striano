@@ -86,20 +86,23 @@ const Projects = () => {
                   variants={lineVariants}
                   className="absolute left-0 top-0 w-1 bg-[#981D1F]"
                 ></motion.div>
-                <p className="text-sm md:text-md font-medium text-white">
+                <p
+                  style={{ letterSpacing: 1 }}
+                  className="text-xs uppercase  text-white"
+                >
                   Portfolio of Success
                 </p>
                 <h2
                   style={{ letterSpacing: -1 }}
-                  className="text-2xl md:text-3xl text-neutral-100 font-medium mt-1 md:mt-2 mb-2 md:mb-4"
+                  className="text-2xl md:text-3xl text-neutral-100 mt-1 md:mt-2"
                 >
                   Projects we&apos;ve worked on
                 </h2>
               </div>
-              <div className="max-w-2xl">
+              <div className="max-w-2xl mt-2 md:mt-3">
                 <p
-                  style={{ lineHeight: 1.7 }}
-                  className="text-neutral-300 pl-6 text-md md:text-lg"
+                  style={{ lineHeight: 1.55 }}
+                  className="text-neutral-200 pl-6 "
                 >
                   We provide a full range of electrical and telecommunication
                   services to blue-chip clients with critical systems across a
