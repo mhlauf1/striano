@@ -30,7 +30,7 @@ export const data: ProjectItem[] = [
     {
         id: 2,
         src: "/ms-1.jpg",
-        name: "Morgan Stanely",
+        name: "Morgan Stanley",
         year: "2022",
         sector: "Financial Institutions",
         gallery: ["MS1.jpg", "MS2.jpg", "MS3.jpg", "MS4.png", "MS5.jpg", "MS6.jpg",]

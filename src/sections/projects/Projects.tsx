@@ -138,7 +138,7 @@ const Projects: React.FC = () => {
         </button>
 
         {/* Project info */}
-        <div className="absolute top-6 left-6 text-white z-50">
+        <div className="absolute top-6 w-3/4 left-6 text-white z-50">
           <h2 className="text-2xl font-medium">{selectedProject.name}</h2>
           <p className="text-sm opacity-70">
             {selectedProject.sector}{" "}
