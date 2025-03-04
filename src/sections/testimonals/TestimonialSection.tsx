@@ -72,7 +72,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           </p>
         </div>
       </div>
-      <p className="text-neutral-700 mb-4">"{testimonial.quote}"</p>
+      <p className="text-neutral-700 mb-4">&quot;{testimonial.quote}&quot;</p>
     </motion.div>
   );
 };
