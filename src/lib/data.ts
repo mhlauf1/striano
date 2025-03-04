@@ -70,9 +70,7 @@ export const testimonialData = [
         author: "Joseph Sorbera",
         title: "President",
         company: "JLS Cost Management Systems, Inc.",
-        logo: "/logos/jls.png",
-        companySize: "500+",
-        industry: "Construction Management",
+
     },
     {
         id: 1,
@@ -81,9 +79,7 @@ export const testimonialData = [
         author: "James K. Donaghy",
         title: "Executive Chairman",
         company: "Structure Tone, Inc.",
-        logo: "/logos/structure-tone.png",
-        companySize: "5,000+",
-        industry: "Construction & Development",
+
     },
     {
         id: 2,
@@ -92,9 +88,7 @@ export const testimonialData = [
         author: "Louis Esposito",
         title: "Chief Operating Officer",
         company: "The Durst Organization",
-        logo: "/logos/durst.png",
-        companySize: "700+",
-        industry: "Real Estate",
+
     },
     {
         id: 3,
@@ -103,9 +97,7 @@ export const testimonialData = [
         author: "Ted Moudis",
         title: "Senior Principal",
         company: "Ted Moudis Associates",
-        logo: "/logos/ted-moudis.png",
-        companySize: "200+",
-        industry: "Architecture & Design",
+
     },
     {
         id: 4,
@@ -114,8 +106,6 @@ export const testimonialData = [
         author: "Joseph Brancato",
         title: "Regional Managing Principal-North East",
         company: "Principal-North East",
-        logo: "/logos/principal.png",
-        companySize: "3,000+",
-        industry: "Investment Management",
+
     },
 ];
