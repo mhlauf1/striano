@@ -99,10 +99,10 @@ const About = () => {
             initial="hidden"
             animate={isImageInView ? "visible" : "hidden"}
             variants={imageVariants}
-            className="relative rounded-md overflow-hidden h-[500px] shadow-lg"
+            className="relative rounded-md overflow-hidden h-[400px] shadow-lg"
           >
             <Image
-              src="/tiffany-2.JPEG"
+              src="/tiff2.JPEG"
               alt="NYC skyline showcasing Striano Electric projects"
               fill
               className="object-cover"
