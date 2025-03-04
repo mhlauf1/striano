@@ -29,7 +29,7 @@ const StrianoFloridaHero = () => {
         className="absolute inset-0"
       >
         <Image
-          src="/florida-hero-bg.jpg" // You'll need to add this image
+          src="/florida.jpg" // You'll need to add this image
           alt="Florida skyline with Striano Electric projects"
           fill
           className="object-cover -z-10 object-center"
