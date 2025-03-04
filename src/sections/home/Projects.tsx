@@ -3,6 +3,7 @@ import React from "react";
 import { PrimaryButton } from "@/components/Button";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const sectors = [
   "Financial Institutions",
@@ -127,7 +128,10 @@ const Projects = () => {
               </div>
 
               <div className="space-y-6 md:space-y-4 mt-12 md:mt-16">
-                <PrimaryButton>Learn More</PrimaryButton>
+                <Link className="w-full md:w-auto" href="/projects">
+                  <PrimaryButton>Learn More</PrimaryButton>
+                </Link>
+
                 <p className="font-medium text-neutral-300 text-sm md:max-w-2xl border-l-2 border-[#981D1F] pl-3">
                   Trusted by leading financial institutions, universities, and
                   corporations
