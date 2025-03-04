@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <section className="relative bg-gradient-to-b pb-12 pt-12 from-[#000000] to-[#202020]">
-      <div className="relative gap-12 z-10 justify-between pt-24 md:pt-0 p-4 sm:p-8 md:p-16 flex flex-col md:flex-row items-center">
+      <div className="relative gap-12 z-10 justify-between pt-24 md:pt-12 p-4 sm:p-8 md:p-16 flex flex-col md:flex-row items-center">
         <div className="flex flex-col mt-auto justify-between items-start w-full md:w-3/5">
           <div className="flex flex-col justify-between items-start">
             <motion.div
@@ -153,7 +153,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="flex md:w-2/5 w-full h-[500px] md:h-[600px] relative rounded-md overflow-hidden"
+          className="flex md:w-2/5 w-full h-[500px] md:h-[75vh] relative rounded-md overflow-hidden"
         >
           {/* Images */}
           {images.map((image, index) => (
