@@ -1,5 +1,50 @@
 import { Project, PROJECT_CATEGORIES } from './types';
 
+export const maintenanceProjects: Project[] = [
+    {
+        id: 150,
+        name: "JP Morgan Chase Branch Maintenance, Various Locations, NY, NJ, CT, Westchester County, Putnam County",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+    {
+        id: 151,
+        name: "Barclays Capital, 745 7th Ave., NY, NY",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+    {
+        id: 152,
+        name: "Ford Foundation Electrical Maintenance, 320 E. 43rd St., NY, NY",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+    {
+        id: 153,
+        name: "UJA Federation of NY, 130 E. 59th St., NY, NY",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+    {
+        id: 154,
+        name: "Willis Towers Watson, 200 Liberty St., NY, NY",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+    {
+        id: 155,
+        name: "Wells Fargo Branch Maintenance, Various Locations",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+    {
+        id: 156,
+        name: "Santander Bank Branch Maintenance, Various Locations",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        featured: false,
+    },
+];
+
 export const projects: Project[] = [
     {
         id: 1,
@@ -895,6 +940,7 @@ export const projects: Project[] = [
         category: PROJECT_CATEGORIES.SPECIALTY,
         featured: false,
     },
+    ...maintenanceProjects,
 ];
 
 // Usage in filter component

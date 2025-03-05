@@ -5,7 +5,8 @@ export const PROJECT_CATEGORIES = {
     PROFESSIONAL: 'Hotels, Real Estate Services, Insurance Management, Law Firms',
     TRADING: 'Trading Floors',
     DATA_CENTERS: 'Data Centers / Telecommunications',
-    SPECIALTY: 'Specialty Projects'
+    SPECIALTY: 'Specialty Projects',
+    ELECTRICAL_MAINTENANCE: 'Electrical Maintenance'
 } as const;
 
 // Create a type from the values of the object

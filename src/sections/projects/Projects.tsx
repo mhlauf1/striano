@@ -9,6 +9,7 @@ import {
   ProjectWithGallery,
   FILTER_OPTIONS,
 } from "@/lib/projectImageData";
+import { PROJECT_CATEGORIES } from "@/lib/types";
 
 const Projects: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -16,8 +17,10 @@ const Projects: React.FC = () => {
     useState<ProjectWithGallery | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  // Category filter state
-  const [activeCategory, setActiveCategory] = useState<string>("All Projects");
+  // Category filter state - default to Electrical Maintenance
+  const [activeCategory, setActiveCategory] = useState<string>(
+    PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE
+  );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Filter projects based on selected category
@@ -38,9 +41,9 @@ const Projects: React.FC = () => {
     const handleKeyDown = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
         setSelectedProject(null);
-      } else if (e.key === "ArrowRight" && selectedProject?.gallery?.length) {
+      } else if (e.key === "ArrowRight" && selectedProject) {
         nextImage();
-      } else if (e.key === "ArrowLeft" && selectedProject?.gallery?.length) {
+      } else if (e.key === "ArrowLeft" && selectedProject) {
         prevImage();
       }
     };
@@ -70,15 +73,26 @@ const Projects: React.FC = () => {
   const closeLightbox = (): void => {
     setSelectedProject(null);
   };
+
   const nextImage = (): void => {
-    if (!selectedProject?.gallery?.length) return;
+    if (
+      !selectedProject ||
+      !selectedProject.gallery ||
+      selectedProject.gallery.length === 0
+    )
+      return;
     setCurrentImageIndex((prev) =>
       prev === selectedProject!.gallery!.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = (): void => {
-    if (!selectedProject?.gallery?.length) return;
+    if (
+      !selectedProject ||
+      !selectedProject.gallery ||
+      selectedProject.gallery.length === 0
+    )
+      return;
     setCurrentImageIndex((prev) =>
       prev === 0 ? selectedProject!.gallery!.length - 1 : prev - 1
     );
@@ -91,7 +105,12 @@ const Projects: React.FC = () => {
   };
 
   const LightboxModal: React.FC = () => {
-    if (!selectedProject?.gallery?.length) return null;
+    if (
+      !selectedProject ||
+      !selectedProject.gallery ||
+      selectedProject.gallery.length === 0
+    )
+      return null;
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
@@ -197,7 +216,7 @@ const Projects: React.FC = () => {
           />
 
           <div
-            className={`grid grid-cols-1 md:grid-cols-3 py-3 md:py-4 relative ${
+            className={`grid grid-cols-1 md:grid-cols-3 py-1 md:py-2 relative ${
               hasValidGallery ? "cursor-pointer" : "cursor-default"
             }`}
             onClick={() => hasValidGallery && openLightbox(project)}
@@ -211,7 +230,7 @@ const Projects: React.FC = () => {
 
             {/* Project name */}
             <div className="col-span-1 flex items-center">
-              <h3 className="text-lg font-normal tracking-tight">{name}</h3>
+              <h3 className="text-sm font-normal tracking-tight">{name}</h3>
             </div>
 
             {/* View Gallery button - only for projects with galleries */}
@@ -219,15 +238,13 @@ const Projects: React.FC = () => {
               {hasValidGallery && (
                 <motion.div
                   className="inline-block"
-                  animate={{
-                    backgroundColor: isHovered
-                      ? "rgb(64, 64, 64)"
-                      : "transparent",
-                    color: isHovered ? "white" : "rgb(107, 114, 128)",
-                  }}
+                  // animate={{
+                  //   backgroundColor: isHovered ? "rgb(64, 64, 64)" : "##981D1F",
+                  //   color: isHovered ? "white" : "rgb(107, 114, 128)",
+                  // }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className="text-xs uppercase tracking-widest px-3 py-1 md:px-4 md:py-2 rounded-sm">
+                  <p className="text-xs uppercase bg-[#981D1F] text-white tracking-widest px-3 py-1 md:px-4 md:py-2">
                     View Gallery
                   </p>
                 </motion.div>
@@ -255,9 +272,11 @@ const Projects: React.FC = () => {
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer text-white bg-[#981D1F]"
           >
-            <span className="text-sm font-medium mr-2">{activeCategory}</span>
+            <span className="text-lg md:text-xl font-medium mr-2">
+              {activeCategory}
+            </span>
             <ChevronDown
-              size={16}
+              size={24}
               className={`transition-transform ${
                 isDropdownOpen ? "rotate-180" : ""
               }`}
@@ -285,7 +304,7 @@ const Projects: React.FC = () => {
           )}
         </div>
 
-        <div className="flex justify-between flex-col md:flex-row gap-2 md:items-center mb-6">
+        <div className="flex justify-between items-center mb-6">
           <p className="text-xs uppercase tracking-widest py-2 rounded-sm text-neutral-500">
             Projects:
           </p>
