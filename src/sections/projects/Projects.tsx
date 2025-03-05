@@ -285,7 +285,7 @@ const Projects: React.FC = () => {
           )}
         </div>
 
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between flex-col md:flex-row gap-2 md:items-center mb-6">
           <p className="text-xs uppercase tracking-widest py-2 rounded-sm text-neutral-500">
             Projects:
           </p>
