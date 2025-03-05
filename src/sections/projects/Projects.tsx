@@ -4,78 +4,43 @@ import { motion } from "framer-motion";
 import { IoIosClose, IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
-import { data } from "@/lib/projectImageData";
-
-// Import project categories
-const PROJECT_CATEGORIES = {
-  FINANCIAL: "Financial Institutions",
-  EDUCATION_MEDICAL:
-    "Universities, Educational & Medical Facilities, Non-Profit Organizations",
-  CORPORATE: "Corporate Offices, Retail Stores, Museums, Government Buildings",
-  PROFESSIONAL: "Hotels, Real Estate Services, Insurance Management, Law Firms",
-  TRADING: "Trading Floors",
-  DATA_CENTERS: "Data Centers / Telecommunications",
-  SPECIALTY: "Specialty Projects",
-};
-
-interface ProjectItem {
-  id: number;
-  src: string;
-  name: string;
-  year?: string;
-  description?: string;
-  sector: string;
-  gallery: string[];
-}
-
-// Updated data with the correct sector values from PROJECT_CATEGORIES
-// Note: In your actual code, update your data in projectImageData.js to use these exact values
-const updatedData = data.map((project) => {
-  let mappedSector = project.sector;
-
-  // Map existing sectors to PROJECT_CATEGORIES values
-  if (project.sector === "Financial Institutions") {
-    mappedSector = PROJECT_CATEGORIES.FINANCIAL;
-  } else if (project.sector === "Commerical") {
-    mappedSector = PROJECT_CATEGORIES.CORPORATE;
-  } else if (project.sector === "Healthcare") {
-    mappedSector = PROJECT_CATEGORIES.EDUCATION_MEDICAL;
-  }
-
-  return {
-    ...project,
-    sector: mappedSector,
-  };
-});
+import {
+  combinedProjects,
+  ProjectWithGallery,
+  FILTER_OPTIONS,
+} from "@/lib/projectImageData";
 
 const Projects: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(
-    null
-  );
+  const [selectedProject, setSelectedProject] =
+    useState<ProjectWithGallery | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   // Category filter state
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>("All Projects");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Get all available sector values from PROJECT_CATEGORIES
-  const allCategories = ["All", ...Object.values(PROJECT_CATEGORIES)];
-
   // Filter projects based on selected category
-  const filteredProjects =
-    activeCategory === "All"
-      ? updatedData
-      : updatedData.filter((project) => project.sector === activeCategory);
+  const filteredProjects = React.useMemo(() => {
+    if (activeCategory === "All Projects") {
+      return combinedProjects;
+    } else if (activeCategory === "Featured Projects") {
+      return combinedProjects.filter((project) => project.featured);
+    } else {
+      return combinedProjects.filter(
+        (project) => project.category === activeCategory
+      );
+    }
+  }, [activeCategory]);
 
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
         setSelectedProject(null);
-      } else if (e.key === "ArrowRight" && selectedProject) {
+      } else if (e.key === "ArrowRight" && selectedProject?.gallery?.length) {
         nextImage();
-      } else if (e.key === "ArrowLeft" && selectedProject) {
+      } else if (e.key === "ArrowLeft" && selectedProject?.gallery?.length) {
         prevImage();
       }
     };
@@ -96,25 +61,26 @@ const Projects: React.FC = () => {
     }
   }, [selectedProject]);
 
-  const openLightbox = (project: ProjectItem): void => {
-    setSelectedProject(project);
+  const openLightbox = (project: ProjectWithGallery): void => {
+    if (project.hasGallery && project.gallery && project.gallery.length > 0) {
+      setSelectedProject(project);
+    }
   };
 
   const closeLightbox = (): void => {
     setSelectedProject(null);
   };
-
   const nextImage = (): void => {
-    if (!selectedProject) return;
+    if (!selectedProject?.gallery?.length) return;
     setCurrentImageIndex((prev) =>
-      prev === selectedProject.gallery.length - 1 ? 0 : prev + 1
+      prev === selectedProject!.gallery!.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = (): void => {
-    if (!selectedProject) return;
+    if (!selectedProject?.gallery?.length) return;
     setCurrentImageIndex((prev) =>
-      prev === 0 ? selectedProject.gallery.length - 1 : prev - 1
+      prev === 0 ? selectedProject!.gallery!.length - 1 : prev - 1
     );
   };
 
@@ -125,7 +91,7 @@ const Projects: React.FC = () => {
   };
 
   const LightboxModal: React.FC = () => {
-    if (!selectedProject) return null;
+    if (!selectedProject?.gallery?.length) return null;
 
     return (
       <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
@@ -141,7 +107,7 @@ const Projects: React.FC = () => {
         <div className="absolute top-6 w-3/4 left-6 text-white z-50">
           <h2 className="text-2xl font-medium">{selectedProject.name}</h2>
           <p className="text-sm opacity-70">
-            {selectedProject.sector}{" "}
+            {selectedProject.category}{" "}
             {selectedProject.year && `- ${selectedProject.year}`}
           </p>
         </div>
@@ -206,9 +172,13 @@ const Projects: React.FC = () => {
     );
   };
 
-  const ProjectItem: React.FC<{ project: ProjectItem }> = ({ project }) => {
-    const { id, name, sector } = project;
+  const ProjectItem: React.FC<{ project: ProjectWithGallery }> = ({
+    project,
+  }) => {
+    const { id, name, category } = project;
     const isHovered = hoveredId === id;
+    const hasValidGallery =
+      project.hasGallery && project.gallery && project.gallery.length > 0;
 
     return (
       <div
@@ -227,45 +197,47 @@ const Projects: React.FC = () => {
           />
 
           <div
-            className="grid grid-cols-1 md:grid-cols-3 py-3 md:py-4 relative cursor-pointer"
-            onClick={() => openLightbox(project)}
+            className={`grid grid-cols-1 md:grid-cols-3 py-3 md:py-4 relative ${
+              hasValidGallery ? "cursor-pointer" : "cursor-default"
+            }`}
+            onClick={() => hasValidGallery && openLightbox(project)}
           >
             {/* Mobile-only sector tag (top position) */}
             <div className="col-span-1 flex items-center justify-start md:hidden mb-2">
               <p className="text-xs text-[#981D1F] whitespace-nowrap text-ellipsis overflow-hidden max-w-full">
-                {sector}
+                {category}
               </p>
             </div>
 
             {/* Project name */}
             <div className="col-span-1 flex items-center">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-normal tracking-tight">
-                {name}
-              </h3>
+              <h3 className="text-lg font-normal tracking-tight">{name}</h3>
             </div>
 
-            {/* View Gallery button */}
-            <div className="col-span-1 items-start flex flex-col justify-center mt-2 md:mt-0">
-              <motion.div
-                className="inline-block"
-                animate={{
-                  backgroundColor: isHovered
-                    ? "rgb(64, 64, 64)"
-                    : "transparent",
-                  color: isHovered ? "white" : "rgb(107, 114, 128)",
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                <p className="text-xs uppercase tracking-widest px-3 py-1 md:px-4 md:py-2 rounded-sm">
-                  View Gallery
-                </p>
-              </motion.div>
+            {/* View Gallery button - only for projects with galleries */}
+            <div className="col-span-1 items-center flex flex-col justify-center mt-2 md:mt-0">
+              {hasValidGallery && (
+                <motion.div
+                  className="inline-block"
+                  animate={{
+                    backgroundColor: isHovered
+                      ? "rgb(64, 64, 64)"
+                      : "transparent",
+                    color: isHovered ? "white" : "rgb(107, 114, 128)",
+                  }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <p className="text-xs uppercase tracking-widest px-3 py-1 md:px-4 md:py-2 rounded-sm">
+                    View Gallery
+                  </p>
+                </motion.div>
+              )}
             </div>
 
             {/* Desktop-only sector tag (right position) */}
             <div className="col-span-1 items-start hidden md:flex md:justify-end overflow-hidden">
               <p className="text-xs md:text-sm bg-neutral-100 text-[#981D1F] px-3 py-1 whitespace-nowrap text-ellipsis overflow-hidden max-w-full">
-                {sector}
+                {category}
               </p>
             </div>
           </div>
@@ -283,14 +255,10 @@ const Projects: React.FC = () => {
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer text-white bg-[#981D1F]"
           >
-            <span className="text-sm font-medium mr-2">
-              {activeCategory === "All"
-                ? "All Business Sectors"
-                : activeCategory}
-            </span>
+            <span className="text-sm font-medium mr-2">{activeCategory}</span>
             <ChevronDown
               size={16}
-              className={` transition-transform ${
+              className={`transition-transform ${
                 isDropdownOpen ? "rotate-180" : ""
               }`}
             />
@@ -299,7 +267,7 @@ const Projects: React.FC = () => {
           {isDropdownOpen && (
             <div className="absolute left-0 right-0 top-full mt-1 bg-white border rounded-md shadow-lg z-10">
               <div className="py-1 max-h-60 overflow-y-auto">
-                {allCategories.map((category) => (
+                {FILTER_OPTIONS.map((category) => (
                   <div
                     key={category}
                     onClick={() => handleCategorySelect(category)}
@@ -309,7 +277,7 @@ const Projects: React.FC = () => {
                         : "text-neutral-700 hover:bg-neutral-100"
                     }`}
                   >
-                    {category === "All" ? "All Business Sectors" : category}
+                    {category}
                   </div>
                 ))}
               </div>
@@ -317,9 +285,17 @@ const Projects: React.FC = () => {
           )}
         </div>
 
-        <p className="text-xs uppercase tracking-widest py-2 rounded-sm mt-2 text-neutral-500">
-          Projects:
-        </p>
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-xs uppercase tracking-widest py-2 rounded-sm text-neutral-500">
+            Projects:
+          </p>
+
+          {/* Optional: Add indicator for projects with galleries */}
+          <p className="text-xs text-neutral-500">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#981D1F] mr-2"></span>
+            Projects with "View Gallery" have photo galleries
+          </p>
+        </div>
 
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
