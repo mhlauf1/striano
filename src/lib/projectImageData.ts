@@ -109,8 +109,6 @@ export const combinedProjects: ProjectWithGallery[] = projects.map(project => {
 // Export the filter options with Electrical Maintenance as default
 export const FILTER_OPTIONS = [
     PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
-    'Featured Projects',
-    'All Projects',
     ...Object.values(PROJECT_CATEGORIES).filter(cat => cat !== PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE)
 ] as const;
 
