@@ -1,5 +1,5 @@
 // projectImageData.ts
-import { Project, ProjectCategory, PROJECT_CATEGORIES } from './types';
+import { Project, PROJECT_CATEGORIES } from './types';
 
 export interface ProjectWithGallery extends Project {
     year?: string;

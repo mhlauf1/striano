@@ -293,7 +293,7 @@ const Projects: React.FC = () => {
           {/* Optional: Add indicator for projects with galleries */}
           <p className="text-xs text-neutral-500">
             <span className="inline-block w-2 h-2 rounded-full bg-[#981D1F] mr-2"></span>
-            Projects with "View Gallery" have photo galleries
+            Projects with &quot;View Gallery&quot; have photo galleries
           </p>
         </div>
 
