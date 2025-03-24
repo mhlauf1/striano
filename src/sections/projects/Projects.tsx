@@ -10,7 +10,6 @@ import {
   FILTER_OPTIONS,
   FilterOption,
 } from "@/lib/projectImageData";
-import { PROJECT_CATEGORIES } from "@/lib/types";
 
 const Projects: React.FC = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
