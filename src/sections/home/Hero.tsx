@@ -21,13 +21,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen rounded-md">
-      {/* Background image with subtle zoom effect */}
-      <motion.div
-        initial={{ scale: 1.05 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 6, ease: "easeOut" }}
-        className="absolute inset-0"
-      >
+      <div className="absolute inset-0">
         <Image
           src="/hero-home-bg.png"
           alt="New York City skyline with Empire State Building"
@@ -39,7 +33,7 @@ const Hero = () => {
         />
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-      </motion.div>
+      </div>
 
       <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end pb-24">
         <div className="max-w-3xl">

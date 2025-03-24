@@ -105,7 +105,7 @@ export const testimonialData = [
             "The measure of success is when a company builds lasting client relationships. Striano Electric has established numerous long-standing client relationships that they continue to service.",
         author: "Joseph Brancato",
         title: "Regional Managing Principal-North East",
-        company: "Principal-North East",
+        company: "Gensler",
 
     },
 ];

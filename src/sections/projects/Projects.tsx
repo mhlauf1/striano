@@ -8,6 +8,7 @@ import {
   combinedProjects,
   ProjectWithGallery,
   FILTER_OPTIONS,
+  FilterOption,
 } from "@/lib/projectImageData";
 import { PROJECT_CATEGORIES } from "@/lib/types";
 
@@ -17,18 +18,16 @@ const Projects: React.FC = () => {
     useState<ProjectWithGallery | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  // Category filter state - default to Electrical Maintenance
-  const [activeCategory, setActiveCategory] = useState<string>(
-    PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE
+  // Category filter state - default to null (nothing selected)
+  const [activeCategory, setActiveCategory] = useState<FilterOption | null>(
+    null
   );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Filter projects based on selected category
   const filteredProjects = React.useMemo(() => {
-    if (activeCategory === "All Projects") {
-      return combinedProjects;
-    } else if (activeCategory === "Featured Projects") {
-      return combinedProjects.filter((project) => project.featured);
+    if (!activeCategory) {
+      return []; // Return empty array if no category is selected
     } else {
       return combinedProjects.filter(
         (project) => project.category === activeCategory
@@ -99,7 +98,7 @@ const Projects: React.FC = () => {
   };
 
   // Function to handle category selection
-  const handleCategorySelect = (category: string) => {
+  const handleCategorySelect = (category: FilterOption) => {
     setActiveCategory(category);
     setIsDropdownOpen(false);
   };
@@ -125,10 +124,7 @@ const Projects: React.FC = () => {
         {/* Project info */}
         <div className="absolute top-6 w-3/4 left-6 text-white z-50">
           <h2 className="text-2xl font-medium">{selectedProject.name}</h2>
-          <p className="text-sm opacity-70">
-            {selectedProject.category}{" "}
-            {selectedProject.year && `- ${selectedProject.year}`}
-          </p>
+          <p className="text-sm opacity-70">{selectedProject.category} </p>
         </div>
 
         {/* Image counter */}
@@ -214,48 +210,26 @@ const Projects: React.FC = () => {
             }}
             transition={{ duration: 0.6 }}
           />
-
           <div
-            className={`grid grid-cols-1 md:grid-cols-3 py-1 md:py-2 relative ${
+            className={`flex flex-row justify-between py-3 relative ${
               hasValidGallery ? "cursor-pointer" : "cursor-default"
             }`}
             onClick={() => hasValidGallery && openLightbox(project)}
           >
-            {/* Mobile-only sector tag (top position) */}
-            <div className="col-span-1 flex items-center justify-start md:hidden mb-2">
-              <p className="text-xs text-[#981D1F] whitespace-nowrap text-ellipsis overflow-hidden max-w-full">
-                {category}
-              </p>
-            </div>
-
-            {/* Project name */}
-            <div className="col-span-1 flex items-center">
+            <div className="flex-1 flex items-center">
               <h3 className="text-sm font-normal tracking-tight">{name}</h3>
             </div>
-
-            {/* View Gallery button - only for projects with galleries */}
-            <div className="col-span-1 items-center flex flex-col justify-center mt-2 md:mt-0">
+            <div className="flex-1 items-end flex flex-col justify-center">
               {hasValidGallery && (
                 <motion.div
                   className="inline-block"
-                  // animate={{
-                  //   backgroundColor: isHovered ? "rgb(64, 64, 64)" : "##981D1F",
-                  //   color: isHovered ? "white" : "rgb(107, 114, 128)",
-                  // }}
                   transition={{ duration: 0.2 }}
                 >
-                  <p className="text-xs uppercase bg-[#981D1F] text-white tracking-widest px-3 py-1 md:px-4 md:py-2">
+                  <p className="text-xs uppercase bg-[#981D1F] text-white tracking-widest px-3 py-2 md:px-4 md:py-3">
                     View Gallery
                   </p>
                 </motion.div>
               )}
-            </div>
-
-            {/* Desktop-only sector tag (right position) */}
-            <div className="col-span-1 items-start hidden md:flex md:justify-end overflow-hidden">
-              <p className="text-xs md:text-sm bg-neutral-100 text-[#981D1F] px-3 py-1 whitespace-nowrap text-ellipsis overflow-hidden max-w-full">
-                {category}
-              </p>
             </div>
           </div>
         </div>
@@ -273,7 +247,7 @@ const Projects: React.FC = () => {
             className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer text-white bg-[#981D1F]"
           >
             <span className="text-lg md:text-xl font-medium mr-2">
-              {activeCategory}
+              {activeCategory || "View Our Projects"}
             </span>
             <ChevronDown
               size={24}
@@ -304,28 +278,32 @@ const Projects: React.FC = () => {
           )}
         </div>
 
-        <div className="flex justify-between items-center mb-6">
-          <p className="text-xs uppercase tracking-widest py-2 rounded-sm text-neutral-500">
-            Projects:
-          </p>
+        {activeCategory && (
+          <>
+            <div className="flex justify-between items-center mb-6">
+              <p className="text-xs uppercase tracking-widest py-2 rounded-sm text-neutral-500">
+                Projects:
+              </p>
 
-          {/* Optional: Add indicator for projects with galleries */}
-          <p className="text-xs text-neutral-500">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#981D1F] mr-2"></span>
-            Projects with &quot;View Gallery&quot; have photo galleries
-          </p>
-        </div>
+              {/* Optional: Add indicator for projects with galleries */}
+              <p className="text-xs text-neutral-500">
+                <span className="inline-block w-2 h-2 rounded-full bg-[#981D1F] mr-2"></span>
+                Projects with &quot;View Gallery&quot; have photo galleries
+              </p>
+            </div>
 
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((project) => (
-            <ProjectItem key={project.id} project={project} />
-          ))
-        ) : (
-          <div className="py-8 text-center border-t border-gray-200">
-            <p className="text-neutral-500">
-              No projects available in this category.
-            </p>
-          </div>
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project) => (
+                <ProjectItem key={project.id} project={project} />
+              ))
+            ) : (
+              <div className="py-8 text-center border-t border-gray-200">
+                <p className="text-neutral-500">
+                  No projects available in this category.
+                </p>
+              </div>
+            )}
+          </>
         )}
       </section>
 

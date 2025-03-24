@@ -3,13 +3,13 @@ import { Project, PROJECT_CATEGORIES } from './types';
 export const maintenanceProjects: Project[] = [
     {
         id: 150,
-        name: "JP Morgan Chase Branch Maintenance, Various Locations, NY, NJ, CT, Westchester County, Putnam County",
+        name: "Barclays Capital, 745 7th Ave.",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
     {
         id: 151,
-        name: "Barclays Capital, 745 7th Ave., NY, NY",
+        name: "JP Morgan Chase Branch Maintenance, Various Locations, NY, NJ, CT, Westchester County, Putnam County",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
@@ -204,7 +204,7 @@ export const projects: Project[] = [
     },
     {
         id: 27,
-        name: "Morgan Stanley, 1585 Broadway, Multiple Projects & Floors",
+        name: "Morgan Stanley, 1585 Broadway",
         category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },

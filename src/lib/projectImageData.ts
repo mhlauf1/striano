@@ -1,5 +1,6 @@
 // projectImageData.ts
 import { Project, PROJECT_CATEGORIES } from './types';
+import { projects } from './projectData';
 
 export interface ProjectWithGallery extends Project {
     year?: string;
@@ -9,7 +10,6 @@ export interface ProjectWithGallery extends Project {
     hasGallery: boolean;
 }
 
-// Your current 4 projects with image data
 const projectsWithGallery = [
     {
         id: 0,
@@ -33,7 +33,7 @@ const projectsWithGallery = [
     },
     {
         id: 2,
-        name: "Morgan Stanley",
+        name: "Morgan Stanley, 1585 Broadway",
         year: "2022",
         category: PROJECT_CATEGORIES.FINANCIAL,
         src: "/ms-1.jpg",
@@ -51,10 +51,18 @@ const projectsWithGallery = [
         featured: false,
         hasGallery: true
     },
+    {
+        id: 4,
+        name: "Barclays Capital",
+        year: "2022",
+        category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
+        src: "bac-1.jpeg",
+        gallery: ["bac-1.jpeg", "bac-2.jpeg", "bac-3.jpeg", "bac-4.jpeg", "bac-5.jpeg", "bac-6.jpeg", "bac-7.jpeg", "bac-8.jpeg", "bac-9.jpeg", "bac-10.jpeg", "bac-11.jpeg", "bac-12.jpeg", "bac-13.jpeg", "bac-14.jpeg", "bac-15.jpeg", "bac-16.jpeg", "bac-17.jpeg", "bac-18.jpeg", "bac-19.jpeg", "bac-20.jpeg",],
+        featured: false,
+        hasGallery: true
+    },
 ];
 
-// Import the complete project list
-import { projects } from './projectData';
 
 // Find matching projects in the full list that match your gallery projects
 const galleryProjectIds = projectsWithGallery.map(p => {
@@ -106,10 +114,7 @@ export const combinedProjects: ProjectWithGallery[] = projects.map(project => {
     };
 });
 
-// Export the filter options with Electrical Maintenance as default
-export const FILTER_OPTIONS = [
-    PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
-    ...Object.values(PROJECT_CATEGORIES).filter(cat => cat !== PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE)
-] as const;
+// Export the filter options with all categories
+export const FILTER_OPTIONS = Object.values(PROJECT_CATEGORIES);
 
-export type FilterOption = typeof FILTER_OPTIONS[number];
+export type FilterOption = (typeof PROJECT_CATEGORIES)[keyof typeof PROJECT_CATEGORIES];

@@ -19,7 +19,13 @@ const Hero = () => {
   };
 
   // Simple carousel with 4 hardcoded images
-  const images = ["pic-3.jpg", "Citi6.jpg", "Pfizer1.jpg", "Citi1.jpg"];
+  const images = [
+    "pic-3.jpg",
+    "Citi6.jpg",
+    "bac-6.jpeg",
+    "Pfizer1.jpg",
+    "Citi1.jpg",
+  ];
   const [currentImage, setCurrentImage] = useState(0);
 
   // Auto rotate carousel
