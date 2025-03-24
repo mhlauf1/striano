@@ -189,7 +189,7 @@ const Projects: React.FC = () => {
   const ProjectItem: React.FC<{ project: ProjectWithGallery }> = ({
     project,
   }) => {
-    const { id, name, category } = project;
+    const { id, name } = project;
     const isHovered = hoveredId === id;
     const hasValidGallery =
       project.hasGallery && project.gallery && project.gallery.length > 0;
