@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 // Define navigation items array
 const NAV_ITEMS = [
@@ -15,11 +16,15 @@ const NAV_ITEMS = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isFloridaPage = pathname === "/striano-florida";
+  const isContactPage = pathname === "/contact";
+
+  const whiteNav = isFloridaPage || isContactPage;
 
   // Add scroll event listener
   useEffect(() => {
     const handleScroll = () => {
-      // You can adjust this threshold as needed
       const isScrolled = window.scrollY > 100;
       setScrolled(isScrolled);
     };
@@ -41,6 +46,33 @@ const Navbar = () => {
     },
   };
 
+  // Determine the styles based on page and scroll state
+  const getTextStyles = () => {
+    // Use dark text for Florida page or when scrolled
+    if (whiteNav || scrolled) {
+      return {
+        logoMain: "text-neutral-800",
+        logoSecondary: "text-neutral-600",
+        navLinks: "text-neutral-800 hover:text-[#981D1F]",
+        contactButton:
+          "border border-[#981D1F] text-[#981D1F] hover:bg-[#981D1F] hover:text-white",
+        mobileMenuBars: "bg-neutral-800",
+      };
+    }
+
+    // Default light text for other pages with dark hero sections
+    return {
+      logoMain: "text-neutral-100",
+      logoSecondary: "text-neutral-300",
+      navLinks: "text-neutral-200 hover:text-white",
+      contactButton:
+        "border border-white/30 bg-transparent text-white hover:bg-white/20 hover:text-white",
+      mobileMenuBars: "bg-white",
+    };
+  };
+
+  const styles = getTextStyles();
+
   return (
     <nav
       className={`fixed w-full top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${
@@ -52,20 +84,10 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="h-6 w-1 bg-[#981D1F] mr-2"></div>
             <h2 className="text-md tracking-wide">
-              <span
-                className={`font-semibold ${
-                  scrolled ? "text-neutral-800" : "text-neutral-100"
-                }`}
-              >
+              <span className={`font-semibold ${styles.logoMain}`}>
                 STRIANO
               </span>
-              <span
-                className={`ml-1 ${
-                  scrolled ? "text-neutral-600" : "text-neutral-300"
-                }`}
-              >
-                ELECTRIC
-              </span>
+              <span className={`ml-1 ${styles.logoSecondary}`}>ELECTRIC</span>
             </h2>
           </div>
         </Link>
@@ -76,11 +98,7 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className={`transition-colors relative group ${
-                scrolled
-                  ? "text-neutral-800 hover:text-[#981D1F]"
-                  : "text-neutral-200 hover:text-white"
-              }`}
+              className={`transition-colors relative group ${styles.navLinks}`}
             >
               {item.label}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#981D1F] group-hover:w-full transition-all duration-200"></span>
@@ -88,11 +106,7 @@ const Navbar = () => {
           ))}
           <Link
             href="/contact"
-            className={`px-5 py-2 rounded transition-colors duration-200 ${
-              scrolled
-                ? "border border-[#981D1F] text-[#981D1F] hover:bg-[#981D1F] hover:text-white"
-                : "border border-white/30 bg-transparent text-white hover:bg-white/20 hover:text-white"
-            }`}
+            className={`px-5 py-2 rounded transition-colors duration-200 ${styles.contactButton}`}
           >
             Contact
           </Link>
@@ -107,23 +121,23 @@ const Navbar = () => {
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
               className={`w-full h-0.5 transition-transform duration-200 ${
-                scrolled ? "bg-neutral-800" : "bg-white"
+                styles.mobileMenuBars
               } ${isOpen ? "rotate-45 translate-y-2" : ""}`}
             />
             <span
               className={`w-full h-0.5 transition-opacity duration-200 ${
-                scrolled ? "bg-neutral-800" : "bg-white"
+                styles.mobileMenuBars
               } ${isOpen ? "opacity-0" : ""}`}
             />
             <span
               className={`w-full h-0.5 transition-transform duration-200 ${
-                scrolled ? "bg-neutral-800" : "bg-white"
+                styles.mobileMenuBars
               } ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
             />
           </div>
         </button>
 
-        {/* Mobile Menu - No need to change this as it appears to already have a dark background */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div

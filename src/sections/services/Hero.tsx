@@ -60,8 +60,8 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            style={{ lineHeight: 1.05 }}
-            className="text-3xl  md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
+            style={{ lineHeight: 1.25 }}
+            className="text-3xl  md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-2xl tracking-tight"
           >
             Engineering Power Solutions, Delivering Critical Results
           </motion.h1>
