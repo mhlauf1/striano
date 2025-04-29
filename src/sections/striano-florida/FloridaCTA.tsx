@@ -55,7 +55,7 @@ const FloridaCTA = () => {
                   Ready to elevate your <br /> Florida project?
                 </h2>
                 <p className="text-lg text-gray-600 mt-4">
-                  Our dedicated Florida team brings Striano's exceptional
+                  Our dedicated Florida team brings Striano&apos;s exceptional
                   standards of electrical excellence to the Sunshine State.
                 </p>
               </motion.div>
@@ -81,8 +81,8 @@ const FloridaCTA = () => {
                     </svg>
                   </div>
                   <p className="ml-2">
-                    Expert teams specialized in Florida's unique construction
-                    codes
+                    Expert teams specialized in Florida&apos;s unique
+                    construction codes
                   </p>
                 </div>
                 <div className="flex items-start">

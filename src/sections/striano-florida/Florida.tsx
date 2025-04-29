@@ -200,7 +200,7 @@ const Florida = () => {
         >
           From high-rise condominiums to commercial spaces, our dedicated
           Florida team brings the same commitment to quality, reliability, and
-          innovation that has built Striano Electric's reputation for
+          innovation that has built Striano Electric&apos;s reputation for
           excellence.
         </motion.p>
       </motion.div>
