@@ -32,7 +32,7 @@ const Hero = () => {
           sizes="100vw"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div> */}
       </div>
 
       <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end pb-24">
