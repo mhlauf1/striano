@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import Nav from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,7 +50,6 @@ export default function RootLayout({
       <body className={`${inter.variable} overflow-x-hidden antialiased`}>
         <Nav />
         {children}
-        <Analytics />
         <Footer />
       </body>
     </html>
