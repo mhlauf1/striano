@@ -940,8 +940,26 @@ export const projects: Project[] = [
         category: PROJECT_CATEGORIES.SPECIALTY,
         featured: false,
     },
+    {
+        id: 150,
+        name: "Little Nell Hotel",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        featured: false,
+    },
+    {
+        id: 151,
+        name: "Wells Fargo, 20 Hudson Yards",
+        category: PROJECT_CATEGORIES.FINANCIAL,
+        featured: false,
+    },
+    {
+        id: 152,
+        name: "JPMC , NY FRB Rock Center, 1230 Avenue of the Americas, New York, NY.",
+        category: PROJECT_CATEGORIES.FINANCIAL,
+        featured: false,
+    },
     ...maintenanceProjects,
-];
+].sort((a, b) => a.name.localeCompare(b.name));
 
 // Usage in filter component
 export const FILTER_OPTIONS = [

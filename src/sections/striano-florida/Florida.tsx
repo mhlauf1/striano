@@ -23,51 +23,76 @@ const Florida = () => {
     },
     {
       id: 1,
+      title: "Porsche Studio",
+      src: "porsche-3.JPG",
+    },
+    {
+      id: 2,
       title: "AC Marriott",
       src: "FL-marriott-1.jpg",
     },
-
-    {
-      id: 2,
-      title: "Boardwalk Bollards",
-      subtext: "Gulf Shore Blvd",
-      src: "FL-Boardwalk-1.jpg",
-    },
     {
       id: 3,
+      title: "Surfs Edge",
+      subtext: "Hurricane Ian Restoration",
+      src: "FL-Harbour-2.jpg",
+    },
+
+    {
+      id: 4,
+      title: "Porsche Studio",
+      src: "porsche-2.JPG",
+    },
+    {
+      id: 5,
+      title: "Surfs Edge",
+      subtext: "Hurricane Ian Restoration",
+      src: "FL-Harbour-4.jpg",
+    },
+    {
+      id: 6,
+      title: "Porsche Studio",
+      src: "porsche-5.JPG",
+    },
+    {
+      id: 7,
       title: "Boardwalk Lighting",
       subtext: "Gulf Shore Blvd",
       src: "FL-Boardwalk-2.jpg",
     },
     {
-      id: 4,
+      id: 8,
+      title: "Porsche Studio",
+      src: "porsche-1.JPG",
+    },
+    {
+      id: 9,
       title: "Boardwalk Lighting",
       subtext: "Gulf Shore Blvd",
       src: "FL-Boardwalk-3.jpg",
     },
     {
-      id: 5,
+      id: 10,
       title: "Harbour Lights",
       subtext: "Gulf Shore Blvd Service Rebuild",
       src: "FL-Harbour-1.jpg",
     },
     {
-      id: 6,
-      title: "Surfs Edge",
-      subtext: "Hurricane Ian Restoration",
-      src: "FL-Harbour-2.jpg",
+      id: 11,
+      title: "Porsche Studio",
+      src: "porsche-6.JPG",
     },
     {
-      id: 7,
+      id: 12,
       title: "Surfs Edge",
       subtext: "Hurricane Ian Restoration",
       src: "FL-Harbour-3.jpg",
     },
     {
-      id: 8,
-      title: "Surfs Edge",
-      subtext: "Hurricane Ian Restoration",
-      src: "FL-Harbour-4.jpg",
+      id: 13,
+      title: "Boardwalk Bollards",
+      subtext: "Gulf Shore Blvd",
+      src: "FL-Boardwalk-1.jpg",
     },
   ];
 

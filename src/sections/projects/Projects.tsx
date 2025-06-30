@@ -122,7 +122,9 @@ const Projects: React.FC = () => {
 
         {/* Project info */}
         <div className="absolute top-6 w-3/4 left-6 text-white z-50">
-          <h2 className="text-2xl font-medium">{selectedProject.name}</h2>
+          <h2 className="text-xl md:text-2xl font-medium">
+            {selectedProject.name}
+          </h2>
           <p className="text-sm opacity-70">{selectedProject.category} </p>
         </div>
 
@@ -134,20 +136,32 @@ const Projects: React.FC = () => {
         {/* Navigation buttons */}
         <button
           onClick={prevImage}
-          className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white z-50 p-3 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
+          className="absolute left-6 bg-black/70 top-1/2 transform -translate-y-1/2 text-white z-50 p-3 hover:bg-black  rounded-full transition-colors"
         >
-          <IoIosArrowBack size={30} />
+          <IoIosArrowBack className="size-6" />
         </button>
 
         <button
           onClick={nextImage}
-          className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white z-50 p-3 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
+          className="absolute right-6  bg-black/70 top-1/2 transform -translate-y-1/2 text-white z-50 p-3 hover:bg-black  rounded-full transition-colors"
         >
-          <IoIosArrowForward size={30} />
+          <IoIosArrowForward className="size-6" />
         </button>
 
         {/* Main image */}
         <div className="w-full max-w-5xl max-h-[80vh] relative">
+          <div className="absolute flex items-center justify-center w-full z-20 bottom-2">
+            {/* <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+              <p className="text-[#981D1F] text-lg md:text-xl font-medium">
+                {selectedProject.name}
+              </p>
+            </div> */}
+            <div className="px-5 py-2 bg-white/90 backdrop-blur-sm rounded-md shadow-sm">
+              <p className="text-neutral-600 md:text-lg text-center font-medium">
+                {selectedProject.name}
+              </p>
+            </div>
+          </div>
           <div className="relative w-full h-[70vh]">
             <Image
               src={`/${selectedProject.gallery[currentImageIndex]}`}

@@ -61,6 +61,36 @@ const projectsWithGallery = [
         featured: false,
         hasGallery: true
     },
+    {
+        id: 4,
+        name: "Little Nell Hotel",
+        year: "2022",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        src: "little-nell.jpg",
+        gallery: ["little-nell.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 5,
+        name: "Wells Fargo, 20 Hudson Yards",
+        year: "2022",
+        category: PROJECT_CATEGORIES.FINANCIAL,
+        src: "wells-fargo.webp",
+        gallery: ["wells-fargo.webp", "wells-fargo-2.png"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 6,
+        name: "JPMC , NY FRB Rock Center, 1230 Avenue of the Americas, New York, NY.",
+        year: "2022",
+        category: PROJECT_CATEGORIES.FINANCIAL,
+        src: "americas.jpg",
+        gallery: ["americas.jpg"],
+        featured: false,
+        hasGallery: true
+    },
 ];
 
 

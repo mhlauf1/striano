@@ -45,7 +45,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          className="text-3xl title-line-height md:text-4xl mb-2 md:mb-3 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
+          className="text-3xl title-line-height font-medium md:text-4xl mb-2 md:mb-3 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
         >
           You&apos;re in great company
         </motion.h1>

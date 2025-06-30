@@ -20,9 +20,9 @@ const Hero = () => {
 
   // Simple carousel with 4 hardcoded images
   const images = [
-    "pic-3.jpg",
     "Citi6.jpg",
-    "bac-6.jpeg",
+    "wells-fargo-2.png",
+    "bac-2.jpeg",
     "Pfizer1.jpg",
     "Citi1.jpg",
   ];
@@ -54,7 +54,7 @@ const Hero = () => {
               custom={0}
               variants={textVariants}
               style={{ letterSpacing: -1.5 }}
-              className="text-3xl sm:text-4xl lg:text-5xl text-white mb-2 md:mb-3"
+              className="text-3xl sm:text-4xl font-medium lg:text-5xl text-white mb-2 md:mb-3"
             >
               Striano Portfolio Of Success
             </motion.h1>

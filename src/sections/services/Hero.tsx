@@ -61,7 +61,7 @@ const Hero = () => {
             animate="visible"
             variants={textVariants}
             style={{ lineHeight: 1.25 }}
-            className="text-3xl  md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-2xl tracking-tight"
+            className="text-3xl  md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white font-medium md:max-w-2xl tracking-tight"
           >
             Engineering Power Solutions, Delivering Critical Results
           </motion.h1>
@@ -86,7 +86,7 @@ const Hero = () => {
           variants={imageVariants}
           className="w-full md:w-3/5 h-[300px] md:h-[500px] relative rounded-md overflow-hidden"
         >
-          <div className="flex flex-col absolute bottom-2 md:bottom-4 left-2 md:left-4 gap-1 z-10 p-3 bg-black/30 backdrop-blur-sm rounded-lg">
+          <div className="flex flex-col absolute top-2 md:top-4 left-2 md:left-4 gap-1 z-10 p-3 bg-black/30 backdrop-blur-sm rounded-lg">
             <motion.div
               custom={4}
               initial="hidden"
@@ -110,6 +110,14 @@ const Hero = () => {
             >
               New York&apos;s Most Trusted Electrical Partner
             </motion.p>
+          </div>
+          <div className="absolute bottom-6 z-20 left-6 right-6">
+            <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+              <p className="text-[#981D1F] font-medium"> Morgan Stanley</p>
+              <p className="text-sm text-gray-600">
+                Morgan Stanley, 1 New York Plaza, Multiple Projects & Floors
+              </p>
+            </div>
           </div>
 
           <Image

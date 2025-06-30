@@ -36,7 +36,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end pb-24">
-        <div className="max-w-3xl">
+        <div>
           {/* Branded accent line */}
           <motion.div
             initial={{ width: 0 }}
@@ -51,7 +51,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-3xl mb-2 md:mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
+            className="text-3xl md:max-w-[28ch] mb-2 md:mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
           >
             Striano Electric Powers New York City&apos;s Most Critical
             Infrastructure

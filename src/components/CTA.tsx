@@ -6,13 +6,8 @@ import { PrimaryButton } from "@/components/Button";
 
 const CTA = () => {
   return (
-    <section className="relative bg-white mx-auto px-2 sm:px-6 lg:px-8 py-8 md:py-16 overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#981D1F] to-[#981D1F]/80"></div>
-      <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-[#981D1F]/5 opacity-30 blur-3xl"></div>
-      <div className="absolute bottom-0 left-10 w-48 h-48 rounded-full bg-[#981D1F]/5 blur-2xl"></div>
-
-      <div className="mt-8 py-12 md:py-16  rounded-md bg-neutral-50 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="relative  overflow-hidden">
+      <div className=" py-12 md:py-16  rounded-md bg-neutral-50 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left column - Text content */}
@@ -103,7 +98,7 @@ const CTA = () => {
             {/* Right column - Image */}
             <div className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/Pfizer4.jpg"
+                src="/wellsfargo.webp"
                 alt="Striano Electric project"
                 fill
                 className="object-cover"

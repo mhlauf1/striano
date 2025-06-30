@@ -158,18 +158,6 @@ const Contact = () => {
               className="w-full border rounded-md border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
             ></textarea>
           </div>
-
-          <div className="flex items-center">
-            <input
-              id="terms"
-              type="checkbox"
-              className="h-4 w-4 border-gray-300 text-[#981D1F] focus:ring-[#981D1F]"
-            />
-            <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
-              I accept the terms
-            </label>
-          </div>
-
           <div className="pt-2">
             <PrimaryButton>Submit</PrimaryButton>
           </div>
