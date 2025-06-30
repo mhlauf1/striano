@@ -95,7 +95,7 @@ const Projects = () => {
                 </p>
                 <h2
                   style={{ letterSpacing: -1 }}
-                  className="text-2xl md:text-3xl text-neutral-100 mt-1 md:mt-2"
+                  className="text-2xl font-medium md:text-3xl text-neutral-100 mt-1 md:mt-2"
                 >
                   Projects we&apos;ve worked on
                 </h2>

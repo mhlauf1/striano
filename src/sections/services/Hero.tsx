@@ -97,7 +97,7 @@ const Hero = () => {
               {[0, 1, 2, 3, 4].map((i) => (
                 <IoIosStar
                   key={i}
-                  className="h-[24px] w-[24px] text-yellow-400"
+                  className="h-[12px] md:h-[24px] w-[12px] md:w-[24px] text-yellow-400"
                 />
               ))}
             </motion.div>
@@ -106,15 +106,15 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               variants={textVariants}
-              className="text-white font-medium"
+              className="text-white text-xs md:text-sm font-medium"
             >
               New York&apos;s Most Trusted Electrical Partner
             </motion.p>
           </div>
-          <div className="absolute bottom-6 z-20 left-6 right-6">
+          <div className="absolute bottom-2 z-20 left-2 right-2">
             <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
               <p className="text-[#981D1F] font-medium"> Morgan Stanley</p>
-              <p className="text-sm text-gray-600">
+              <p className="text-xs md:text-sm text-gray-600">
                 Morgan Stanley, 1 New York Plaza, Multiple Projects & Floors
               </p>
             </div>
