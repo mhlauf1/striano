@@ -43,7 +43,7 @@ const Florida = () => {
       id: 4,
       title: "Boardwalk Lighting",
       subtext: "Gulf Shore Blvd",
-      src: "FL-Boardwalk-parents.jpg",
+      src: "FL-Boardwalk-3.jpg",
     },
     {
       id: 5,
