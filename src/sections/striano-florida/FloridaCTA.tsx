@@ -128,7 +128,7 @@ const FloridaCTA = () => {
               </motion.div>
 
               <motion.div variants={itemVariants} className="pt-4">
-                <Link href="/contact-florida">
+                <Link href="/contact">
                   <PrimaryButton> Discuss Your Florida Project</PrimaryButton>
                 </Link>
               </motion.div>
