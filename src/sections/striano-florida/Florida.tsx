@@ -71,7 +71,6 @@ const Florida = () => {
     },
   ];
 
-  // Update images per view based on screen size - improved responsive breakpoints
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
