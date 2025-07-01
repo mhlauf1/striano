@@ -51,7 +51,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-3xl md:max-w-[28ch] mb-2 md:mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
+            className="text-3xl max-w-[18ch] md:max-w-[28ch] mb-2 md:mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
           >
             Striano Electric Powers New York City&apos;s Most Critical
             Infrastructure
