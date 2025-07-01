@@ -115,7 +115,7 @@ const Hero = () => {
                 index === currentImage ? "opacity-100" : "opacity-0"
               }`}
             >
-              <div className="absolute top-6 z-20 left-6 right-6">
+              <div className="absolute top-2 md:top-6 z-20 left-2 md:left-6 right-2 md:right-6">
                 <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                   <p className="text-[#981D1F] font-medium"> {image?.text}</p>
                 </div>
