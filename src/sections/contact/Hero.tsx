@@ -15,7 +15,7 @@ const Contact = () => {
 
   return (
     <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-      <div className="flex md:flex-row flex-col   md:px-12 rounded-md py-12 sm:py-16 md:py-24  mt-8 bg-neutral-50 gap-12 md:gap-16">
+      <div className="flex md:flex-row flex-col   md:px-12 rounded-md py-8 sm:py-16 md:py-24  mt-8 bg-neutral-50 gap-12 md:gap-16">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -26,7 +26,7 @@ const Contact = () => {
             <p className="text-xs uppercase tracking-wider text-[#981D1F] font-medium mb-2">
               Get in touch
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-gray-900 tracking-tight mb-3 md:mb-4">
               Contact us
             </h1>
             <p className="text-lg text-gray-600">
@@ -40,7 +40,7 @@ const Contact = () => {
               <div className="flex-shrink-0 mt-1 text-[#981D1F] mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="size-4 md:size-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -65,7 +65,7 @@ const Contact = () => {
               <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="size-4 md:size-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -84,7 +84,7 @@ const Contact = () => {
               <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
+                  className="size-4 md:size-5"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
