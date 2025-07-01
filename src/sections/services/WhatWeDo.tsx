@@ -80,7 +80,7 @@ const WhatWeDo = () => {
 
               {/* Right Image - Only on desktop */}
               <div className="hidden relative lg:block lg:w-full self-start">
-                <div className="absolute bottom-6 left-6 right-6">
+                <div className="absolute bottom-2 left-2 right-2">
                   <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                     <p className="text-[#981D1F] font-medium"> Tiffany</p>
                     <p className="text-sm text-gray-600">
@@ -90,10 +90,10 @@ const WhatWeDo = () => {
                 </div>
                 <Image
                   alt="Striano Electric"
-                  src="/tiff3.JPEG"
-                  width={500}
-                  height={380}
-                  className="w-full rounded-md object-cover h-[500px]"
+                  src="/tiffany-wed.jpg"
+                  width={800}
+                  height={800}
+                  className="w-full rounded-md object-cover h-[700px]"
                   priority
                 />
               </div>

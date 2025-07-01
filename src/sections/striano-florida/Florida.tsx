@@ -24,12 +24,14 @@ const Florida = () => {
     {
       id: 1,
       title: "Porsche Studio",
+      subtext: "Infrastructure",
       src: "porsche-3.JPG",
     },
     {
       id: 2,
       title: "AC Marriott",
       src: "FL-marriott-1.jpg",
+      subtext: "Infrastructure",
     },
     {
       id: 3,
@@ -42,6 +44,7 @@ const Florida = () => {
       id: 4,
       title: "Porsche Studio",
       src: "porsche-2.JPG",
+      subtext: "Bar",
     },
     {
       id: 5,
@@ -53,6 +56,7 @@ const Florida = () => {
       id: 6,
       title: "Porsche Studio",
       src: "porsche-5.JPG",
+      subtext: "Infrastructure",
     },
     {
       id: 7,
@@ -64,6 +68,7 @@ const Florida = () => {
       id: 8,
       title: "Porsche Studio",
       src: "porsche-1.JPG",
+      subtext: "Infrastructure",
     },
     {
       id: 10,
@@ -75,6 +80,7 @@ const Florida = () => {
       id: 11,
       title: "Porsche Studio",
       src: "porsche-6.JPG",
+      subtext: "Infrastructure",
     },
     {
       id: 12,
@@ -331,17 +337,17 @@ const Florida = () => {
                     />
 
                     {/* Enhanced Label - Only improving this part */}
-                    <div className="absolute top-2 md:top-4 left-2 md:left-4 right-2 md:right-4">
+                    <div className="absolute bottom-2 left-2 right-2 ">
                       <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                         <p className="text-[#981D1F] font-medium">
                           {" "}
                           {data.title}
                         </p>
-                        {data.subtext && (
+                        {/* {data.subtext && (
                           <p className="text-sm text-gray-600">
                             {data.subtext}
                           </p>
-                        )}
+                        )} */}
                       </div>
                     </div>
                   </div>

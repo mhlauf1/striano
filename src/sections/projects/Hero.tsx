@@ -20,11 +20,36 @@ const Hero = () => {
 
   // Simple carousel with 4 hardcoded images
   const images = [
-    "Citi6.jpg",
-    "wells-fargo-2.png",
-    "bac-2.jpeg",
-    "Pfizer1.jpg",
-    "Citi1.jpg",
+    {
+      id: 0,
+      name: "Citi Bank",
+      src: "citi-main.png",
+      address: "123 Street",
+    },
+    {
+      id: 1,
+      name: "Tiffany",
+      src: "tiffany-1.jpg",
+      address: "727 5th Ave., New York, NY.",
+    },
+    {
+      id: 2,
+      name: "The Ford Foundation",
+      src: "ford-foundation.png",
+      address: "320 E. 43rd St., New York, NY.",
+    },
+    {
+      id: 3,
+      name: "Barclays Capital",
+      src: "bac-2.jpeg",
+      address: "745 7th Ave., New York, NY.",
+    },
+    {
+      id: 3,
+      name: "JPMC",
+      src: "park-ave.jpg",
+      address: "270 Park Ave High Rise floors 40-44.",
+    },
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -160,7 +185,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="flex md:w-2/5 w-full h-[500px] md:h-[75vh] relative rounded-md overflow-hidden"
+          className="flex md:w-1/2 w-full h-[500px] md:h-[75vh] relative rounded-md overflow-hidden"
         >
           {/* Images */}
           {images.map((image, index) => (
@@ -171,8 +196,8 @@ const Hero = () => {
               }`}
             >
               <Image
-                src={`/${image}`}
-                alt={`Project showcase`}
+                src={`/${image.src}`}
+                alt={image.name}
                 fill
                 className="object-cover"
                 priority={index === 0}
@@ -180,13 +205,32 @@ const Hero = () => {
             </div>
           ))}
 
+          {/* Animated caption */}
+          {images.map((image, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: index === currentImage ? 1 : 0,
+                y: index === currentImage ? 0 : 10,
+              }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="absolute bottom-2 left-2 right-2"
+            >
+              <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+                <p className="text-[#981D1F] font-medium">{image.name}</p>
+                <p className="text-sm text-gray-600">{image.address}</p>
+              </div>
+            </motion.div>
+          ))}
+
           {/* Navigation Dots */}
-          <div className="absolute bottom-4 left-4 flex space-x-2 z-10">
+          <div className="absolute top-4 left-4 flex space-x-2 z-10">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImage(index)}
-                className={`w-2 h-2 rounded-full ${
+                className={`size-2 md:size-3 rounded-full ${
                   index === currentImage ? "bg-white" : "bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

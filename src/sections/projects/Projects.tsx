@@ -254,7 +254,7 @@ const Projects: React.FC = () => {
     <div className="mt-12 md:mt-16 pb-16 px-4 sm:px-8 md:px-12 lg:px-16">
       <section className="w-full bg-inherit relative">
         {/* Category Dropdown */}
-        <div className="relative w-full max-w-xl mb-6">
+        <div className="relative w-full z-20 max-w-xl mb-6">
           <div
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex items-center justify-between px-4 py-3 border rounded-md cursor-pointer text-white bg-[#981D1F]"

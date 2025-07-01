@@ -37,7 +37,7 @@ const FloridaCTA = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={sectionVariants}
-      className="relative bg-white mx-auto px-2 sm:px-6 lg:px-8 py-4 md:py-8 overflow-hidden"
+      className="relative overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-blue-50 opacity-30 blur-3xl"></div>
@@ -137,7 +137,7 @@ const FloridaCTA = () => {
             {/* Right column - Image */}
             <motion.div
               variants={itemVariants}
-              className="relative h-64 md:h-full min-h-[300px] md:min-h-[400px] rounded-xl overflow-hidden shadow-xl"
+              className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-xl"
             >
               <Image
                 src="/FL-Harbour-1.jpg"
@@ -147,7 +147,7 @@ const FloridaCTA = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-2 md:bottom-6 left-2 md:left-4 right-2 md:right-2">
+              <div className="absolute bottom-2  left-2  right-2">
                 <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                   <p className="text-[#981D1F] font-medium">Harbour Lights</p>
                   <p className="text-sm text-gray-600">

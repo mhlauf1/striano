@@ -6,7 +6,7 @@ import { PrimaryButton } from "@/components/Button";
 import Link from "next/link";
 
 const Hero = () => {
-  // Animation variants
+  // Animation variants for text
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -20,136 +20,140 @@ const Hero = () => {
     }),
   };
 
-  // Simple carousel with 4 hardcoded images
+  // Carousel slides: now with name & address
   const images = [
     {
       id: 0,
-      text: "AC Marriott",
+      name: "AC Marriott",
       src: "FL-marriott-1.jpg",
+      address: "123 Ocean Blvd, Miami, FL",
     },
     {
-      id: 0,
-      text: "Porsche Studio",
+      id: 1,
+      name: "Porsche Studio",
       src: "porsche-4.JPG",
+      address: "500 Design Dr, West Palm Beach, FL",
     },
     {
-      id: 0,
-      text: "Gulf Shore Blvd Boardwalk",
+      id: 2,
+      name: "Gulf Shore Blvd Boardwalk",
       src: "FL-Boardwalk-2.jpg",
+      address: "40 Gulf Shore Blvd, Naples, FL",
     },
     {
-      id: 0,
-      text: "AC Marriott",
+      id: 3,
+      name: "AC Marriott South",
       src: "FL-marriott-2.jpg",
+      address: "200 Bay St, Tampa, FL",
     },
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Auto rotate carousel
+  // Auto‐rotate
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-
+    const interval = setInterval(
+      () => setCurrentImage((prev) => (prev + 1) % images.length),
+      5000
+    );
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-b pb-12 md:pb-4 pt-12 from-[#FFFFFF] to-[#EFEBE1]">
-      <div className="relative gap-12 z-10 justify-between pt-24 md:pt-12 p-4 sm:p-8 md:p-16 flex flex-col md:flex-row items-center">
-        <div className="flex flex-col mt-auto mb-12 justify-between items-start w-full md:w-2/5">
-          <div className="flex flex-col justify-between items-start">
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "175px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="h-1 bg-[#981D1F] mb-4"
-            ></motion.div>
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              custom={0}
-              variants={textVariants}
-              style={{ letterSpacing: -1, lineHeight: 1.3 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-medium text-neutral-900 mb-2 md:mb-3"
-            >
-              Striano Florida: Bringing Premier Electrical Solutions to the
-              Sunshine State
-            </motion.h1>
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              custom={1}
-              variants={textVariants}
-              style={{ lineHeight: 1.55 }}
-              className="text-md md:text-lg md:max-w-3xl font-medium w-full text-neutral-600"
-            >
-              Leveraging our proven New York expertise to deliver exceptional
-              electrical services for Florida&apos;s most demanding projects.
-            </motion.p>
-          </div>
+    <section className="relative bg-gradient-to-b from-[#FFFFFF] to-[#EFEBE1] pt-12 pb-12 md:pb-4">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-12 p-4 sm:p-8 md:p-16 relative z-10">
+        {/* Text side */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-start">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "175px" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="h-1 bg-[#981D1F] mb-4"
+          />
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            variants={textVariants}
+            className="text-3xl sm:text-4xl lg:text-5xl font-medium text-neutral-900 mb-2 md:mb-3"
+            style={{ letterSpacing: -1, lineHeight: 1.3 }}
+          >
+            Striano Florida: Premier Electrical Solutions in the Sunshine State
+          </motion.h1>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            variants={textVariants}
+            className="text-md md:text-lg font-medium text-neutral-600 md:max-w-3xl"
+            style={{ lineHeight: 1.55 }}
+          >
+            From luxury hotels to beachfront boardwalks, we bring our New
+            York–honed expertise down to Florida’s most demanding projects.
+          </motion.p>
           <Link href="/contact">
             <motion.div
-              custom={3}
               initial="hidden"
               animate="visible"
+              custom={2}
               variants={textVariants}
-              className="flex flex-col md:flex-row gap-4 mt-8 md:mt-12"
+              className="mt-8"
             >
-              <PrimaryButton>Contact Florida Team</PrimaryButton>
+              <PrimaryButton>Contact Our Florida Team</PrimaryButton>
             </motion.div>
           </Link>
         </div>
 
-        {/* Simple Image Carousel */}
+        {/* Carousel side */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="flex md:w-3/5 w-full h-[500px] md:h-[80vh] relative rounded-md overflow-hidden"
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/2 h-[500px] md:h-[80vh] relative rounded-md overflow-hidden"
         >
-          {images.map((image, index) => (
+          {/* Slides */}
+          {images.map((slide, idx) => (
             <div
-              key={index}
-              className={`absolute inset-0  ${
-                index === currentImage ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <div className="absolute top-2 md:top-6 z-20 left-2 md:left-6 right-2 md:right-6">
-                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
-                  <p className="text-[#981D1F] font-medium"> {image?.text}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-          {/* Images */}
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0  ${
-                index === currentImage ? "opacity-100" : "opacity-0"
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                idx === currentImage ? "opacity-100" : "opacity-0"
               }`}
             >
               <Image
-                src={`/${image?.src}`}
-                alt={`Project showcase`}
+                src={`/${slide.src}`}
+                alt={slide.name}
                 fill
                 className="object-cover"
-                priority={index === 0}
+                priority={idx === 0}
               />
+
+              {/* animated caption */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{
+                  opacity: idx === currentImage ? 1 : 0,
+                  y: idx === currentImage ? 0 : 10,
+                }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="absolute bottom-2 left-2 right-2"
+              >
+                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+                  <p className="text-[#981D1F] font-medium">{slide.name}</p>
+                  {/* <p className="text-sm text-gray-600">{slide.address}</p> */}
+                </div>
+              </motion.div>
             </div>
           ))}
 
-          {/* Navigation Dots */}
-          <div className="absolute bottom-4 left-4 flex space-x-2 z-10">
-            {images.map((_, index) => (
+          {/* nav dots */}
+          <div className="absolute top-4 left-4 flex space-x-2 z-10">
+            {images.map((_, idx) => (
               <button
-                key={index}
-                onClick={() => setCurrentImage(index)}
-                className={`w-2 h-2 rounded-full ${
-                  index === currentImage ? "bg-white" : "bg-white/50"
+                key={idx}
+                onClick={() => setCurrentImage(idx)}
+                className={`size-2 md:size-3 rounded-full ${
+                  idx === currentImage ? "bg-white" : "bg-white/50"
                 }`}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
           </div>

@@ -7,7 +7,7 @@ import { PrimaryButton } from "@/components/Button";
 const CTA = () => {
   return (
     <section className="relative  overflow-hidden">
-      <div className=" py-12 md:py-16  rounded-md bg-neutral-50 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className=" py-12 md:py-16  rounded-md bg-neutral-50 mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left column - Text content */}
@@ -98,13 +98,18 @@ const CTA = () => {
             {/* Right column - Image */}
             <div className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/Citi2.jpg"
+                src="/Citi-main.png"
                 alt="Striano Electric project"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
+                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+                  <p className="text-[#981D1F] font-medium">Citigroup HQ</p>
+                  <p className="text-sm text-gray-600">388 Greenwich St.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -13,11 +13,11 @@ export interface ProjectWithGallery extends Project {
 const projectsWithGallery = [
     {
         id: 0,
-        name: "Citi Bank",
+        name: "Citi Headquarters Bank Branch, 388 Greenwich St.",
         year: "2022",
         category: PROJECT_CATEGORIES.FINANCIAL,
         src: "/proj.png",
-        gallery: ["Citi1.jpg", "Citi2.jpg", "Citi3.jpg", "Citi4.jpg", "Citi5.jpg", "Citi6.jpg"],
+        gallery: ["citi-main.png", "Citi3.jpg", "Citi4.jpg", "Citi5.jpg", "Citi6.jpg"],
         featured: false,
         hasGallery: true
     },
@@ -27,17 +27,17 @@ const projectsWithGallery = [
         year: "2022",
         category: PROJECT_CATEGORIES.CORPORATE,
         src: "/tiff-1.JPEG",
-        gallery: ["tiff1.JPEG", "tiff2.JPEG", "tiff3.JPEG", "tiff4.JPEG", "tiff5.JPEG", "tiff6.JPEG"],
+        gallery: ["tiffany-1.jpg", "tiffany-2.jpg", "tiff1.JPEG", "tiffany-wed.jpg", "tiff2.JPEG", "tiff3.JPEG", "tiff4.JPEG", "tiff5.JPEG", "tiff6.JPEG"],
         featured: false,
         hasGallery: true
     },
     {
         id: 2,
-        name: "Morgan Stanley, 1585 Broadway",
+        name: "Morgan Stanley, 1585 Broadway, Various Projects/Multiple Floor Fit-Outs",
         year: "2022",
         category: PROJECT_CATEGORIES.FINANCIAL,
-        src: "/ms-1.jpg",
-        gallery: ["MS1.jpg", "MS2.jpg", "MS3.jpg", "MS4.png", "MS5.jpg", "MS6.jpg"],
+        src: "/MS-main.png",
+        gallery: ["MS-main.png"],
         featured: false,
         hasGallery: true
     },
@@ -88,6 +88,66 @@ const projectsWithGallery = [
         category: PROJECT_CATEGORIES.FINANCIAL,
         src: "americas.jpg",
         gallery: ["americas.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 7,
+        name: "St. John’s University Little Theater",
+        year: "2022",
+        category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
+        src: "st-johns.jpg",
+        gallery: ["st-johns.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 8,
+        name: "Telx, 111 8th Ave",
+        year: "2022",
+        category: PROJECT_CATEGORIES.DATA_CENTERS,
+        src: "telx.jpg",
+        gallery: ["telx.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 9,
+        name: "Gerber Bar at the Weston Grand Central Hotel, 212 E. 42nd St.",
+        year: "2022",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        src: "gerber.jpg",
+        gallery: ["gerber.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 10,
+        name: "Sheraton Ballroom Lighting, 811 Seventh Avenue",
+        year: "2022",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        src: "sheraton.jpg",
+        gallery: ["sheraton.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 11,
+        name: "Morgan Stanley, 1585 Broadway, Various Projects/Multiple Floor Fit-Outs",
+        year: "2022",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        src: "morgans-hotel.jpg",
+        gallery: ["morgans-hotel.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 12,
+        name: "Major League Baseball (MLB) Headquarters, 245 Park Ave.",
+        year: "2022",
+        category: PROJECT_CATEGORIES.CORPORATE,
+        src: "mlb.jpg",
+        gallery: ["mlb.jpg"],
         featured: false,
         hasGallery: true
     },

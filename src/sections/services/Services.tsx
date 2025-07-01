@@ -18,7 +18,7 @@ const serviceItemData = [
     title: "Core Infrastructure",
     description:
       "Complete Electrical Distribution, High/Low Voltage Systems, Underground & Overhead Installations, Data Center & UPS Infrastructure",
-    image: "/MS4.png",
+    image: "/core-infra.png",
   },
   {
     id: 1,
@@ -26,7 +26,7 @@ const serviceItemData = [
     title: "Building Systems",
     description:
       "Lighting & Controls, Security Integration, Audio/Visual Solutions, Fire & Life Safety, Motor Control Systems",
-    image: "/Citi3.jpg",
+    image: "/building-systems.png",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const serviceItemData = [
     title: "Maintenance & Support",
     description:
       "24/7 Emergency Response, Preventive Maintenance, Safety Inspections, Power Quality Monitoring, After-Hours Service",
-    image: "/Pfizer2.jpg",
+    image: "/support.png",
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const serviceItemData = [
     title: "Project Services",
     description:
       "Value Engineering, Project Management, Installation & Implementation, System Integration, Quality Assurance",
-    image: "/Citi1.jpg",
+    image: "/proj-services.png",
   },
 ];
 

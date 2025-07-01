@@ -202,12 +202,7 @@ export const projects: Project[] = [
         category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },
-    {
-        id: 27,
-        name: "Morgan Stanley, 1585 Broadway",
-        category: PROJECT_CATEGORIES.FINANCIAL,
-        featured: false,
-    },
+
     {
         id: 28,
         name: "Morgan Stanley, 1 New York Plaza, Multiple Projects & Floors",
@@ -216,7 +211,7 @@ export const projects: Project[] = [
     },
     {
         id: 29,
-        name: "Morgan Stanley, 750 7thAve., Floors 12,14,18,19 & 29",
+        name: "Morgan Stanley, 750 7th Ave., Floors 12,14,18,19 & 29",
         category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },
@@ -774,34 +769,11 @@ export const projects: Project[] = [
     },
     {
         id: 122,
-        name: "Morgan Stanley, 1585 Broadway, 11th Floor Electrical & Telecom",
+        name: "Morgan Stanley, 1585 Broadway, Various Projects/Multiple Floor Fit-Outs",
         category: PROJECT_CATEGORIES.TRADING,
         featured: false,
     },
-    {
-        id: 123,
-        name: "Morgan Stanley, 1585 Broadway, 15th Floor Electrical & Telecom",
-        category: PROJECT_CATEGORIES.TRADING,
-        featured: false,
-    },
-    {
-        id: 124,
-        name: "Morgan Stanley, 1585 Broadway, Floors 26, 27 & 28",
-        category: PROJECT_CATEGORIES.TRADING,
-        featured: false,
-    },
-    {
-        id: 125,
-        name: "Morgan Stanley, 1585 Broadway, Floors 245 & 25 Floor Electrical & Telecom",
-        category: PROJECT_CATEGORIES.TRADING,
-        featured: false,
-    },
-    {
-        id: 126,
-        name: "Morgan Stanley, 1585 Broadway, 12th Floor Electrical & Telecom",
-        category: PROJECT_CATEGORIES.TRADING,
-        featured: false,
-    },
+
     {
         id: 127,
         name: "Morgan Stanley, 1 New York Plaza, 36th Floor Electrical & Telecom",
@@ -962,6 +934,48 @@ export const projects: Project[] = [
         id: 153,
         name: "Barclay's Capital NYC Headquarters Electrical Infrastructure Refurbishment",
         category: PROJECT_CATEGORIES.FINANCIAL,
+        featured: false,
+    },
+    {
+        id: 154,
+        name: "Tiffany’s 727 5th Ave.",
+        category: PROJECT_CATEGORIES.SPECIALTY,
+        featured: false,
+    },
+    {
+        id: 155,
+        name: "Major League Baseball (MLB) Headquarters, 245 Park Ave.",
+        category: PROJECT_CATEGORIES.CORPORATE,
+        featured: false,
+    },
+    {
+        id: 156,
+        name: "St. John’s University Little Theater",
+        category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
+        featured: false,
+    },
+    {
+        id: 157,
+        name: "Telx, 111 8th Ave",
+        category: PROJECT_CATEGORIES.DATA_CENTERS,
+        featured: false,
+    },
+    {
+        id: 158,
+        name: "Gerber Bar at the Weston Grand Central Hotel, 212 E. 42nd St.",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        featured: false,
+    },
+    {
+        id: 159,
+        name: "Sheraton Ballroom Lighting, 811 Seventh Avenue",
+        category: PROJECT_CATEGORIES.PROFESSIONAL,
+        featured: false,
+    },
+    {
+        id: 160,
+        name: "Morgans Hotel Lobby Lighting, 237 Madison Ave.",
+        category: PROJECT_CATEGORIES.CORPORATE,
         featured: false,
     },
     ...maintenanceProjects,
