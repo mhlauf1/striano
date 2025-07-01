@@ -147,7 +147,7 @@ const FloridaCTA = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute bottom-2 md:bottom-6 left-2 md:left-4 right-2 md:right-2">
                 <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                   <p className="text-[#981D1F] font-medium">Harbour Lights</p>
                   <p className="text-sm text-gray-600">

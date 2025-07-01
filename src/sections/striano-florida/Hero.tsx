@@ -70,7 +70,7 @@ const Hero = () => {
               animate="visible"
               custom={0}
               variants={textVariants}
-              style={{ letterSpacing: -1.5, lineHeight: 1.3 }}
+              style={{ letterSpacing: -1, lineHeight: 1.3 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-medium text-neutral-900 mb-2 md:mb-3"
             >
               Striano Florida: Bringing Premier Electrical Solutions to the

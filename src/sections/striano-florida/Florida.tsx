@@ -208,10 +208,7 @@ const Florida = () => {
           >
             Striano Florida
           </p>
-          <h2
-            style={{ letterSpacing: -0.75 }}
-            className="text-2xl md:text-3xl text-neutral-800 mt-1 md:mt-2 mb-2 md:mb-3 font-medium"
-          >
+          <h2 className="text-2xl md:text-3xl text-neutral-800 mt-1 md:mt-2 mb-2 md:mb-3 font-medium">
             Explore projects completed in Florida
           </h2>
         </div>
@@ -340,7 +337,7 @@ const Florida = () => {
                     />
 
                     {/* Enhanced Label - Only improving this part */}
-                    <div className="absolute top-6 left-6 right-6">
+                    <div className="absolute top-2 md:top-4 left-2 md:left-4 right-6 md:right-4">
                       <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                         <p className="text-[#981D1F] font-medium">
                           {" "}
