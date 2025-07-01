@@ -14,16 +14,15 @@ const Contact = () => {
   };
 
   return (
-    <section className=" mx-auto px-2 sm:px-6 lg:px-8 py-8 md:py-10">
-      <div className="grid grid-cols-1 px-6 md:px-12 rounded-md py-12 sm:py-16 md:py-24 md:grid-cols-2 mt-8 bg-neutral-50 gap-12 md:gap-16">
-        {/* Left Column - Content */}
+    <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+      <div className="flex md:flex-row flex-col   md:px-12 rounded-md py-12 sm:py-16 md:py-24  mt-8 bg-neutral-50 gap-12 md:gap-16">
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="md:pr-8"
+          className="flex flex-col w-full md:w-1/2  md:pr-8"
         >
-          <div className="mb-10">
+          <div className="md:mb-10">
             <p className="text-xs uppercase tracking-wider text-[#981D1F] font-medium mb-2">
               Get in touch
             </p>
@@ -36,9 +35,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="space-y-6 mt-12">
+          <div className="space-y-6 mt-8 md:mt-12">
             <div className="flex items-start">
-              <div className="flex-shrink-0 text-[#981D1F] mr-4">
+              <div className="flex-shrink-0 mt-1 text-[#981D1F] mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -63,7 +62,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-start">
-              <div className="flex-shrink-0 text-[#981D1F] mr-4">
+              <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -82,7 +81,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-start">
-              <div className="flex-shrink-0 text-[#981D1F] mr-4">
+              <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -114,7 +113,7 @@ const Contact = () => {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="space-y-6"
+          className="flex flex-col w-full md:w-1/2  space-y-6"
         >
           <div>
             <label
