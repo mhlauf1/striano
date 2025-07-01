@@ -98,7 +98,7 @@ const CTA = () => {
             {/* Right column - Image */}
             <div className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-xl">
               <Image
-                src="/Citi-main.png"
+                src="/citi-main.png"
                 alt="Striano Electric project"
                 fill
                 className="object-cover"
