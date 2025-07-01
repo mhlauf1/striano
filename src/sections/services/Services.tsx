@@ -73,7 +73,7 @@ const ServiceItem = ({
       className="bg-white rounded-md overflow-hidden group hover:shadow-md transition-all duration-300 flex flex-col h-full"
     >
       <div className="px-4 py-8 pb-6 flex-grow">
-        <h3 className="text-md tracking-tight md:text-xl mb-2">{title}</h3>
+        <h3 className="text-lg tracking-tight md:text-xl mb-2">{title}</h3>
         <p className="text-neutral-700 text-md">{description}</p>
       </div>
       <div className="relative h-[220px] w-full">
@@ -143,10 +143,7 @@ const Services = () => {
           >
             Our Services
           </p>
-          <h2
-            style={{ letterSpacing: -0.75 }}
-            className="text-2xl font-medium md:text-3xl text-neutral-800  mt-1 md:mt-2"
-          >
+          <h2 className="text-2xl font-medium md:text-3xl text-neutral-800  mt-1 md:mt-2">
             Expert solutions for every electrical need
           </h2>
         </div>

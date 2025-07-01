@@ -53,7 +53,7 @@ const Hero = () => {
               animate="visible"
               custom={0}
               variants={textVariants}
-              style={{ letterSpacing: -1.5 }}
+              style={{ letterSpacing: -1 }}
               className="text-3xl sm:text-4xl font-medium lg:text-5xl text-white mb-2 md:mb-3"
             >
               Striano Portfolio Of Success
