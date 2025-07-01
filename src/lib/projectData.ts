@@ -958,6 +958,12 @@ export const projects: Project[] = [
         category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },
+    {
+        id: 153,
+        name: "Barclay's Capital NYC Headquarters Electrical Infrastructure Refurbishment",
+        category: PROJECT_CATEGORIES.FINANCIAL,
+        featured: false,
+    },
     ...maintenanceProjects,
 ].sort((a, b) => a.name.localeCompare(b.name));
 
