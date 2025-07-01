@@ -337,7 +337,7 @@ const Florida = () => {
                     />
 
                     {/* Enhanced Label - Only improving this part */}
-                    <div className="absolute top-2 md:top-4 left-2 md:left-4 right-6 md:right-4">
+                    <div className="absolute top-2 md:top-4 left-2 md:left-4 right-2 md:right-4">
                       <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
                         <p className="text-[#981D1F] font-medium">
                           {" "}
