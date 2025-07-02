@@ -18,11 +18,10 @@ const Hero = () => {
     }),
   };
 
-  // Simple carousel with 4 hardcoded images
   const images = [
     {
       id: 0,
-      name: "Citi HQ Bank Branch,",
+      name: "Citi HQ Bank Branch",
       src: "citi-main.png",
       address: "388 Greenwich St.",
     },
@@ -44,11 +43,12 @@ const Hero = () => {
       src: "bac-2.jpeg",
       address: "745 7th Ave., New York, NY.",
     },
+    // move JPMC to be last
     {
-      id: 3,
+      id: 4,
       name: "JPMC",
       src: "park-ave.jpg",
-      address: "270 Park Ave High Rise floors 40-44.",
+      address: "270 Park Ave High Rise, floors 40–44.",
     },
   ];
   const [currentImage, setCurrentImage] = useState(0);
@@ -187,7 +187,6 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="flex md:w-1/2 w-full h-[500px] md:h-[80vh] relative rounded-md overflow-hidden"
         >
-          {/* Images */}
           {images.map((image, index) => (
             <div
               key={index}
@@ -199,7 +198,11 @@ const Hero = () => {
                 src={`/${image.src}`}
                 alt={image.name}
                 fill
-                className="object-cover object-top"
+                className={
+                  image.src === "park-ave.jpg"
+                    ? "object-contain" // show whole image, letterboxed on black
+                    : "object-cover" // your normal crop
+                }
                 priority={index === 0}
               />
             </div>
