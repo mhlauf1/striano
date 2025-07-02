@@ -65,24 +65,26 @@ const Navbar = () => {
     return {
       logoMain: "text-neutral-100",
       logoSecondary: "text-neutral-300",
-      navLinks: "text-neutral-200 hover:text-white",
+      navLinks: "text-neutral-800 hover:text-black",
       contactButton:
-        "border border-white/30 bg-transparent text-white hover:bg-white/20 hover:text-white",
-      mobileMenuBars: "bg-white",
+        "border border-[#981D1F] text-[#981D1F] hover:bg-[#981D1F] hover:text-white",
+      mobileMenuBars: "bg-neutral-900",
     };
   };
 
   const styles = getTextStyles();
 
   return (
-    <nav
-      className={`fixed w-full top-0 left-0 right-0 z-50 py-3 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md" : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed w-full bg-white shadow-md top-0 left-0 right-0 z-50 py-3 transition-all duration-300">
       <div className="flex px-4 sm:px-8 md:px-12 lg:px-16 justify-between items-center">
         <Link href="/">
-          <Image src="/striano-logo.tif" alt="Logo" height={70} width={150} />
+          <Image
+            src="/logo-no-bg.png"
+            alt="Logo"
+            height={90}
+            width={200}
+            className="md:h-auto md:w-[200px] h-auto w-[150px]"
+          />
         </Link>
 
         {/* Desktop Menu */}

@@ -5,8 +5,13 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-100 border-t border-neutral-100">
       <div className="flex flex-col items-start md:items-center text-center gap-5 px-4 sm:px-8 md:px-12 lg:px-16 py-10 md:py-12">
-        <Image src="/striano-logo.tif" alt="Logo" height={70} width={150} />
-
+        <Image
+          src="/logo-no-bg.png"
+          alt="Logo"
+          height={90}
+          width={200}
+          className="md:h-auto md:w-[200px] h-auto w-[150px]"
+        />
         <div className="flex flex-col items-start  md:flex-row gap-3 md:gap-5 text-neutral-600">
           <Link
             href="/"
