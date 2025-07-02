@@ -185,7 +185,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="flex md:w-1/2 w-full h-[500px] md:h-[75vh] relative rounded-md overflow-hidden"
+          className="flex md:w-1/2 w-full h-[500px] md:h-[80vh] relative rounded-md overflow-hidden"
         >
           {/* Images */}
           {images.map((image, index) => (
@@ -199,7 +199,7 @@ const Hero = () => {
                 src={`/${image.src}`}
                 alt={image.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority={index === 0}
               />
             </div>
