@@ -972,6 +972,18 @@ export const projects: Project[] = [
         category: PROJECT_CATEGORIES.CORPORATE,
         featured: false,
     },
+    {
+        id: 161,
+        name: "Verizon LL97 Mechanical Upgrades, 360 Bridge St., Brooklyn, NY",
+        category: PROJECT_CATEGORIES.SPECIALTY,
+        featured: false,
+    },
+    {
+        id: 162,
+        name: "Verizon LL97 Mechanical Upgrades, 221 E. 37th St. & 240 E. 38th St., New York, NY",
+        category: PROJECT_CATEGORIES.SPECIALTY,
+        featured: false,
+    },
     ...maintenanceProjects,
 ].sort((a, b) => a.name.localeCompare(b.name));
 

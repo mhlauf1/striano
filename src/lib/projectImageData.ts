@@ -106,8 +106,8 @@ const projectsWithGallery = [
         name: "Telx, 111 8th Ave",
         year: "2022",
         category: PROJECT_CATEGORIES.DATA_CENTERS,
-        src: "telx.jpg",
-        gallery: ["telx.jpg"],
+        src: "telx.png",
+        gallery: ["telx.png"],
         featured: false,
         hasGallery: true
     },
