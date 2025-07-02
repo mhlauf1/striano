@@ -93,7 +93,7 @@ const WhatWeDo = () => {
                   src="/tiffany-wed.jpg"
                   width={800}
                   height={800}
-                  className="w-full rounded-md object-cover h-[700px]"
+                  className="w-full rounded-md  object-cover h-[750px]"
                   priority
                 />
               </div>

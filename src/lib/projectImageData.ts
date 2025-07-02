@@ -143,7 +143,7 @@ const projectsWithGallery = [
     },
     {
         id: 12,
-        name: "Major League Baseball (MLB) Headquarters, 245 Park Ave.",
+        name: "Major League Baseball Headquarters, 245 Park Ave.",
         year: "2022",
         category: PROJECT_CATEGORIES.CORPORATE,
         src: "mlb.jpg",
@@ -151,6 +151,7 @@ const projectsWithGallery = [
         featured: false,
         hasGallery: true
     },
+
 ];
 
 

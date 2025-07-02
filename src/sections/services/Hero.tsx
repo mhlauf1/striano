@@ -31,7 +31,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-36 pb-16 md:pb-36 bg-gradient-to-b from-[#1F1F1F] to-[#151515]">
+    <section className="relative pt-36 pb-16 md:pb-24 bg-gradient-to-b from-[#1F1F1F] to-[#151515]">
       <div className="relative gap-12 z-10 justify-between  px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col md:flex-row items-center">
         <div className="flex w-full md:w-1/2 flex-col">
           {/* Branded accent line */}
@@ -84,7 +84,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={imageVariants}
-          className="w-full md:w-1/2 h-[300px] md:h-[500px] relative rounded-md overflow-hidden"
+          className="w-full md:w-1/2 h-[300px] md:h-[700px] relative rounded-md overflow-hidden"
         >
           <div className="flex flex-col absolute top-2 left-2 gap-1 z-10 p-3 bg-black/30 backdrop-blur-md rounded-md">
             <motion.div

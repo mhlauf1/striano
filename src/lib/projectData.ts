@@ -860,7 +860,7 @@ export const projects: Project[] = [
     },
     {
         id: 141,
-        name: "Major League Baseball Executive Offices, 245 Park Ave.",
+        name: "Major League Baseball Headquarters, 245 Park Ave.",
         category: PROJECT_CATEGORIES.SPECIALTY,
         featured: false,
     },
@@ -940,12 +940,6 @@ export const projects: Project[] = [
         id: 154,
         name: "Tiffany’s 727 5th Ave.",
         category: PROJECT_CATEGORIES.SPECIALTY,
-        featured: false,
-    },
-    {
-        id: 155,
-        name: "Major League Baseball (MLB) Headquarters, 245 Park Ave.",
-        category: PROJECT_CATEGORIES.CORPORATE,
         featured: false,
     },
     {

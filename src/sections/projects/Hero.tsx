@@ -22,9 +22,9 @@ const Hero = () => {
   const images = [
     {
       id: 0,
-      name: "Citi Bank",
+      name: "Citi HQ Bank Branch,",
       src: "citi-main.png",
-      address: "123 Street",
+      address: "388 Greenwich St.",
     },
     {
       id: 1,
