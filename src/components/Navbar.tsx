@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 // Define navigation items array
 const NAV_ITEMS = [
@@ -81,15 +82,7 @@ const Navbar = () => {
     >
       <div className="flex px-4 sm:px-8 md:px-12 lg:px-16 justify-between items-center">
         <Link href="/">
-          <div className="flex items-center">
-            <div className="h-6 w-1 bg-[#981D1F] mr-2"></div>
-            <h2 className="text-md tracking-wide">
-              <span className={`font-semibold ${styles.logoMain}`}>
-                STRIANO
-              </span>
-              <span className={`ml-1 ${styles.logoSecondary}`}>ELECTRIC</span>
-            </h2>
-          </div>
+          <Image src="/striano-logo.tif" alt="Logo" height={70} width={150} />
         </Link>
 
         {/* Desktop Menu */}
