@@ -38,11 +38,7 @@ const floridaProjects: FloridaProject[] = [
   {
     id: "boardwalk",
     name: "Gulf Shore Blvd Boardwalk",
-    gallery: [
-      "/FL-Boardwalk-1.jpg",
-      "/FL-Boardwalk-2.jpg",
-      "/FL-Boardwalk-3.jpg",
-    ],
+    gallery: ["/FL-Boardwalk-1.jpg", "/FL-Boardwalk-2.jpg", "/boardwalk-1.jpg"],
   },
   {
     id: "harbour",
