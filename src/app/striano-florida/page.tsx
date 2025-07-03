@@ -1,13 +1,13 @@
 import React from "react";
 import StrianoFloridaHero from "@/sections/striano-florida/Hero";
-import Florida from "@/sections/striano-florida/Florida";
 import FloridaCTA from "@/sections/striano-florida/FloridaCTA";
+import FloridaProjects from "@/sections/striano-florida/FloridaProjects";
 
 export default function StrianoFlorida() {
   return (
     <main>
       <StrianoFloridaHero />
-      <Florida />
+      <FloridaProjects />
       <FloridaCTA />
     </main>
   );

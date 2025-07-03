@@ -42,8 +42,8 @@ const FloridaCTA = () => {
       {/* Decorative elements */}
       <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-blue-50 opacity-30 blur-3xl"></div>
       <div className="absolute bottom-0 left-10 w-48 h-48 rounded-full bg-[#981D1F]/5 blur-2xl"></div>
-      <div className="mt-8 py-12 md:py-16  rounded-md bg-neutral-50 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
+      <div className="mt-8 py-12 md:py-16  rounded-md bg-neutral-50 px-4 gap-5 lg:gap-8 sm:px-8 md:px-12 lg:px-16 relative z-10">
+        <div className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left column - Text content */}
             <div className="space-y-5">
