@@ -112,7 +112,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-3/5 h-[500px] md:h-[60vh] relative rounded-md"
+          className="w-full md:w-3/5 h-[400px] md:h-[60vh] relative rounded-md"
         >
           {/* Slides */}
           {images.map((slide, idx) => (
