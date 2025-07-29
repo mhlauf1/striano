@@ -96,7 +96,7 @@ const CTA = () => {
             </div>
 
             {/* Right column - Image */}
-            <div className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-xl">
+            <div className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-md overflow-hidden">
               <Image
                 src="/citi-main.png"
                 alt="Striano Electric project"
@@ -104,8 +104,8 @@ const CTA = () => {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
-                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+              <div className="absolute bottom-2 left-2  right-2 ">
+                <div className="px-4 py-2 bg-white rounded-sm">
                   <p className="text-[#981D1F] font-medium">Citigroup HQ</p>
                   <p className="text-sm text-gray-600">388 Greenwich St.</p>
                 </div>

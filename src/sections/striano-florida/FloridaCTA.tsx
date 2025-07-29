@@ -46,15 +46,15 @@ const FloridaCTA = () => {
         <div className="">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left column - Text content */}
-            <div className="space-y-5">
-              <motion.div variants={itemVariants} className="space-y-2">
+            <div className="space-y-6">
+              <motion.div variants={itemVariants} className="space-y-3">
                 <h2
-                  style={{ lineHeight: 1.3 }}
-                  className="text-3xl md:text-4xl font-medium text-gray-900 tracking-tight"
+                  style={{ lineHeight: 1.2, letterSpacing: -0.5 }}
+                  className="text-3xl md:text-4xl font-semibold text-gray-900 tracking-tight"
                 >
                   Ready to elevate your <br /> Florida project?
                 </h2>
-                <p className="text-lg text-gray-600 mt-4">
+                <p className="text-lg md:max-w-xl text-neutral-700 mt-6">
                   Our dedicated Florida team brings Striano&apos;s exceptional
                   standards of electrical excellence to the Sunshine State.
                 </p>
@@ -137,22 +137,19 @@ const FloridaCTA = () => {
             {/* Right column - Image */}
             <motion.div
               variants={itemVariants}
-              className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-xl"
+              className="relative h-64 md:h-full min-h-[300px] md:min-h-[500px] rounded-md overflow-hidden"
             >
               <Image
-                src="/FL-Harbour-1.jpg"
+                src="/fl-naples-garden-2.png"
                 alt="Striano Electric Florida project"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-2  left-2  right-2">
-                <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
-                  <p className="text-[#981D1F] font-medium">Harbour Lights</p>
-                  <p className="text-sm text-gray-600">
-                    Gulf Shore Blvd Service Rebuild
-                  </p>
+                <div className="px-4 py-2 bg-white rounded-sm">
+                  <p className="text-[#981D1F] font-medium">Naples Garden</p>
+                  <p className="text-sm text-neutral-600">FL Naples Garden</p>
                 </div>
               </div>
             </motion.div>

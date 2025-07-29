@@ -32,14 +32,14 @@ const Hero = () => {
 
   return (
     <section className="relative pt-36 pb-16 md:pb-24 bg-gradient-to-b from-[#1F1F1F] to-[#151515]">
-      <div className="relative gap-12 z-10 justify-between  px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col md:flex-row items-center">
+      <div className="relative gap-12 z-10 justify-between  px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col md:flex-row items-center">
         <div className="flex w-full md:w-1/2 flex-col">
           {/* Branded accent line */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "120px" }}
+            animate={{ width: "220px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="h-1 bg-[#981D1F]"
+            className="h-1 bg-[#981D1F] mb-2"
           ></motion.div>
 
           {/* Subtitle with subtle left animation */}
@@ -48,8 +48,8 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-neutral-100 text-xs mt-4 uppercase "
-            style={{ letterSpacing: 1 }}
+            className="text-neutral-100 font-medium text-xs mt-4 uppercase "
+            style={{ letterSpacing: 2 }}
           >
             Specialized Solutions. Superior Service.
           </motion.p>
@@ -60,8 +60,8 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            style={{ lineHeight: 1.25 }}
-            className="text-3xl  md:text-4xl mb-2 md:mb-4 lg:text-5xl mt-2 md:mt-3 text-white font-medium md:max-w-3xl tracking-tight"
+            style={{ lineHeight: 1.1 }}
+            className="text-3xl  md:text-4xl mb-2 md:mb-5 lg:text-5xl mt-3 text-white font-semibold md:max-w-3xl tracking-tight"
           >
             Engineering Power Solutions, Delivering Critical Results
           </motion.h1>
@@ -73,7 +73,7 @@ const Hero = () => {
             animate="visible"
             variants={textVariants}
             style={{ lineHeight: 1.35 }}
-            className="text-md md:text-lg font-medium w-full md:max-w-2xl text-gray-100"
+            className="text-md md:text-xl font-medium w-full md:max-w-2xl text-gray-100"
           >
             Striano Electric Co., Inc. has the knowledge and experience
             necessary to perform effectively on any size project.
@@ -112,7 +112,7 @@ const Hero = () => {
             </motion.p>
           </div>
           <div className="absolute bottom-2 z-20 left-2 right-2">
-            <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+            <div className="px-4 py-2 bg-white rounded-sm ">
               <p className="text-[#981D1F] font-medium"> Tiffany&apos;s</p>
               <p className="text-sm text-gray-600">
                 727 5th Ave., New York, NY.

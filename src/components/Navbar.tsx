@@ -168,7 +168,7 @@ const Navbar = () => {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="px-6 py-2 rounded border border-[#981D1F] text-white hover:bg-[#981D1F] hover:text-white transition-colors duration-200 text-center mt-4 block"
+                  className="px-6 py-2 rounded border border-[#981D1F] text-white hover:bg-[#981D1F] hover:text-white transition-colors duration-300 text-center mt-4 block"
                 >
                   Contact
                 </Link>

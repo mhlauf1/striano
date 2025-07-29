@@ -73,7 +73,7 @@ const ServiceItem = ({
       className="bg-white rounded-md overflow-hidden group hover:shadow-md transition-all duration-300 flex flex-col h-full"
     >
       <div className="px-4 py-8 pb-6 flex-grow">
-        <h3 className="text-lg tracking-tight md:text-xl mb-2">{title}</h3>
+        <h3 className="text-lg font-medium md:text-xl mb-2">{title}</h3>
         <p className="text-neutral-700 text-md">{description}</p>
       </div>
       <div className="relative h-[220px] w-full">
@@ -124,7 +124,7 @@ const Services = () => {
   };
 
   return (
-    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 py-20 md:py-24 bg-neutral-50">
+    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 py-20 md:py-24 bg-neutral-50">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -138,8 +138,8 @@ const Services = () => {
             className="absolute left-0 top-0 w-1 bg-[#981D1F]"
           ></motion.div>
           <p
-            style={{ letterSpacing: 1 }}
-            className="text-xs uppercase  text-[#981D1F]"
+            style={{ letterSpacing: 2 }}
+            className="text-xs uppercase font-medium text-[#981D1F]"
           >
             Our Services
           </p>

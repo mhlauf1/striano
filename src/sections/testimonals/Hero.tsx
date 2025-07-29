@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <section className="relative bg-gradient-to-b from-[#1F1F1F] to-[#151515] border-b pb-8 md:pb-12 pt-16 md:pt-24">
-      <div className=" px-4 sm:px-8 md:px-12 lg:px-16 mt-[10vh]  mx-auto">
+      <div className=" px-4 sm:px-8 md:px-12 lg:px-16 mt-[10vh] pb-8  mx-auto">
         {/* Branded accent line */}
         <motion.div
           initial={{ width: 0 }}
@@ -33,8 +33,8 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          className="text-neutral-100 text-xs mt-4 uppercase "
-          style={{ letterSpacing: 1 }}
+          className="text-neutral-100 font-medium text-xs mt-4 uppercase "
+          style={{ letterSpacing: 2 }}
         >
           Client Success Stories
         </motion.p>
@@ -45,7 +45,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={textVariants}
-          className="text-3xl title-line-height font-medium md:text-4xl mb-2 md:mb-3 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
+          className="text-3xl title-line-height font-semibold md:text-4xl mb-2 md:mb-3 lg:text-5xl mt-2 md:mt-3 text-white md:max-w-xl tracking-tight"
         >
           You&apos;re in great company
         </motion.h1>

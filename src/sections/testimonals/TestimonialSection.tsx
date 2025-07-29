@@ -62,17 +62,19 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       initial="hidden"
       animate="visible"
       variants={cardVariants}
-      className="bg-white rounded-lg p-6 shadow-sm"
+      className="bg-white rounded-md border border-neutral-100 p-6 "
     >
       <div className="flex items-center mb-4">
         <div>
-          <h3 className="font-medium text-neutral-900">{testimonial.author}</h3>
-          <p className="text-sm text-neutral-500">
+          <h3 className="font-semibold text-neutral-900">
+            {testimonial.author}
+          </h3>
+          <p className="text-sm text-neutral-600">
             {testimonial.title} at {testimonial.company}
           </p>
         </div>
       </div>
-      <p className="text-neutral-700 mb-4">&quot;{testimonial.quote}&quot;</p>
+      <p className="text-neutral-800 mb-4">&quot;{testimonial.quote}&quot;</p>
     </motion.div>
   );
 };

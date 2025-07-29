@@ -64,22 +64,23 @@ const Hero = () => {
 
   return (
     <section className="relative bg-gradient-to-b pb-12 md:pb-4 pt-12 from-[#000000] to-[#202020]">
-      <div className="relative gap-12 z-10 justify-between pt-24 md:pt-12 p-4 sm:p-8 md:p-16 flex flex-col md:flex-row items-center">
+      <div className="relative gap-12 z-10 justify-between pt-24 md:pt-20 p-4 sm:p-8 md:p-20 flex flex-col md:flex-row items-center">
         <div className="flex flex-col mt-auto justify-between items-start w-full md:w-3/5">
           <div className="flex flex-col justify-between items-start">
             <motion.div
               initial={{ width: 0 }}
-              animate={{ width: "175px" }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="h-1 bg-[#981D1F] mb-4"
+              animate={{ width: "220px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="h-1 bg-[#981D1F] mb-6"
             ></motion.div>
+
             <motion.h1
               initial="hidden"
               animate="visible"
               custom={0}
               variants={textVariants}
               style={{ letterSpacing: -1 }}
-              className="text-3xl sm:text-4xl font-medium lg:text-5xl text-white mb-2 md:mb-3"
+              className="text-3xl sm:text-4xl font-semibold lg:text-5xl text-white mb-2 md:mb-3"
             >
               Striano Portfolio Of Success
             </motion.h1>
@@ -103,7 +104,7 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="flex mt-8 flex-col justify-between items-start gap-2"
           >
-            <h3 className="text-white text-sm uppercase tracking-wider text-md font-normal">
+            <h3 className="text-white text-sm uppercase tracking-widest text-md font-medium">
               Variety Of Business Sectors:
             </h3>
             {/* Business sectors with desktop layout preserved but responsive on mobile */}
@@ -185,7 +186,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          className="flex md:w-1/2 w-full h-[500px] md:h-[80vh] relative rounded-md overflow-hidden"
+          className="flex md:w-1/2 w-full h-[500px] md:h-[80vh] relative rounded-md"
         >
           {images.map((image, index) => (
             <div
@@ -198,11 +199,13 @@ const Hero = () => {
                 src={`/${image.src}`}
                 alt={image.name}
                 fill
-                className={
-                  image.src === "park-ave.jpg"
-                    ? "object-contain" // show whole image, letterboxed on black
-                    : "object-cover" // your normal crop
-                }
+                className={`
+                  rounded-md
+                  ${
+                    image.src === "park-ave.jpg"
+                      ? "object-contain" // show whole image, letterboxed on black
+                      : "object-cover" // your normal crop
+                  }`}
                 priority={index === 0}
               />
             </div>
@@ -220,7 +223,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="absolute bottom-2 left-2 right-2"
             >
-              <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+              <div className="px-4 py-2 bg-white rounded-sm">
                 <p className="text-[#981D1F] font-medium">{image.name}</p>
                 <p className="text-sm text-gray-600">{image.address}</p>
               </div>
@@ -228,12 +231,12 @@ const Hero = () => {
           ))}
 
           {/* Navigation Dots */}
-          <div className="absolute top-4 left-4 flex space-x-2 z-10">
+          <div className="absolute bottom-[-20px] right-0 flex space-x-2 z-20">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImage(index)}
-                className={`size-2 md:size-3 rounded-full ${
+                className={`size-2.5 rounded-full ${
                   index === currentImage ? "bg-white" : "bg-white/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

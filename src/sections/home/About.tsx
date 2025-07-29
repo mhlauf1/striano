@@ -16,7 +16,7 @@ const About = () => {
       y: 0,
       transition: {
         duration: 0.4,
-        ease: "easeOut",
+        ease: "circOut",
       },
     },
   };
@@ -27,7 +27,7 @@ const About = () => {
       height: "100%",
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "circOut",
         delay: 0.1,
       },
     },
@@ -39,13 +39,13 @@ const About = () => {
       opacity: 1,
       transition: {
         duration: 0.7,
-        ease: "easeOut",
+        ease: "circOut",
       },
     },
   };
 
   return (
-    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 py-12 md:py-24">
+    <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 py-12 md:py-24">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
         <motion.div
           ref={textRef}
@@ -60,12 +60,12 @@ const About = () => {
               className="absolute left-0 top-0 w-1 bg-[#981D1F]"
             ></motion.div>
             <p
-              style={{ letterSpacing: 1 }}
-              className="text-xs uppercase  text-[#981D1F]"
+              className="text-xs uppercase font-medium mb-1 md:mb-3 text-[#981D1F]"
+              style={{ letterSpacing: 2 }}
             >
               About Us
             </p>
-            <h2 className="text-2xl font-medium md:text-3xl text-neutral-800  mt-1 md:mt-2 mb-2 md:mb-3">
+            <h2 className="text-2xl font-semibold md:text-3xl text-neutral-800  mt-1 md:mt-2 mb-3 md:mb-5">
               Trusted Electrical Contractor in NYC
             </h2>
           </div>
@@ -74,8 +74,8 @@ const About = () => {
               initial={{ opacity: 0 }}
               animate={isTextInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              style={{ lineHeight: 1.55 }}
-              className="text-neutral-700 text-md  pl-6"
+              style={{ lineHeight: 1.6 }}
+              className="text-neutral-700 text-md md:text-lg md:w-[95%] pl-6"
             >
               Striano Electric Co., Inc. is an I.B.E.W. full service contractor
               providing electrical and telecommunications installations, repairs
@@ -96,7 +96,7 @@ const About = () => {
             initial="hidden"
             animate={isImageInView ? "visible" : "hidden"}
             variants={imageVariants}
-            className="relative rounded-md overflow-hidden h-[400px] shadow-lg"
+            className="relative rounded-md overflow-hidden h-[400px]"
           >
             <Image
               src="/tiff2.JPEG"
@@ -105,8 +105,8 @@ const About = () => {
               className="object-cover"
               priority
             />
-            <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
-              <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+            <div className="absolute bottom-2  left-2  right-2">
+              <div className="px-4 py-2 bg-white rounded-sm ">
                 <p className="text-[#981D1F] font-medium"> Tiffany</p>
                 <p className="text-sm text-gray-600">
                   Tiffany flagship store complete renovation.

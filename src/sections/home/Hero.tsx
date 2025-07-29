@@ -7,20 +7,20 @@ import Link from "next/link";
 
 const Hero = () => {
   const textVariants = {
-    hidden: { opacity: 0, x: -10 },
+    hidden: { opacity: 0, y: 10 },
     visible: (i: number) => ({
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         delay: 0.1 + i * 0.1,
-        duration: 0.5,
-        ease: "easeOut",
+        duration: 0.3,
+        ease: "circOut",
       },
     }),
   };
 
   return (
-    <section className="relative h-screen rounded-md">
+    <section className="relative h-[95vh] rounded-md">
       <div className="absolute inset-0">
         <Image
           src="/hero-home-bg.png"
@@ -31,27 +31,22 @@ const Hero = () => {
           quality={100}
           sizes="100vw"
         />
-        {/* Gradient overlay */}
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div> */}
       </div>
-
-      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-16  flex flex-col justify-end pb-24">
+      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-20  flex flex-col justify-end pb-24">
         <div>
-          {/* Branded accent line */}
+          {/* Heading with subtle left animation */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "175px" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            animate={{ width: "220px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="h-1 bg-[#981D1F] mb-6"
           ></motion.div>
-
-          {/* Heading with subtle left animation */}
           <motion.h1
             custom={0}
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="text-3xl md:max-w-[28ch] mb-2 md:mb-4 font-medium title-line-height md:text-4xl lg:text-5xl text-white tracking-tight"
+            className="text-4xl max-w-[18ch] mb-4  font-semibold  md:text-4xl lg:text-5xl text-white tracking-tight"
           >
             Striano Electric Powers New York City&apos;s Most Critical
             Infrastructure
@@ -64,7 +59,7 @@ const Hero = () => {
             animate="visible"
             variants={textVariants}
             style={{ lineHeight: 1.35 }}
-            className="text-md md:text-lg title-line-subheight max-w-xl font-medium w-full text-neutral-100"
+            className="text-md md:text-xl title-line-subheight  max-w-md md:max-w-xl font-medium w-full text-neutral-50"
           >
             Premier electrical solutions for New York&apos;s leading
             institutions, delivered on time and on budget.
@@ -76,7 +71,7 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             variants={textVariants}
-            className="flex flex-col md:flex-row gap-4 pt-6 md:pt-8"
+            className="flex flex-col md:flex-row gap-4 pt-8 md:pt-10"
           >
             <Link className="w-full md:w-auto" href="/projects">
               <PrimaryButton>View Projects</PrimaryButton>

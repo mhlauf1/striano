@@ -79,7 +79,7 @@ const Projects = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
-            className="flex mt-4 md:mt-8  px-4 sm:px-8 md:px-12 lg:px-16  flex-col md:flex-row gap-x-36 justify-between"
+            className="flex mt-4 md:mt-8  px-4 sm:px-8 md:px-12 lg:px-20  flex-col md:flex-row gap-x-36 justify-between"
           >
             <div className="flex flex-col flex-1 justify-between items-start max-w-3xl">
               <div className="relative pl-6">
@@ -88,12 +88,12 @@ const Projects = () => {
                   className="absolute left-0 top-0 w-1 bg-[#981D1F]"
                 ></motion.div>
                 <p
-                  style={{ letterSpacing: 1 }}
-                  className="text-xs uppercase  text-white"
+                  style={{ letterSpacing: 2 }}
+                  className="text-xs uppercase font-medium  text-white"
                 >
                   Portfolio of Success
                 </p>
-                <h2 className="text-2xl font-medium md:text-3xl text-neutral-100 mt-1 md:mt-2">
+                <h2 className="text-2xl font-semibold md:text-3xl text-neutral-100 mt-1 md:mt-2">
                   Projects we&apos;ve worked on
                 </h2>
               </div>
@@ -117,9 +117,7 @@ const Projects = () => {
                     className="flex items-center gap-3"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-[#981D1F]"></div>
-                    <p className="font-medium text-md md:text-lg text-white">
-                      {item}
-                    </p>
+                    <p className="font-medium md:text-lg text-white">{item}</p>
                   </motion.div>
                 ))}
               </div>

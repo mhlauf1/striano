@@ -251,7 +251,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="mt-12 md:mt-16 pb-16 px-4 sm:px-8 md:px-12 lg:px-16">
+    <div className="mt-12 md:mt-16 pb-16 px-4 sm:px-8 md:px-12 lg:px-20">
       <section className="w-full bg-inherit relative">
         {/* Category Dropdown */}
         <div className="relative w-full z-20 max-w-xl mb-6">

@@ -42,7 +42,7 @@ const WhatWeDo = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             variants={variants}
-            className="px-4 sm:px-8 md:px-12 lg:px-16  w-full"
+            className="px-4 sm:px-8 md:px-12 lg:px-20  w-full"
           >
             <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
               <div className="w-full">
@@ -52,8 +52,8 @@ const WhatWeDo = () => {
                     className="absolute left-0 top-0 w-1 bg-white"
                   ></motion.div>
                   <p
-                    style={{ letterSpacing: 1 }}
-                    className="text-xs uppercase text-white"
+                    style={{ letterSpacing: 2 }}
+                    className="text-xs font-medium uppercase text-white"
                   >
                     What We Do
                   </p>
@@ -81,7 +81,7 @@ const WhatWeDo = () => {
               {/* Right Image - Only on desktop */}
               <div className="hidden relative lg:block lg:w-full self-start">
                 <div className="absolute bottom-2 left-2 right-2">
-                  <div className="px-4 py-2 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm">
+                  <div className="px-4 py-2 bg-white rounded-sm">
                     <p className="text-[#981D1F] font-medium"> Tiffany</p>
                     <p className="text-sm text-gray-600">
                       Tiffany flagship store complete renovation.
