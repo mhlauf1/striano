@@ -323,7 +323,7 @@ const Florida = () => {
                   style={{ width: `${100 / imagesPerView}%` }}
                   className="flex-shrink-0 px-2 py-1"
                 >
-                  <div className="relative rounded-md overflow-hidden h-[400px] md:h-[650px] shadow-lg">
+                  <div className="relative rounded-md overflow-hidden h-[300px] md:h-[650px] shadow-lg">
                     {/* Image */}
                     <Image
                       src={`/${data.src}`}
