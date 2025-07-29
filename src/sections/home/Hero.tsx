@@ -31,8 +31,9 @@ const Hero = () => {
           quality={100}
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-black/50 md:bg-black/10"></div>
       </div>
-      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-20  flex flex-col justify-end pb-24">
+      <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-20  flex flex-col justify-end pb-16 md:pb-24">
         <div>
           {/* Heading with subtle left animation */}
           <motion.div
