@@ -14,8 +14,8 @@ const Contact = () => {
   };
 
   return (
-    <section className=" mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-      <div className="flex md:flex-row flex-col   md:px-12 rounded-md py-8 sm:py-16 md:py-24  mt-8 bg-neutral-50 gap-12 md:gap-16">
+    <section className="">
+      <div className="flex md:flex-row flex-col  px-4 sm:px-8 md:px-20 rounded-md py-8 sm:py-16 md:py-24  pt-[12vh] md:pt-[16vh]  mt-8 bg-white0 gap-12 md:gap-16">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -35,9 +35,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="space-y-6 mt-8 md:mt-12">
+          <div className="space-y-4 md:space-y-6 mt-6 md:mt-12">
             <div className="flex items-start">
-              <div className="flex-shrink-0 mt-1 text-[#981D1F] mr-3">
+              <div className="flex-shrink-0 mt-1 text-[#981D1F] mr-2 md:mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="size-4 md:size-5"
@@ -62,7 +62,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-start">
-              <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-3">
+              <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-2 md:mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="size-4 md:size-5"
@@ -81,7 +81,7 @@ const Contact = () => {
             </div>
 
             <div className="flex items-start">
-              <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-3">
+              <div className="flex-shrink-0 text-[#981D1F] mt-1 mr-2 md:mr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="size-4 md:size-5"
