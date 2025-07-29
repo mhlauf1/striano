@@ -115,7 +115,7 @@ const Hero = () => {
             <div className="px-4 py-2 bg-white rounded-sm ">
               <p className="text-[#981D1F] font-medium"> Tiffany&apos;s</p>
               <p className="text-sm text-gray-600">
-                727 5th Ave., New York, NY.
+                727 5th Ave., New York, NY
               </p>
             </div>
           </div>

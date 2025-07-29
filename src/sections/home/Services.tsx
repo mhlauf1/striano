@@ -91,7 +91,7 @@ const Services = () => {
                     {" "}
                     Major League Baseball
                   </p>
-                  <p className="text-sm text-gray-600">MLB All-star game</p>
+                  <p className="text-sm text-gray-600">MLB 245 Park Ave</p>
                 </div>
               </div>
             </motion.div>

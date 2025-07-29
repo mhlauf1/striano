@@ -149,7 +149,9 @@ const FloridaCTA = () => {
               <div className="absolute bottom-2  left-2  right-2">
                 <div className="px-4 py-2 bg-white rounded-sm">
                   <p className="text-[#981D1F] font-medium">Naples Garden</p>
-                  <p className="text-sm text-neutral-600">FL Naples Garden</p>
+                  <p className="text-sm text-neutral-600">
+                    Naples Botanical Garden
+                  </p>
                 </div>
               </div>
             </motion.div>

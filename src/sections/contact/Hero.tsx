@@ -35,7 +35,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="space-y-4 md:space-y-6 mt-6 md:mt-12">
+          <div className="space-y-4 md:space-y-6 mt-6">
             <div className="flex items-start">
               <div className="flex-shrink-0 mt-1 text-[#981D1F] mr-2 md:mr-3">
                 <svg

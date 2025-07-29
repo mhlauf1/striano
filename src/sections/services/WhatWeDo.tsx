@@ -84,7 +84,7 @@ const WhatWeDo = () => {
                   <div className="px-4 py-2 bg-white rounded-sm">
                     <p className="text-[#981D1F] font-medium"> Tiffany</p>
                     <p className="text-sm text-gray-600">
-                      Tiffany flagship store complete renovation.
+                      Tiffany flagship store complete renovation
                     </p>
                   </div>
                 </div>

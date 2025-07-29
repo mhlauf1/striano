@@ -24,27 +24,28 @@ const Hero = () => {
   const images = [
     {
       id: 0,
-      name: "Bigham Jewelers",
-      src: "bigham-jewelers.jpg",
-      address: "123 Ocean Blvd, Miami, FL",
+      name: "Naples Botanical Garden",
+      src: "naples-botanical-garden3.jpg",
     },
     {
       id: 1,
-      name: "AC Hotel Naples",
-      src: "fl-hotel-naples.jpg",
-      address: "500 Design Dr, West Palm Beach, FL",
+      name: "Bigham Jewelers",
+      src: "bigham-jewelers.jpg",
     },
     {
       id: 2,
-      name: "Shadow Wood",
-      src: "shadow-wood.jpg",
-      address: "40 Gulf Shore Blvd, Naples, FL",
+      name: "AC Hotel Naples",
+      src: "fl-hotel-naples.jpg",
     },
     {
       id: 3,
+      name: "Shadow Wood",
+      src: "shadow-wood.jpg",
+    },
+    {
+      id: 4,
       name: "Porshce",
       src: "porshce-11.jpg",
-      address: "200 Bay St, Tampa, FL",
     },
   ];
   const [currentImage, setCurrentImage] = useState(0);
@@ -112,7 +113,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-          className="w-full md:w-3/5 h-[400px] md:h-[60vh] relative rounded-md"
+          className="w-full md:w-3/5 h-[300px] md:h-[60vh] relative rounded-md"
         >
           {/* Slides */}
           {images.map((slide, idx) => (
@@ -140,8 +141,8 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="absolute bottom-2 left-2 right-2"
               >
-                <div className="px-5 py-3 bg-white rounded-sm">
-                  <p className="text-[#981D1F] text-lg font-semibold">
+                <div className="px-3 md:px-5 py-3 bg-white rounded-sm">
+                  <p className="text-[#981D1F] md:text-lg font-semibold">
                     {slide.name}
                   </p>
                   {/* <p className="text-sm text-gray-600">{slide.address}</p> */}

@@ -18,7 +18,7 @@ const floridaProjects: FloridaProject[] = [
     gallery: [
       "/FL-marriott-1.jpg",
       "/FL-marriott-2.jpg",
-      "/ac-hotel.jpg",
+      "/fl-hotel-naples.jpg",
       "/ac-hotel-2.jpeg",
       "/ac-hotel-3.jpeg",
     ],
@@ -28,6 +28,7 @@ const floridaProjects: FloridaProject[] = [
     name: "Porsche Studio",
     gallery: [
       "/porsche-1.JPG",
+      "/porsche-11.jpg",
       "/porsche-2.JPG",
       "/porsche-3.JPG",
       "/porsche-4.JPG",
@@ -40,6 +41,41 @@ const floridaProjects: FloridaProject[] = [
     name: "Gulf Shore Blvd Boardwalk",
     gallery: ["/FL-Boardwalk-1.jpg", "/FL-Boardwalk-2.jpg", "/boardwalk-1.jpg"],
   },
+
+  {
+    id: "bigham",
+    name: "Bigham Jewelers",
+    gallery: ["/bigham-jewelers.jpg", "/bigham-jewelers-2.jpg"],
+  },
+  {
+    id: "shadow-wood",
+    name: "Shadow Wood CC",
+    gallery: ["/shadow-wood.jpg", "/shadow-wood-2.jpg"],
+  },
+  {
+    id: "zoo",
+    name: "Naples Zoo",
+    gallery: ["/fl-naples-zoo.jpg"],
+  },
+  {
+    id: "garden",
+    name: "Naples Botanical Garden",
+    gallery: [
+      "/fl-naples-garden.jpg",
+      "/fl-naples-garden-2.png",
+      "/naples-botanical-garden3.jpg",
+    ],
+  },
+  {
+    id: "edision",
+    name: "The Edision",
+    gallery: ["/the-edision.jpg"],
+  },
+  {
+    id: "olympia",
+    name: "Olympia Medical Center",
+    gallery: ["/fl-medical.jpg"],
+  },
   {
     id: "harbour",
     name: "Harbour",
@@ -50,6 +86,11 @@ const floridaProjects: FloridaProject[] = [
       "/FL-Harbour-4.jpg",
     ],
   },
+  {
+    id: "church",
+    name: "Hope Lutheran Church, Bonita Springs",
+    gallery: ["/hope-church.png"],
+  },
 ];
 
 export default function FloridaProjects() {
@@ -59,7 +100,7 @@ export default function FloridaProjects() {
 
   return (
     <div className="pt-12 pb-6 md:pb-12 md:pt-24 px-4 sm:px-8 md:px-12 lg:px-16">
-      <div className="flex flex-col  gap-4 md:items-start items-center justify-between ">
+      <div className="flex flex-col  gap-4 items-start justify-between ">
         {/* Animated Title */}
         <motion.h2
           key={activeProject?.id || "empty"}
@@ -120,7 +161,7 @@ export default function FloridaProjects() {
                 alt={`${activeProject.name} ${idx + 1}`}
                 height={1000}
                 width={1000}
-                className="object-cover rounded-md"
+                className="object-cover flex flex-1 h-full rounded-md"
               />
             </div>
           ))}
