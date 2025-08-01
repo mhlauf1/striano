@@ -1,9 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { PrimaryButton } from "@/components/Button";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -13,14 +19,42 @@ const Contact = () => {
     },
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        setSuccess(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Network error.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
-    <section className="">
-      <div className="flex md:flex-row flex-col  px-4 sm:px-8 md:px-20 rounded-md py-8 sm:py-16 md:py-24  pt-[12vh] md:pt-[16vh]  mt-8 bg-white0 gap-12 md:gap-16">
+    <section>
+      <div className="flex md:flex-row flex-col px-4 sm:px-8 md:px-20 rounded-md py-8 sm:py-16 md:py-24 pt-[12vh] md:pt-[16vh] mt-8 bg-white0 gap-12 md:gap-16">
+        {/* Left Column - Info */}
         <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="flex flex-col w-full md:w-1/2  md:pr-8"
+          className="flex flex-col w-full md:w-1/2 md:pr-8"
         >
           <div className="md:mb-10">
             <p className="text-xs uppercase tracking-wider text-[#981D1F] font-medium mb-2">
@@ -113,53 +147,73 @@ const Contact = () => {
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          className="flex flex-col w-full md:w-1/2  space-y-6"
+          className="flex flex-col w-full md:w-1/2 space-y-6"
         >
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
-            />
-          </div>
+          {success && (
+            <div className="bg-green-100 text-green-800 p-4 rounded-lg mb-6">
+              Thank you! We'll get back to you shortly.
+            </div>
+          )}
 
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
-            />
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
+              />
+            </div>
 
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              rows={8}
-              placeholder="Type your message..."
-              className="w-full border rounded-md border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
-            ></textarea>
-          </div>
-          <div className="pt-2">
-            <PrimaryButton>Submit</PrimaryButton>
-          </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows={8}
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Type your message..."
+                className="w-full border rounded-md border-gray-300 px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#981D1F] focus:border-[#981D1F]"
+              ></textarea>
+            </div>
+
+            <div className="pt-2">
+              <PrimaryButton type="submit" disabled={submitting}>
+                {submitting ? "Submitting…" : "Submit"}
+              </PrimaryButton>
+            </div>
+          </form>
         </motion.div>
       </div>
     </section>

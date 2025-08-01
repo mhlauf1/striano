@@ -235,7 +235,7 @@ export const projects: Project[] = [
     },
     {
         id: 33,
-        name: "New York Stock Exchange, 11 Wall St., 8th Fl, Demo",
+        name: "NYSE, 11 Wall St., 8th Fl Commodities Exchange Coffee Lab",
         category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },
@@ -988,6 +988,12 @@ export const projects: Project[] = [
         id: 163,
         name: "Barnard College Milstein Center",
         category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
+        featured: false,
+    },
+    {
+        id: 164,
+        name: "NYSE, 11 Wall St., B1 Vault Conversion to Speak Easy",
+        category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },
     ...maintenanceProjects,
