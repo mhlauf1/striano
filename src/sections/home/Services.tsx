@@ -59,7 +59,7 @@ const Services = () => {
   };
 
   return (
-    <section className="flex flex-col pb-20 px-4 sm:px-8 md:px-12 lg:px-20 md:pb-20 pt-12">
+    <section className="flex flex-col pb-20 px-4 sm:px-8 md:px-12 lg:px-20 md:pb-20 pt-6 md:pt-12">
       {/* Top content area with two columns */}
       <motion.div
         ref={ref}
