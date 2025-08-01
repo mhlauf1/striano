@@ -27,9 +27,8 @@ export async function POST(req: Request) {
         await resend.emails.send({
             from: "Striano Electric <info@strianoelectric.com>",
             to: [
-                // "VStriano@strianoelectric.com",
-                // "LGallagher@strianoelectric.com"
-                "mlaufersweiler@gmail.com"
+                "VStriano@strianoelectric.com",
+                "LGallagher@strianoelectric.com"
             ],
             subject: `New Contact Form Submission: ${name}`,
             replyTo: email,
