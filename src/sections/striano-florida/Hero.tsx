@@ -45,7 +45,7 @@ const Hero = () => {
     {
       id: 4,
       name: "Porshce",
-      src: "porshce-11.jpg",
+      src: "porsche-11.jpg",
     },
   ];
   const [currentImage, setCurrentImage] = useState(0);
