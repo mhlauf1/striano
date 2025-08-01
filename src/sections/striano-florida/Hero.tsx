@@ -44,7 +44,7 @@ const Hero = () => {
     },
     {
       id: 4,
-      name: "Porshce",
+      name: "Porsche",
       src: "porsche-11.jpg",
     },
   ];

@@ -2,37 +2,37 @@ import { Project, PROJECT_CATEGORIES } from './types';
 
 export const maintenanceProjects: Project[] = [
     {
-        id: 150,
+        id: 800,
         name: "Barclays Capital, 745 7th Ave.",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
     {
-        id: 151,
+        id: 801,
         name: "JP Morgan Chase Branch Maintenance, Various Locations, NY, NJ, CT, Westchester County, Putnam County",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
     {
-        id: 152,
+        id: 802,
         name: "Ford Foundation Electrical Maintenance, 320 E. 43rd St., NY, NY",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
     {
-        id: 153,
+        id: 803,
         name: "UJA Federation of NY, 130 E. 59th St., NY, NY",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
     {
-        id: 154,
+        id: 804,
         name: "Willis Towers Watson, 200 Liberty St., NY, NY",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
     },
     {
-        id: 155,
+        id: 805,
         name: "Wells Fargo Branch Maintenance, Various Locations",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         featured: false,
@@ -982,6 +982,12 @@ export const projects: Project[] = [
         id: 162,
         name: "Verizon LL97 Mechanical Upgrades, 221 E. 37th St. & 240 E. 38th St., New York, NY",
         category: PROJECT_CATEGORIES.SPECIALTY,
+        featured: false,
+    },
+    {
+        id: 163,
+        name: "Barnard College Milstein Center",
+        category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
         featured: false,
     },
     ...maintenanceProjects,

@@ -151,6 +151,16 @@ const projectsWithGallery = [
         featured: false,
         hasGallery: true
     },
+    {
+        id: 13,
+        name: "Barnard College Milstein Center",
+        year: "2022",
+        category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
+        src: "Barnard-1.jpg",
+        gallery: ["Barnard-1.jpg", "Barnard-2.jpg", "Barnard-3.jpg", "Barnard-4.jpg"],
+        featured: false,
+        hasGallery: true
+    },
 
 ];
 
