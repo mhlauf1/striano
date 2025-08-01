@@ -22,6 +22,16 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
+        id: 1,
+        name: "Tiffany & Co.",
+        year: "2022",
+        category: PROJECT_CATEGORIES.CORPORATE,
+        src: "/tiff-1.JPEG",
+        gallery: ["tiffany-1.jpg", "tiffany-2.jpg", "tiff1.JPEG", "tiffany-wed.jpg", "tiff2.JPEG", "tiff3.JPEG", "tiff4.JPEG", "tiff5.JPEG", "tiff6.JPEG"],
+        featured: false,
+        hasGallery: true
+    },
+    {
         id: 2,
         name: "Morgan Stanley, 1585 Broadway, Various Projects/Multiple Floor Fit-Outs",
         year: "2022",

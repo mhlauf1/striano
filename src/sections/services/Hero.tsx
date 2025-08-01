@@ -84,7 +84,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={imageVariants}
-          className="w-full md:w-1/2 h-[300px] md:h-[700px] relative rounded-md overflow-hidden"
+          className="w-full md:w-1/2 h-[300px] md:h-[650px] relative rounded-md overflow-hidden"
         >
           <div className="flex flex-col absolute top-2 left-2 gap-1 z-10 p-3 bg-black/30 backdrop-blur-md rounded-md">
             <motion.div
@@ -113,15 +113,16 @@ const Hero = () => {
           </div>
           <div className="absolute bottom-2 z-20 left-2 right-2">
             <div className="px-4 py-2 bg-white rounded-sm ">
-              <p className="text-[#981D1F] font-medium"> Tiffany&apos;s</p>
-              <p className="text-sm text-gray-600">
-                727 5th Ave., New York, NY
+              <p className="text-[#981D1F] font-medium">
+                {" "}
+                New Your Stock Exchange
               </p>
+              <p className="text-sm text-gray-600">NYSE, 11 Wall St.</p>
             </div>
           </div>
           <Image
             alt="Striano Electric"
-            src="/tiffany-2.jpg"
+            src="/NYSE.jpg"
             fill
             className="object-cover"
             priority
