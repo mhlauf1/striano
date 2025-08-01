@@ -151,7 +151,7 @@ const Contact = () => {
         >
           {success && (
             <div className="bg-green-100 text-green-800 p-4 rounded-lg mb-6">
-              Thank you! We'll get back to you shortly.
+              Thank you! We&apos;ll get back to you shortly.
             </div>
           )}
 
