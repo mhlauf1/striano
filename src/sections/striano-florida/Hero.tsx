@@ -80,7 +80,7 @@ const Hero = () => {
             custom={0}
             variants={textVariants}
             className="text-4xl sm:text-4xl lg:text-5xl font-semibold text-center md:text-start max-w-[16ch] text-neutral-800 mb-1 md:mb-2"
-            style={{ letterSpacing: -1.25, lineHeight: 1.1 }}
+            style={{ letterSpacing: -1.24, lineHeight: 1.1 }}
           >
             Premier Electrical Solutions in Florida
           </motion.h1>
