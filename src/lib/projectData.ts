@@ -992,7 +992,7 @@ export const projects: Project[] = [
     },
     {
         id: 164,
-        name: "NYSE, 11 Wall St., B1 Vault Conversion to Speak Easy",
+        name: "NYSE, 11 Wall St., B1 Vault Level Speak Easy",
         category: PROJECT_CATEGORIES.FINANCIAL,
         featured: false,
     },

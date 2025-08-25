@@ -163,11 +163,11 @@ const projectsWithGallery = [
     },
     {
         id: 14,
-        name: "NYSE, 11 Wall St., B1 Vault Conversion to Speak Easy",
+        name: "NYSE, 11 Wall St., B1 Vault Level Speak Easy",
         year: "2022",
         category: PROJECT_CATEGORIES.FINANCIAL,
         src: "nyse-1.jpg",
-        gallery: ["nyse-1.jpg", "nyse-2.jpg", "nyse-3.jpg", "nyse-4.jpg"],
+        gallery: ["nyse-1.jpg", "nyse-2.jpg", "nyse-3.jpg", "nyse-4.jpg", "nyse-5.jpg", "nyse-6.jpg", "nyse-7.jpg"],
         featured: false,
         hasGallery: true
     },
