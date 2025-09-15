@@ -21,34 +21,46 @@ const Hero = () => {
   const images = [
     {
       id: 0,
-      name: "Citi HQ Bank Branch",
-      src: "citi-main.png",
-      address: "388 Greenwich St.",
-    },
-    {
-      id: 1,
-      name: "Tiffany",
-      src: "tiffany-1.jpg",
-      address: "727 5th Ave., New York, NY.",
-    },
-    {
-      id: 2,
       name: "The Ford Foundation",
       src: "ford-foundation.png",
       address: "320 E. 43rd St., New York, NY.",
     },
     {
-      id: 3,
-      name: "Barclays Capital",
-      src: "bac-2.jpeg",
-      address: "745 7th Ave., New York, NY.",
+      id: 1,
+      name: "JP Morgan Chase Global Headquarters",
+      src: "park-ave.jpg",
+      address: "270 Park Ave - High Rise Office Space",
     },
-    // move JPMC to be last
+    {
+      id: 2,
+      name: "Major League Baseball",
+      src: "mlb.jpg",
+      address: "MLB 245 Park Ave",
+    },
+    {
+      id: 3,
+      name: "Deutsche Bank Global Headquaters - Life Safety Systems",
+      src: "Deutsche-Bank.jpg",
+      address: "1 Columbus Circle New York, NY",
+    },
     {
       id: 4,
-      name: "JPMC",
-      src: "park-ave.jpg",
-      address: "270 Park Ave High Rise, floors 40–44.",
+      name: 'Tiffany & Co. Flagship Store - "The Landmark" - Fifth Avenue',
+      src: "tiffany-1.jpg",
+      address: "727 5th Ave, New York, NY",
+    },
+
+    {
+      id: 5,
+      name: "Barclays Capital",
+      src: "Barclays-med.webp",
+      address: "745 7th Ave, New York, NY.",
+    },
+    {
+      id: 6,
+      name: "Citibank Headquarters - Flagship Client Center",
+      src: "citi-main.png",
+      address: "388 Greenwich St, New York, NY",
     },
   ];
   const [currentImage, setCurrentImage] = useState(0);
@@ -199,13 +211,15 @@ const Hero = () => {
                 src={`/${image.src}`}
                 alt={image.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw" // <-- Add this line
                 className={`
-                  rounded-md
-                  ${
-                    image.src === "park-ave.jpg"
-                      ? "object-contain" // show whole image, letterboxed on black
-                      : "object-cover" // your normal crop
-                  }`}
+    rounded-md
+    ${
+      image.src === "park-ave.jpg"
+        ? "object-contain" // show whole image, letterboxed on black
+        : "object-contain" // your normal crop
+    }`}
+                quality={85}
                 priority={index === 0}
               />
             </div>

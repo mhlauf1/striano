@@ -96,20 +96,20 @@ const About = () => {
             initial="hidden"
             animate={isImageInView ? "visible" : "hidden"}
             variants={imageVariants}
-            className="relative rounded-md overflow-hidden h-[400px]"
+            className="relative rounded-md overflow-hidden md:h-[500px] h-[400px]"
           >
             <Image
-              src="/tiff2.JPEG"
-              alt="NYC skyline showcasing Striano Electric projects"
+              src="/Barclays-close.jpg"
+              alt="Barclays Capital"
               fill
               className="object-cover"
               priority
             />
             <div className="absolute bottom-2  left-2  right-2">
               <div className="px-4 py-2 bg-white rounded-sm ">
-                <p className="text-[#981D1F] font-medium"> Tiffany</p>
+                <p className="text-[#981D1F] font-medium">Barclays Capital</p>
                 <p className="text-sm text-gray-600">
-                  Tiffany flagship store complete renovation
+                  745 7th Ave., New York, NY.
                 </p>
               </div>
             </div>

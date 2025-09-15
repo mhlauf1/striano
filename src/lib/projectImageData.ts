@@ -43,21 +43,11 @@ const projectsWithGallery = [
     },
     {
         id: 3,
-        name: "Pfizer",
-        year: "2022",
-        category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
-        src: "/pfizer-1.jpg",
-        gallery: ["Pfizer1.jpg", "Pfizer2.jpg", "Pfizer3.jpg", "Pfizer4.jpg", "Pfizer5.jpg", "Pfizer6.jpg"],
-        featured: false,
-        hasGallery: true
-    },
-    {
-        id: 4,
         name: "Barclays Capital",
         year: "2022",
         category: PROJECT_CATEGORIES.ELECTRICAL_MAINTENANCE,
         src: "bac-1.jpeg",
-        gallery: ["bac-1.jpeg", "bac-2.jpeg", "bac-3.jpeg", "bac-4.jpeg", "bac-5.jpeg", "bac-6.jpeg", "bac-7.jpeg", "bac-8.jpeg", "bac-9.jpeg", "bac-10.jpeg", "bac-11.jpeg", "bac-12.jpeg", "bac-13.jpeg", "bac-14.jpeg", "bac-15.jpeg", "bac-16.jpeg", "bac-17.jpeg", "bac-18.jpeg", "bac-19.jpeg", "bac-20.jpeg",],
+        gallery: ["bac-1.jpeg", "bac-2.jpeg", "bac-18.jpeg"],
         featured: false,
         hasGallery: true
     },
@@ -83,16 +73,6 @@ const projectsWithGallery = [
     },
     {
         id: 6,
-        name: "JPMC , NY FRB Rock Center, 1230 Avenue of the Americas, New York, NY.",
-        year: "2022",
-        category: PROJECT_CATEGORIES.FINANCIAL,
-        src: "americas.jpg",
-        gallery: ["americas.jpg"],
-        featured: false,
-        hasGallery: true
-    },
-    {
-        id: 7,
         name: "St. John’s University Little Theater",
         year: "2022",
         category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
@@ -102,7 +82,7 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 8,
+        id: 7,
         name: "Telx, 111 8th Ave",
         year: "2022",
         category: PROJECT_CATEGORIES.DATA_CENTERS,
@@ -112,7 +92,7 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 9,
+        id: 8,
         name: "Gerber Bar at the Weston Grand Central Hotel, 212 E. 42nd St.",
         year: "2022",
         category: PROJECT_CATEGORIES.PROFESSIONAL,
@@ -122,7 +102,7 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 10,
+        id: 9,
         name: "Sheraton Ballroom Lighting, 811 Seventh Avenue",
         year: "2022",
         category: PROJECT_CATEGORIES.PROFESSIONAL,
@@ -132,7 +112,7 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 11,
+        id: 10,
         name: "Morgan Stanley, 1585 Broadway, Various Projects/Multiple Floor Fit-Outs",
         year: "2022",
         category: PROJECT_CATEGORIES.PROFESSIONAL,
@@ -142,7 +122,7 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 12,
+        id: 11,
         name: "Major League Baseball Headquarters, 245 Park Ave.",
         year: "2022",
         category: PROJECT_CATEGORIES.CORPORATE,
@@ -152,7 +132,7 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 13,
+        id: 12,
         name: "Barnard College Milstein Center",
         year: "2022",
         category: PROJECT_CATEGORIES.EDUCATION_MEDICAL,
@@ -162,12 +142,22 @@ const projectsWithGallery = [
         hasGallery: true
     },
     {
-        id: 14,
+        id: 13,
         name: "NYSE, 11 Wall St., B1 Vault Level Speak Easy",
         year: "2022",
         category: PROJECT_CATEGORIES.FINANCIAL,
         src: "nyse-1.jpg",
         gallery: ["nyse-1.jpg", "nyse-2.jpg", "nyse-3.jpg", "nyse-4.jpg", "nyse-5.jpg", "nyse-6.jpg", "nyse-7.jpg"],
+        featured: false,
+        hasGallery: true
+    },
+    {
+        id: 14,
+        name: "Deutsche Bank Global Headquaters - Life Safety Systems",
+        year: "2022",
+        category: PROJECT_CATEGORIES.FINANCIAL,
+        src: "Deutsche-Bank.jpg",
+        gallery: ["Deutsche-Bank.jpg"],
         featured: false,
         hasGallery: true
     },

@@ -66,7 +66,7 @@ const Services = () => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         variants={variants}
-        className="flex flex-col lg:flex-row lg:items-start lg:justify-between w-full"
+        className="flex flex-col-reverse lg:flex-row lg:items-start lg:justify-between w-full"
       >
         {/* Left column - Headers */}
         <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
@@ -76,11 +76,11 @@ const Services = () => {
               initial="hidden"
               animate={isImageInView ? "visible" : "hidden"}
               variants={imageVariants}
-              className="relative rounded-md overflow-hidden h-[600px] w-full "
+              className="relative rounded-md mt-8 md:mt-0 overflow-hidden md:h-[750px] h-[600px] w-full "
             >
               <Image
-                src="/mlb.jpg"
-                alt="NYC skyline showcasing Striano Electric projects"
+                src="/tiffanys-exterior.avif"
+                alt='Tiffany & Co. Flagship Store - "The Landmark" - Fifth Avenue'
                 fill
                 className="object-cover"
                 priority
@@ -89,9 +89,11 @@ const Services = () => {
                 <div className="px-4 py-2 bg-white rounded-sm ">
                   <p className="text-[#981D1F] font-medium">
                     {" "}
-                    Major League Baseball
+                    Tiffany & Co. Flagship Store - "The Landmark" - Fifth Avenue
                   </p>
-                  <p className="text-sm text-gray-600">MLB 245 Park Ave</p>
+                  <p className="text-sm text-gray-600">
+                    727 5th Ave, New York, NY
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -132,7 +134,7 @@ const Services = () => {
           <motion.div
             custom={0}
             variants={cardVariants}
-            className="flex items-start  pl-6 gap-3 lg:gap-3 pt-6 md:pt-8"
+            className="flex items-start  pl-6 gap-3 lg:gap-3 pt-4 md:pt-8"
           >
             <div className="space-y-2 max-w-3xl">
               <h3 className="text-md text-neutral-800 font-medium md:text-xl">
