@@ -89,7 +89,8 @@ const Services = () => {
                 <div className="px-4 py-2 bg-white rounded-sm ">
                   <p className="text-[#981D1F] font-medium">
                     {" "}
-                    Tiffany & Co. Flagship Store - "The Landmark" - Fifth Avenue
+                    Tiffany & Co. Flagship Store - &quot;The Landmark&quot; -
+                    Fifth Avenue
                   </p>
                   <p className="text-sm text-gray-600">
                     727 5th Ave, New York, NY
