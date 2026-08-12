@@ -99,17 +99,19 @@ const About = () => {
             className="relative rounded-md overflow-hidden md:h-[500px] h-[400px]"
           >
             <Image
-              src="/Barclays-close.jpg"
-              alt="Barclays Capital"
+              src="/park-ave.jpg"
+              alt="JP Morgan Chase Global Headquarters"
               fill
               className="object-cover"
               priority
             />
             <div className="absolute bottom-2  left-2  right-2">
               <div className="px-4 py-2 bg-white rounded-sm ">
-                <p className="text-[#981D1F] font-medium">Barclays Capital</p>
+                <p className="text-[#981D1F] font-medium">
+                  JP Morgan Chase Global Headquarters
+                </p>
                 <p className="text-sm text-gray-600">
-                  745 7th Ave., New York, NY.
+                  270 Park Ave., New York, NY.
                 </p>
               </div>
             </div>
