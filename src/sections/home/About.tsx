@@ -96,15 +96,8 @@ const About = () => {
             initial="hidden"
             animate={isImageInView ? "visible" : "hidden"}
             variants={imageVariants}
-            className="relative flex justify-center rounded-md overflow-hidden py-8 md:py-10"
+            className="flex justify-center bg-white py-8 md:py-10"
           >
-            <Image
-              src="/park-ave.jpg"
-              alt=""
-              fill
-              aria-hidden
-              className="object-cover scale-110 blur-lg brightness-[0.45]"
-            />
             <div className="relative rounded-md overflow-hidden h-[600px] md:h-[800px] shadow-2xl">
               <Image
                 src="/park-ave.jpg"
@@ -114,15 +107,15 @@ const About = () => {
                 className="h-full w-auto"
                 priority
               />
-            </div>
-            <div className="absolute bottom-2 left-2 right-2">
-              <div className="px-4 py-2 bg-white rounded-sm">
-                <p className="text-[#981D1F] font-medium">
-                  JP Morgan Chase Global Headquarters
-                </p>
-                <p className="text-sm text-gray-600">
-                  270 Park Ave, High Rise Office Space
-                </p>
+              <div className="absolute bottom-2 left-2 right-2">
+                <div className="px-4 py-2 bg-white rounded-sm">
+                  <p className="text-[#981D1F] font-medium">
+                    JP Morgan Chase Global Headquarters
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    270 Park Ave, High Rise Office Space
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
