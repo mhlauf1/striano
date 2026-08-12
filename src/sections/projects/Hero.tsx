@@ -29,7 +29,7 @@ const Hero = () => {
       id: 1,
       name: "JP Morgan Chase Global Headquarters",
       src: "park-ave.jpg",
-      address: "270 Park Ave - High Rise Office Space",
+      address: "270 Park Ave, High Rise Office Space",
     },
     {
       id: 2,
