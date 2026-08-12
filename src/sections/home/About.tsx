@@ -96,22 +96,32 @@ const About = () => {
             initial="hidden"
             animate={isImageInView ? "visible" : "hidden"}
             variants={imageVariants}
-            className="relative rounded-md overflow-hidden md:h-[500px] h-[400px]"
+            className="relative flex justify-center rounded-md overflow-hidden py-8 md:py-10"
           >
             <Image
               src="/park-ave.jpg"
-              alt="JP Morgan Chase Global Headquarters"
+              alt=""
               fill
-              className="object-cover"
-              priority
+              aria-hidden
+              className="object-cover scale-110 blur-lg brightness-[0.45]"
             />
-            <div className="absolute bottom-2  left-2  right-2">
-              <div className="px-4 py-2 bg-white rounded-sm ">
+            <div className="relative rounded-md overflow-hidden h-[600px] md:h-[800px] shadow-2xl">
+              <Image
+                src="/park-ave.jpg"
+                alt="JP Morgan Chase Global Headquarters"
+                width={1200}
+                height={2163}
+                className="h-full w-auto"
+                priority
+              />
+            </div>
+            <div className="absolute bottom-2 left-2 right-2">
+              <div className="px-4 py-2 bg-white rounded-sm">
                 <p className="text-[#981D1F] font-medium">
                   JP Morgan Chase Global Headquarters
                 </p>
                 <p className="text-sm text-gray-600">
-                  270 Park Ave., New York, NY.
+                  270 Park Ave, High Rise Office Space
                 </p>
               </div>
             </div>
