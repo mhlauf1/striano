@@ -23,16 +23,15 @@ const Hero = () => {
     <section className="relative h-[95vh] rounded-md">
       <div className="absolute inset-0">
         <Image
-          src="/Barclays-close.jpg"
-          alt="Barclays Capital building at 745 7th Ave, New York"
+          src="/hero-home-bg.png"
+          alt="New York City skyline with Empire State Building"
           fill
           priority
           className="object-cover -z-10 object-top"
           quality={100}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-black/50 md:bg-black/10"></div>
       </div>
       <div className="relative z-10 h-full px-4 sm:px-8 md:px-12 lg:px-20  flex flex-col justify-end pb-16 md:pb-24">
         <div>
