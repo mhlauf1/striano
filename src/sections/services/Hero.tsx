@@ -115,7 +115,7 @@ const Hero = () => {
             <div className="px-4 py-2 bg-white rounded-sm ">
               <p className="text-[#981D1F] font-medium">
                 {" "}
-                New Your Stock Exchange
+                New York Stock Exchange
               </p>
               <p className="text-sm text-gray-600">NYSE, 11 Wall St.</p>
             </div>
